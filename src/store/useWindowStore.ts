@@ -1,32 +1,60 @@
 import { create } from "zustand";
 
+// Define the shape of the application state
 interface AppState {
   isOpen: boolean;
   zIndex: number;
+  isMinimized: boolean;
+  isMaximized: boolean;
 }
 
 interface WindowStore {
   apps: Record<string, AppState>;
   focusedApp: string | null;
   nextZIndex: number;
+  selectedProject: number | null;
   openApp: (id: string) => void;
   closeApp: (id: string) => void;
   focusApp: (id: string) => void;
+  minimizeApp: (id: string) => void;
+  maximizeApp: (id: string) => void;
+  setSelectedProject: (projectId: number | null) => void;
 }
 
 export const useWindowStore = create<WindowStore>((set) => ({
   apps: {
-    terminal: { isOpen: true, zIndex: 10 },
-    safari: { isOpen: true, zIndex: 10 },
-    finder: { isOpen: false, zIndex: 10 },
+    terminal: {
+      isOpen: true,
+      zIndex: 10,
+      isMinimized: false,
+      isMaximized: false,
+    },
+    safari: {
+      isOpen: false,
+      zIndex: 10,
+      isMinimized: false,
+      isMaximized: false,
+    },
+    finder: {
+      isOpen: true,
+      zIndex: 11,
+      isMinimized: false,
+      isMaximized: false,
+    },
   },
   focusedApp: null,
   nextZIndex: 20,
+  selectedProject: null,
   openApp: (id) =>
     set((state) => ({
       apps: {
         ...state.apps,
-        [id]: { ...state.apps[id], isOpen: true, zIndex: state.nextZIndex },
+        [id]: {
+          ...state.apps[id],
+          isOpen: true,
+          isMinimized: false,
+          zIndex: state.nextZIndex,
+        },
       },
       focusedApp: id,
       nextZIndex: state.nextZIndex + 1,
@@ -44,4 +72,19 @@ export const useWindowStore = create<WindowStore>((set) => ({
       focusedApp: id,
       nextZIndex: state.nextZIndex + 1,
     })),
+  minimizeApp: (id) =>
+    set((state) => ({
+      apps: {
+        ...state.apps,
+        [id]: { ...state.apps[id], isMinimized: !state.apps[id].isMinimized },
+      },
+    })),
+  maximizeApp: (id) =>
+    set((state) => ({
+      apps: {
+        ...state.apps,
+        [id]: { ...state.apps[id], isMaximized: !state.apps[id].isMaximized },
+      },
+    })),
+  setSelectedProject: (projectId) => set({ selectedProject: projectId }),
 }));

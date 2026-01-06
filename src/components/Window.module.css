@@ -1,7 +1,4 @@
 .windowContainer {
-  position: absolute;
-  top: 80px;
-  left: 80px;
   min-width: 400px;
   min-height: 300px;
   width: 700px;
@@ -9,7 +6,7 @@
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(40px) saturate(180%);
   border-radius: 12px;
-  box-shadow: 
+  box-shadow:
     0 0 0 1px rgba(0, 0, 0, 0.04),
     0 8px 16px rgba(0, 0, 0, 0.08),
     0 16px 32px rgba(0, 0, 0, 0.12);
@@ -18,11 +15,11 @@
   flex-direction: column;
   border: 0.5px solid rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease;
-  resize: both; /* 크기 조절 가능 */
+  resize: both;
 }
 
 .windowContainer:hover {
-  box-shadow: 
+  box-shadow:
     0 0 0 1px rgba(0, 0, 0, 0.06),
     0 12px 24px rgba(0, 0, 0, 0.12),
     0 24px 48px rgba(0, 0, 0, 0.16);
@@ -68,7 +65,7 @@
 }
 
 .circle::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -79,38 +76,13 @@
 
 /* 호버시 아이콘 표시 */
 .close {
-  background-color: #FF5F56;
+  background-color: #ff5f56;
 }
 
 .close:hover::before {
-  content: '×';
-  color: #8B0000;
+  content: "×";
+  color: #8b0000;
   font-size: 12px;
-  font-weight: bold;
-  opacity: 1;
-}
-
-.minimize {
-  background-color: #FFBD2E;
-}
-
-.minimize:hover::before {
-  content: '−';
-  color: #995700;
-  font-size: 14px;
-  font-weight: bold;
-  opacity: 1;
-  margin-top: -2px;
-}
-
-.maximize {
-  background-color: #27C93F;
-}
-
-.maximize:hover::before {
-  content: '↗';
-  color: #006400;
-  font-size: 10px;
   font-weight: bold;
   opacity: 1;
 }

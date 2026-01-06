@@ -1,10 +1,10 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Draggable from "react-draggable";
-import { motion } from "framer-motion";
 import { useWindowStore } from "@/store/useWindowStore";
 import styles from "./Window.module.css";
 
+// Draggable Window Component
 export const Window = ({
   id,
   title,
@@ -18,52 +18,67 @@ export const Window = ({
   const app = apps[id];
   const nodeRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [mounted, setMounted] = useState(false);
 
-  if (!app?.isOpen) return null;
+  // Center the window on mount
+  useEffect(() => {
+    // Calculate center position
+    const windowWidth = window.innerWidth;
+    const elementWidth = 700;
+    const menuBarHeight = 30;
+
+    // Set initial position to center
+    setPosition({
+      x: (windowWidth - elementWidth) / 2,
+      y: menuBarHeight + 50,
+    });
+
+    // Mark as mounted
+    setMounted(true);
+  }, []);
+
+  // Handle window close action
+  const handleClose = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    closeApp(id);
+  };
+
+  // If the app is not open or not mounted yet, do not render
+  if (!app?.isOpen || !mounted) return null;
 
   return (
     <Draggable
       nodeRef={nodeRef}
-      handle={`.${styles.header}`}
-      position={position}
-      onDrag={(e, data) => {
-        setPosition({ x: data.x, y: data.y });
-      }}
+      handle=".drag-handle"
+      defaultPosition={position}
       onStart={() => {
-        console.log("Drag started"); // 디버깅용
         focusApp(id);
       }}
     >
-      <motion.div
+      {/* Window Container */}
+      <div
         ref={nodeRef}
-        initial={{ scale: 0.9, opacity: 0, y: 20 }}
-        animate={{ scale: 1, opacity: 1, y: 0 }}
-        transition={{ duration: 0.2, ease: "easeOut" }}
-        style={{ zIndex: app.zIndex }}
+        style={{
+          zIndex: app.zIndex,
+          position: "absolute",
+        }}
         className={styles.windowContainer}
+        onClick={() => focusApp(id)}
       >
-        <div className={styles.header}>
+        {/* Window Header */}
+        <div className={`${styles.header} drag-handle`}>
           <div className={styles.buttonGroup}>
             <button
-              onClick={(e) => {
-                e.stopPropagation();
-                closeApp(id);
-              }}
+              onClick={handleClose}
               className={`${styles.circle} ${styles.close}`}
             />
-            <button
-              onClick={(e) => e.stopPropagation()}
-              className={`${styles.circle} ${styles.minimize}`}
-            />
-            <button
-              onClick={(e) => e.stopPropagation()}
-              className={`${styles.circle} ${styles.maximize}`}
-            />
           </div>
+          {/* Window Title */}
           <span className={styles.title}>{title}</span>
         </div>
+        {/* Window Content */}
         <div className={styles.content}>{children}</div>
-      </motion.div>
+      </div>
     </Draggable>
   );
 };

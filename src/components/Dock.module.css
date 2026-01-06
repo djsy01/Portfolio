@@ -63,7 +63,7 @@
   opacity: 1;
 }
 
-/* 앱이 실행 중일 때 아래에 찍히는 작은 점Indicator */
+/* Indicator for open apps */
 .indicator {
   width: 4px;
   height: 4px;

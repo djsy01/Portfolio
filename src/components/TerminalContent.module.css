@@ -1,7 +1,7 @@
 .terminalWrapper {
-  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-family: "Menlo", "Monaco", "Courier New", monospace;
   height: 100%;
-  color: #27c93f; /* 터미널 녹색 */
+  color: #27c93f;
 }
 
 .headerText {
@@ -28,6 +28,11 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
