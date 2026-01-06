@@ -1,0 +1,33 @@
+.terminalWrapper {
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  height: 100%;
+  color: #27c93f; /* 터미널 녹색 */
+}
+
+.headerText {
+  color: #9ca3af;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.codeText {
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: #27c93f;
+  margin-left: 4px;
+  animation: blink 1s infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
