@@ -204,6 +204,66 @@
   border-color: #d1d5db;
 }
 
+/* 협업자 정보 */
+.teamList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.teamMember {
+  padding: 16px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.teamMember:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-color: #007aff;
+}
+
+.memberHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.memberName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.memberRole {
+  padding: 4px 12px;
+  background: #eff6ff;
+  color: #1e40af;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.responsibilitiesList {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.8;
+}
+
+.responsibilitiesList li {
+  margin-bottom: 6px;
+}
+
+.responsibilitiesList li:last-child {
+  margin-bottom: 0;
+}
+
 /* list */
 .list {
   margin: 0;
