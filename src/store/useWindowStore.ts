@@ -24,7 +24,7 @@ interface WindowStore {
 export const useWindowStore = create<WindowStore>((set) => ({
   apps: {
     terminal: {
-      isOpen: true,
+      isOpen: false,
       zIndex: 10,
       isMinimized: false,
       isMaximized: false,
@@ -36,7 +36,7 @@ export const useWindowStore = create<WindowStore>((set) => ({
       isMaximized: false,
     },
     finder: {
-      isOpen: true,
+      isOpen: false,
       zIndex: 11,
       isMinimized: false,
       isMaximized: false,
