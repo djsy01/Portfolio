@@ -11,16 +11,13 @@ const PROJECTS = [
     tech: ["Vue.js, Vite, TypeScript, CSS, Redis, MySQL"],
     problems: [
       "기존 사이트의 복잡한 네비게이션",
-      "티켓 예매 시스템의 분리된 사용자 경험"
+      "티켓 예매 시스템의 분리된 사용자 경험",
     ],
-    solutions: [
-      "직관적인 단일 플랫폼으로 통합",
-      "개선된 예매 플로우 설계"
-    ],
+    solutions: ["직관적인 단일 플랫폼으로 통합", "개선된 예매 플로우 설계"],
     links: {
       github: "#",
-      demo: "#"
-    }
+      Site: "#",
+    },
   },
   {
     id: 2,
@@ -28,16 +25,24 @@ const PROJECTS = [
     desc: "실시간 티켓 예매 및 관리 시스템",
     status: "진행중",
     tech: ["React", "Node.js", "TypeScript"],
-    features: [
-      "실시간 좌석 선택",
-      "결제 시스템 연동",
-      "예매 내역 관리"
-    ],
+    features: ["실시간 좌석 선택", "결제 시스템 연동", "예매 내역 관리"],
     links: {
       github: "#",
-      demo: "#"
-    }
-  }
+      Site: "#",
+    },
+  },
+  {
+    id: 3,
+    title: "Personal Portfolio",
+    desc: "개인 프로젝트 및 기술 스택을 소개하는 포트폴리오 사이트",
+    status: "진행중",
+    tech: ["Next.js", "TypeScript", "CSS", "React"],
+    features: ["프로젝트 갤러리", "연락처 폼"],
+    links: {
+      github: "#",
+      Site: "#",
+    },
+  },
 ];
 
 export const SafariContent = () => {
@@ -99,16 +104,16 @@ export const SafariContent = () => {
 
             {/* 링크 */}
             <div className={styles.links}>
-              <a 
-                href={project.links.github} 
+              <a
+                href={project.links.github}
                 className={styles.link}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 GitHub
               </a>
-              <a 
-                href={project.links.demo} 
+              <a
+                href={project.links.demo}
                 className={styles.link}
                 target="_blank"
                 rel="noopener noreferrer"
