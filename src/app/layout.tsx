@@ -28,6 +28,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        // Site verification meta tags
+        <meta
+          name="google-site-verification"
+          content="DMLRC1b37hV-SKAXUO2Srsls0e9WKtdm9381WiE0e7w"
+        />
+        <meta
+          name="naver-site-verification"
+          content="0f6ebfdef4ca90cb74473f1bd57d3b25fbf5eb6e"
+        />
+      </head>
       {/* Root layout component */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
