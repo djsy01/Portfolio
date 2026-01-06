@@ -1,0 +1,73 @@
+.dockContainer {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+.dockItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.dockItem:hover {
+  transform: translateY(-10px) scale(1.1);
+}
+
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
+}
+
+.dockItem:hover .iconWrapper {
+  background-color: white;
+}
+
+.tooltip {
+  position: absolute;
+  top: -45px;
+  padding: 4px 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 12px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.dockItem:hover .tooltip {
+  opacity: 1;
+}
+
+/* 앱이 실행 중일 때 아래에 찍히는 작은 점Indicator */
+.indicator {
+  width: 4px;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  margin-top: 4px;
+}

@@ -1,65 +1,34 @@
-import Image from "next/image";
+"use client"; // Next.js에서 인터랙션(클릭, 상태)을 쓰려면 필수!
+
+import { Dock } from "@/components/Dock";
+import { Window } from "@/components/Window";
+import { MenuBar } from "@/components/MenuBar";
+import { TerminalContent } from "@/components/TerminalContent";
+import { SafariContent } from "@/components/SafariContent";
+import { useWindowStore } from "@/store/useWindowStore";
 
 export default function Home() {
+  const { apps } = useWindowStore();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="relative h-screen w-screen overflow-hidden bg-[url('https://images.unsplash.com/photo-1614027164847-1b2809eb189d?q=80&w=2000')] bg-cover bg-center">
+      {/* 1. 최상단 메뉴바 */}
+      <MenuBar />
+      
+      {/* 2. 앱 창들 */}
+      <Window id="terminal" title="Terminal — zsh">
+        <TerminalContent />
+      </Window>
+      
+      <Window id="safari" title="Safari">
+        <div className="p-4">
+          <h2 className="text-xl font-bold mb-4">Selected Projects</h2>
+          <SafariContent />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </Window>
+
+      {/* 3. 하단 독 */}
+      <Dock />
+    </main>
   );
 }
