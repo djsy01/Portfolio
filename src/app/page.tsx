@@ -10,22 +10,24 @@ import "./globals.css";
 
 export default function Home() {
   return (
-    <main className="relative h-screen w-screen overflow-hidden macos-gradient">
+    <main className="flex flex-col h-screen w-screen overflow-hidden macos-gradient">
       {/* 1. Menu Bar */}
       <MenuBar />
 
-      {/* 2. App Windows */}
-      <Window id="finder" title="Finder">
-        <FinderContent />
-      </Window>
+      {/* 2. Window Area - between MenuBar and Dock */}
+      <div className="window-area">
+        <Window id="finder" title="Finder">
+          <FinderContent />
+        </Window>
 
-      <Window id="safari" title="Safari">
-        <SafariContent />
-      </Window>
+        <Window id="safari" title="Safari">
+          <SafariContent />
+        </Window>
 
-      <Window id="terminal" title="Terminal — zsh">
-        <TerminalContent />
-      </Window>
+        <Window id="terminal" title="Terminal — zsh">
+          <TerminalContent />
+        </Window>
+      </div>
 
       {/* 3. Bottom Dock */}
       <Dock />

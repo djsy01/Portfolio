@@ -14,7 +14,7 @@ export const Window = ({
   title: string;
   children: React.ReactNode;
 }) => {
-  const { apps, closeApp, focusApp } = useWindowStore();
+  const { apps, closeApp, focusApp, maximizeApp } = useWindowStore();
   const app = apps[id];
   const nodeRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -43,14 +43,24 @@ export const Window = ({
     closeApp(id);
   };
 
+  // Handle window maximize action
+  const handleMaximize = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    maximizeApp(id);
+  };
+
   // If the app is not open or not mounted yet, do not render
   if (!app?.isOpen || !mounted) return null;
+
+  const isMaximized = app.isMaximized;
 
   return (
     <Draggable
       nodeRef={nodeRef}
       handle=".drag-handle"
       defaultPosition={position}
+      position={isMaximized ? { x: 0, y: 0 } : undefined}
+      disabled={isMaximized}
       onStart={() => {
         focusApp(id);
       }}
@@ -62,7 +72,7 @@ export const Window = ({
           zIndex: app.zIndex,
           position: "absolute",
         }}
-        className={styles.windowContainer}
+        className={`${styles.windowContainer} ${isMaximized ? styles.maximized : ""}`}
         onClick={() => focusApp(id)}
       >
         {/* Window Header */}
@@ -71,6 +81,10 @@ export const Window = ({
             <button
               onClick={handleClose}
               className={`${styles.circle} ${styles.close}`}
+            />
+            <button
+              onClick={handleMaximize}
+              className={`${styles.circle} ${styles.maximize}`}
             />
           </div>
           {/* Window Title */}

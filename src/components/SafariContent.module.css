@@ -305,10 +305,16 @@
   transition: all 0.2s ease;
 }
 
-.linkButton:hover {
+.linkButton:hover:not(:disabled) {
   background: #0051d5;
   transform: translateY(-2px);
   box-shadow: 0 8px 16px rgba(0, 122, 255, 0.3);
+}
+
+.linkDisabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 /* responsive */

@@ -1,12 +1,11 @@
 .dockContainer {
-  position: fixed;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
+  flex-shrink: 0;
   display: flex;
   align-items: flex-end;
+  justify-content: center;
   gap: 12px;
   padding: 8px;
+  margin: 0 auto 16px;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);

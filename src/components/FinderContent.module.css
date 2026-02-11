@@ -109,12 +109,8 @@
 }
 
 .folderEmoji {
-  position: absolute;
-  font-size: 24px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: -4px;
+  font-size: 48px;
+  line-height: 1;
 }
 
 /* image wrapper */
