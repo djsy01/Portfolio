@@ -28,6 +28,15 @@ const PROJECTS = [
           "티켓 예매 시스템의 백엔드 로직 구현",
         ],
       },
+      {
+        name: "엄인호",
+        role: "Front-End Developer",
+        responsibilities: [
+          "Vue.js와 TypeScript를 활용한 프론트엔드 개발",
+          "UI/UX 디자인 및 통합 작업",
+          "반응형 디자인 구현",
+        ],
+      },
     ],
     links: {
       github: "https://github.com/yourusername/obed-homepage",
@@ -43,6 +52,15 @@ const PROJECTS = [
     tech: ["React", "TypeScript"],
     features: ["실시간 좌석 선택", "결제 시스템 연동", "예매 내역 관리"],
     team: [
+      {
+        name: "엄인호",
+        role: "Front-End Developer",
+        responsibilities: [
+          "React와 TypeScript를 활용한 프론트엔드 개발",
+          "UI/UX 디자인 및 구현",
+          "실시간 좌석 선택 UI 구현",
+        ],
+      },
       {
         name: "이준행",
         role: "Back-End Developer",
@@ -60,9 +78,52 @@ const PROJECTS = [
   },
   {
     id: 3,
+    title: "UT Tailwind",
+    desc: "Tailwind CSS를 활용한 UI 컴포넌트 라이브러리",
+    status: "완료",
+    type: "Team",
+    tech: ["HTML", "Tailwind CSS", "JavaScript"],
+    features: ["반응형 디자인", "다양한 UI 컴포넌트 제공"],
+    team: [
+      {
+        name: "박현우",
+        role: "Front-End Developer",
+        responsibilities: ["banner 컴포넌트 개발"],
+      },
+      {
+        name: "방효진",
+        role: "Front-End Developer",
+        responsibilities: ["header 컴포넌트 개발"],
+      },
+      {
+        name: "엄인호",
+        role: "Front-End Developer",
+        responsibilities: [
+          "스트럼 마스터",
+          "index.html, style.css, main.js 등 메인 파일 작업",
+          "About, Download 컴포넌트 개발",
+        ],
+      },
+      {
+        name: "이규화",
+        role: "Front-End Developer",
+        responsibilities: ["Apply 컴포넌트 개발"],
+      },
+      {
+        name: "홍정빈",
+        role: "Front-End Developer",
+        responsibilities: ["QnA 컴포넌트 개발"],
+      },
+    ],
+    links: {
+      site: "https://vitemin-tailwind.netlify.app/",
+    },
+  },
+  {
+    id: 4,
     title: "Personal Portfolio",
     desc: "개인 프로젝트 및 기술 스택을 소개하는 포트폴리오 사이트",
-    status: "진행중",
+    status: "완료",
     type: "Personal",
     tech: ["Next.js", "React", "TypeScript", "CSS", "React"],
     features: ["프로젝트 갤러리", "연락처 폼"],
@@ -77,7 +138,7 @@ const PROJECTS = [
 export const SafariContent = () => {
   const { selectedProject: storeSelectedProject } = useWindowStore();
   const [currentView, setCurrentView] = useState<"detail" | "website">(
-    "detail"
+    "detail",
   );
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [currentUrl, setCurrentUrl] = useState<string>("");
@@ -212,20 +273,34 @@ export const SafariContent = () => {
 
           {/* Link Buttons */}
           <div className={styles.links}>
-            <button
-              onClick={() => handleLinkClick(project.links.github, true)}
-              className={styles.linkButton}
-            >
-              <ExternalLink size={16} />
-              GitHub
-            </button>
-            <button
-              onClick={() => handleLinkClick(project.links.site, false)}
-              className={styles.linkButton}
-            >
-              <ExternalLink size={16} />
-              Live Site
-            </button>
+            {project.links.github ? (
+              <button
+                onClick={() => handleLinkClick(project.links.github!, true)}
+                className={styles.linkButton}
+              >
+                <ExternalLink size={16} />
+                GitHub
+              </button>
+            ) : (
+              <button className={`${styles.linkButton} ${styles.linkDisabled}`} disabled>
+                <ExternalLink size={16} />
+                GitHub (비공개)
+              </button>
+            )}
+            {project.links.site ? (
+              <button
+                onClick={() => handleLinkClick(project.links.site!, false)}
+                className={styles.linkButton}
+              >
+                <ExternalLink size={16} />
+                Live Site
+              </button>
+            ) : (
+              <button className={`${styles.linkButton} ${styles.linkDisabled}`} disabled>
+                <ExternalLink size={16} />
+                Live Site (준비중)
+              </button>
+            )}
           </div>
         </div>
       )}

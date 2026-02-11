@@ -24,9 +24,18 @@ const PROJECTS = [
   },
   {
     id: 3,
+    title: "UT Tailwind",
+    desc: "Tailwind CSS를 활용한 UI 컴포넌트 라이브러리",
+    status: "완료",
+    icon: "🚕",
+    image:
+      "https://lh3.googleusercontent.com/rd-d/ALs6j_E02NxvZ8lQzQ8LLyc4c3lujggcPIE051GDt5MnOEzztaoY_3OxWsSZEBiLAK3SmIVhxvXQSnh6TNwjG_488dAtxuMTnfLE0-jGLNmVCI38OFnH2wiipcENzQQ3g4L4KdiSyImCHSFJj7e8oGRlbKkC1Ga54DAVCNe7HvbQUmsm-9BrXSbl7vC0tZFaqML28n6DxxmL8UcbcxtHfGf3z4lqlKINCuZGVrO9J9DQuG9Qqtrms9ABcFZcX4AihVNPp8qfcig8txHULpabJa71NaxnNGR5NyXlJzSKnPbFMMx0FYHMFThyID704to4xmZyQwVNBDRi7tKvbL1kvjz-v8MK_aD5Y8UuuOGQHlwB4slga9kRjHJXUCGFlR770_ZthhDRD5NoMRh6ieNj2BuSuPw0_Mwg6XmwVYBzg0677sUrxqAdAamkSMHNcpKfhrKmace5DPh2fjYwg-poTxyWMhceeJ3ktWXvuc0t35xab8IIG82I7aekU2F1KRPf8n-C4qQhjiMs3aOC65yr-m100zU2Cq-BQgJJ3UJvhnIXS_v1JKvEAOQYXuHTdBQYGN99ORz58JXNciuOzoGtLRr1UzzVhkPGEDqmKoxhwP_AAJ-0j9Ayp3sqLJOsV8aycpPraAEK2F-zugMDNHIefqFOIYV1phDLl0VdwT0xE4uLRQDcJKtpf8sXjWTjfMDdxO64uKWEydL-PL1vb5egpQ-SJ-jQpc3Z3jukC4756eNtFumEPYVeqkYLPVsY5mf40YE447OTo3JyT6--jY5ly8TbNJ96tztsWEiI90zV60qj0ZehtzA38sMDmu3IdItfsfuAL_3YRnRm2fkhaKRD36WmeUbUewtFySgjCtsi4hF-knQpEAYciJV5WMwwSwJi8ZkhZ9QSjHtUCDi6zUzm0Mz7FbMJoglCYIFRT0VFAtRrXIJcfBsizv_Ortkuv0OYNafEBKBvR57D-bkNrXmgl0WGH5mYNnB99aA6eIfeeWS0t60D8fz_EM8bjQUa8Gp_CU_tXarUSIkINrQzbgDBqL1vsv9HgR5kZ6ipYXnDVCCAQB9gfl9PlOgNZxNwuRBvLdw2s8w3qHTCMgJBNA=w3584-h1810?auditContext=forDisplay",
+  },
+  {
+    id: 4,
     title: "Personal Portfolio",
     desc: "개인 프로젝트 및 기술 스택을 소개하는 포트폴리오 사이트",
-    status: "진행중",
+    status: "완료",
     icon: "💼",
     image:
       "https://lh3.googleusercontent.com/rd-d/ALs6j_HOVud8mXRPPXA6WRksflRIS5rqdXUeItPC8eBJXXIaaU0Fy5spUGB-C4GI9UX42U3Pp1pmCdg-VDwTac4aOtwa05uIHNeT7rsQ8GMy9n1rNw9mXSD61GGltz6IQ-88HEndhEBQ0NtmRrJsgaaX4cW-48YmHDQdzeykn8lCd7JPDsngxLgrPkKqeTHqbUTIGPKMDUaR49qWCuXNJfVHvbgo8qK-7TvFda1R_r5LraoLNh2sASLtBWIxykQkwPSQmCqwHKVAI6StmC-PoU1VjujAC9hAMGpCywfN4h7EJQREZeqgDZ27YfDXsCX6Y_qc4YR1YhgL04d3FtRzHwNoW_cB2qdTf9KwSr-Xlb8tTS05AUGIW0bkXwbqz7LUC11AwFR8ifWi5h7Tpuqotc7j0ZeN7MNGrIurmYIQQhLGb00tAt16RZcPAS8p0IoABja455I7FcG0FypsZm3CsHViqvkjuHDBb_78w1K37HkAc_hIoE4sOK-rS3-LUjmZUayLIyen-iMUIwQLXPcvFhAvry8KTgKWpACV12gbpkYoAq7xvuZ0NfXwrQddSDToeRZ9jHxBNoiuW8ldlRRJg0kBrwwITiXq7qDNl7eSWJnuKM8Xa7kXEiSIzcgrcneJaR6i06eSin8-F5ngo9_z2LitUTAz3APHiAUlLsi4N8q-YFScRWRxtjPnsSDcwwY2J4JSp7Ekh67WJ_YwDlzf-5gmQYnlna5S4j3AThcafTYaUqn88qJ9qTb0vy9UI4hYWgpjLHx5-ph4FwmHZ3BYqm1D4NTzq31C-54CkW6kqv0Kfi6qjkFoFliJ6XCEz6i9Jghl5JqxfiGf7DBK0ivDXNVkbETXQwc1xrtTyz3v8057H16lisCPDdWUzYOJVRvh79MvCcTiO0JX5ZfkalJ3d-Hnwpw-Hlc-HC0F1-s5EOVYmJ6qplwl7VvpWLmxxaRWeCM3e6nwwkoezUiXUpHXR9wtHDcb8XHv_mQYS2KlsGOyjmzoxtRyVD4tXlc_32XRBaYMl3jIauXTIrOXXQUArYsqdW1YWMrmThBtZLe5OiKxk1yEGlR31A=w3584-h1812?auditContext=prefetch",
@@ -84,7 +93,6 @@ export const FinderContent = () => {
                 </div>
               ) : (
                 <div className={styles.folderIconWrapper}>
-                  <FolderOpen size={64} color="#007AFF" />
                   <span className={styles.folderEmoji}>{project.icon}</span>
                 </div>
               )}
