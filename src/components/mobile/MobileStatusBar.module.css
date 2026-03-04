@@ -1,0 +1,51 @@
+.statusBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px 4px;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  position: relative;
+  z-index: 10;
+}
+
+.time {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.battery {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.batteryBody {
+  width: 22px;
+  height: 11px;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-radius: 3px;
+  padding: 1.5px;
+}
+
+.batteryFill {
+  width: 75%;
+  height: 100%;
+  background: white;
+  border-radius: 1px;
+}
+
+.batteryTip {
+  width: 2px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 0 1px 1px 0;
+}
