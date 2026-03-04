@@ -1,41 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
-/* Window area: fills space between MenuBar and Dock */
-.window-area {
-  position: relative;
-  flex: 1;
-  overflow: hidden;
+html,
+body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* gradient anmation */
-.animated-gradient {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* MacOs Style smooth gradient animation */
-.macos-gradient {
+body {
   background: linear-gradient(
     135deg,
     #667eea 0%,
@@ -49,65 +25,33 @@ body {
 }
 
 @keyframes macosFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Blue gradient */
-.calm-blue-gradient {
-  background: linear-gradient(
-    -45deg,
-    #0f2027,
-    #203a43,
-    #2c5364,
-    #1e3c72,
-    #2a5298
-  );
-  background-size: 400% 400%;
-  animation: calmFlow 18s ease infinite;
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-family: inherit;
 }
 
-@keyframes calmFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Window area (desktop) */
+.window-area {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
 }
 
-/* Pupple and Pink gradient */
-.purple-pink-gradient {
-  background: linear-gradient(
-    -45deg,
-    #8e2de2,
-    #4a00e0,
-    #da22ff,
-    #9733ee,
-    #667eea
-  );
-  background-size: 400% 400%;
-  animation: purpleFlow 16s ease infinite;
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 6px;
 }
-
-@keyframes purpleFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
 }

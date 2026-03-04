@@ -1,36 +1,28 @@
 "use client";
-
+import { MenuBar } from "@/components/MenuBar";
 import { Dock } from "@/components/Dock";
 import { Window } from "@/components/Window";
-import { MenuBar } from "@/components/MenuBar";
-import { TerminalContent } from "@/components/TerminalContent";
-import { SafariContent } from "@/components/SafariContent";
 import { FinderContent } from "@/components/FinderContent";
-import "./globals.css";
+import { SafariContent } from "@/components/SafariContent";
+import { TerminalContent } from "@/components/TerminalContent";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main className="flex flex-col h-screen w-screen overflow-hidden macos-gradient">
-      {/* 1. Menu Bar */}
+    <div className={styles.desktop}>
       <MenuBar />
-
-      {/* 2. Window Area - between MenuBar and Dock */}
-      <div className="window-area">
+      <div className={styles.windowArea}>
         <Window id="finder" title="Finder">
           <FinderContent />
         </Window>
-
         <Window id="safari" title="Safari">
           <SafariContent />
         </Window>
-
-        <Window id="terminal" title="Terminal — zsh">
+        <Window id="terminal" title="Terminal">
           <TerminalContent />
         </Window>
       </div>
-
-      {/* 3. Bottom Dock */}
       <Dock />
-    </main>
+    </div>
   );
 }
