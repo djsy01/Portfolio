@@ -1,10 +1,13 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
-import { COMMANDS, WELCOME, type Line } from '@/lib/terminalCommands';
+import { getCommands, getWelcome, type Line } from '@/lib/terminalCommands';
+import { useWindowStore } from '@/store/useWindowStore';
 import styles from './MobileTerminal.module.css';
 
 export const MobileTerminal = () => {
-    const [lines, setLines] = useState<Line[]>(WELCOME);
+    const { portfolioType } = useWindowStore();
+    const COMMANDS = getCommands(portfolioType);
+    const [lines, setLines] = useState<Line[]>(() => getWelcome(portfolioType));
     const [input, setInput] = useState('');
     const [history, setHistory] = useState<string[]>([]);
     const [historyIdx, setHistoryIdx] = useState(-1);
@@ -24,7 +27,7 @@ export const MobileTerminal = () => {
         if (!cmd) return;
 
         if (cmd === 'clear') {
-            setLines(WELCOME);
+            setLines(getWelcome(portfolioType));
             setInput('');
             setHistory((h) => [cmd, ...h]);
             setHistoryIdx(-1);

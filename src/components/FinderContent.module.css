@@ -63,9 +63,21 @@
 }
 
 .breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 13px;
   font-weight: 600;
   color: #1d1d1f;
+}
+
+.breadcrumbLink {
+  cursor: pointer;
+  color: #007aff;
+}
+
+.breadcrumbLink:hover {
+  text-decoration: underline;
 }
 
 /* project grid */
@@ -155,6 +167,19 @@
   border-radius: 12px;
   font-size: 11px;
   font-weight: 600;
+}
+
+.sidebarEmoji {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.emptyMsg {
+  color: rgba(0, 0, 0, 0.35);
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
 }
 
 /* scrollbar styles */
