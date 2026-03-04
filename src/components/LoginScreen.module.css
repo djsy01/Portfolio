@@ -260,12 +260,26 @@
 }
 
 .passwordDots {
+  --slot-size: 9px;
+  --slot-gap: 7px;
+  --slot-step: calc(var(--slot-size) + var(--slot-gap));
+  --cursor-index: 0;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: var(--slot-gap);
   min-height: 44px;
   flex-wrap: nowrap;
+}
+
+.passwordSlot {
+  width: var(--slot-size);
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .dot {
@@ -293,6 +307,7 @@
   align-self: center;
   animation: blink 0.8s step-end infinite;
 }
+
 
 @keyframes blink {
   0%, 100% { opacity: 1; }

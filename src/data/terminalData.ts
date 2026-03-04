@@ -84,6 +84,7 @@ export const HELP: Record<PortfolioType, Line[]> = {
         { type: 'item', text: '  skills    — 프론트엔드 기술 스택' },
         { type: 'item', text: '  projects  — 프론트엔드 프로젝트 목록' },
         { type: 'item', text: '  contact   — 연락처' },
+        { type: 'item', text: '  menual    — 사이트 사용 방법' },
         { type: 'item', text: '  clear     — 터미널 초기화' },
     ],
     backend: [
@@ -92,6 +93,7 @@ export const HELP: Record<PortfolioType, Line[]> = {
         { type: 'item', text: '  skills    — 백엔드 기술 스택' },
         { type: 'item', text: '  projects  — 백엔드 프로젝트 목록' },
         { type: 'item', text: '  contact   — 연락처' },
+        { type: 'item', text: '  menual    — 사이트 사용 방법' },
         { type: 'item', text: '  clear     — 터미널 초기화' },
     ],
     fullstack: [
@@ -100,6 +102,7 @@ export const HELP: Record<PortfolioType, Line[]> = {
         { type: 'item', text: '  skills    — 풀스택 기술 스택' },
         { type: 'item', text: '  projects  — 전체 프로젝트 목록' },
         { type: 'item', text: '  contact   — 연락처' },
+        { type: 'item', text: '  menual    — 사이트 사용 방법' },
         { type: 'item', text: '  clear     — 터미널 초기화' },
     ],
 };
