@@ -8,7 +8,7 @@ const PROFILES: {
   label: string;
   emoji: string;
   subtitle: string;
-  password: string;
+  demoCode: string;
   color: string;
 }[] = [
   {
@@ -16,7 +16,7 @@ const PROFILES: {
     label: "Frontend",
     emoji: "🎨",
     subtitle: "UI / UX Developer",
-    password: "fr0nt3nd!",
+    demoCode: "frontend-demo",
     color: "#4A9EFF",
   },
   {
@@ -24,7 +24,7 @@ const PROFILES: {
     label: "Backend",
     emoji: "⚙️",
     subtitle: "Server / DB Engineer",
-    password: "b4ck3nd!",
+    demoCode: "backend-demo",
     color: "#34C759",
   },
   {
@@ -32,7 +32,7 @@ const PROFILES: {
     label: "Fullstack",
     emoji: "🚀",
     subtitle: "End-to-End Developer",
-    password: "full5t4ck!",
+    demoCode: "fullstack-demo",
     color: "#FF9F0A",
   },
 ];
@@ -60,7 +60,7 @@ export const SwitchOverlay = () => {
     if (intervalRef.current) clearInterval(intervalRef.current);
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
-    const pw = profile.password;
+    const pw = profile.demoCode;
     let i = 0;
 
     // 300ms 딜레이 후 타이핑 시작
@@ -122,17 +122,16 @@ export const SwitchOverlay = () => {
             style={{ "--accent": profile.color } as React.CSSProperties}
           >
             <span className={styles.passwordDots}>
-              {typedPassword.split("").map((_, i) => (
-                <span
-                  key={i}
-                  className={styles.dot}
-                  style={{ animationDelay: `${i * 0.05}s` }}
-                />
+              {Array.from({ length: profile.demoCode.length }).map((_, i) => (
+                <span key={i} className={styles.passwordSlot}>
+                  {i < typedPassword.length && (
+                    <span
+                      className={styles.dot}
+                      style={{ animationDelay: `${i * 0.05}s` }}
+                    />
+                  )}
+                </span>
               ))}
-              {typedPassword.length > 0 &&
-                typedPassword.length < profile.password.length && (
-                  <span className={styles.cursor} />
-                )}
             </span>
           </div>
 
