@@ -1,0 +1,332 @@
+/* ===== Container ===== */
+.container {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.fadeOut {
+  animation: fadeOutScreen 0.6s ease forwards !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeOutScreen {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(1.05); }
+}
+
+/* ===== Background ===== */
+.bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, #0d1117 0%, #111827 40%, #0a0a0a 100%);
+}
+
+.bgBlob1,
+.bgBlob2,
+.bgBlob3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+  animation: drift 12s ease-in-out infinite;
+}
+
+.bgBlob1 {
+  width: 500px;
+  height: 500px;
+  top: -100px;
+  left: -100px;
+  background: #4A9EFF;
+  animation-delay: 0s;
+}
+
+.bgBlob2 {
+  width: 400px;
+  height: 400px;
+  bottom: -80px;
+  right: -80px;
+  background: #34C759;
+  animation-delay: -4s;
+}
+
+.bgBlob3 {
+  width: 350px;
+  height: 350px;
+  top: 40%;
+  left: 50%;
+  background: #FF9F0A;
+  animation-delay: -8s;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(30px, -20px) scale(1.05); }
+  66%  { transform: translate(-20px, 30px) scale(0.95); }
+}
+
+/* ===== Inner ===== */
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+/* ===== Clock ===== */
+.clock {
+  text-align: center;
+  color: #fff;
+  user-select: none;
+}
+
+.clockTime {
+  font-size: clamp(52px, 10vw, 88px);
+  font-weight: 200;
+  letter-spacing: -2px;
+  line-height: 1;
+  text-shadow: 0 0 40px rgba(255,255,255,0.15);
+}
+
+.clockDate {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Profile Selection ===== */
+.profileSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.hint {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.profiles {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 28px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  min-width: 140px;
+}
+
+.profileCard:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--accent),
+    0 0 30px -5px var(--accent);
+}
+
+.profileCard:active {
+  transform: translateY(-2px);
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.25s ease;
+}
+
+.profileCard:hover .avatar {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px -4px var(--accent);
+}
+
+.avatarEmoji {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.profileLabel {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.profileSub {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 11px;
+  text-align: center;
+}
+
+/* ===== Login Section (after profile selected) ===== */
+.loginSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: slideUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.bigAvatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px -8px var(--accent);
+  transition: border-color 0.3s ease;
+}
+
+.bigEmoji {
+  font-size: 42px;
+  line-height: 1;
+}
+
+.loginLabel {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.loginSub {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 13px;
+  margin: 0;
+}
+
+/* ===== Password Field ===== */
+.passwordField {
+  margin-top: 8px;
+  width: 240px;
+  min-height: 44px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.passwordField.passwordSuccess {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px -6px var(--accent);
+}
+
+.passwordDots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  flex-wrap: nowrap;
+}
+
+.dot {
+  display: block;
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  animation: dotPop 0.15s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes dotPop {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.cursor {
+  display: block;
+  flex-shrink: 0;
+  width: 2px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 1px;
+  align-self: center;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ===== Logging In Text ===== */
+.loggingInText {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  animation: fadeInText 0.4s ease forwards;
+  margin: 0;
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Back Button ===== */
+.backBtn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+  margin-top: 4px;
+}
+
+.backBtn:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.08);
+}

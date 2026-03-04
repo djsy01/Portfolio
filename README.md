@@ -106,6 +106,7 @@ my-mac-portfolio/
 | `projects` | 프로젝트 목록 및 상태                            |
 | `contact`  | 연락처 (이메일)                                  |
 | `help`     | 사용 가능한 명령어 목록                          |
+| `menual`   | 사이트 사용 방법 안내                            |
 | `clear`    | 터미널 초기화                                    |
 
 ## 🎨 커스터마이징

@@ -1,42 +1,161 @@
 .menuBar {
-  flex-shrink: 0;
-  height: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 15px;
-  background-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  z-index: 10000;
-  font-size: 13px;
-  font-weight: 500;
-  color: #000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 10000;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.leftSection, .rightSection {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.leftSection,
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .appleIcon {
-  font-size: 18px;
-  margin-right: 5px;
-  cursor: pointer;
+    font-size: 18px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: #ffffff;
 }
 
 .menuItem {
-  cursor: pointer;
-  padding: 2px 8px;
-  border-radius: 4px;
+    cursor: pointer;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.85);
+    transition: background 0.15s;
+}
+
+.menuItemBold {
+    font-weight: 700;
 }
 
 .menuItem:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .rightSection svg {
-  cursor: pointer;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.dateText {
+    font-size: 12px;
+    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===== Type Badge ===== */
+.typeBadge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid;
+    letter-spacing: 0.3px;
+    user-select: none;
+}
+
+/* ===== Portfolio Dropdown ===== */
+.portfolioMenu {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 200px;
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 6px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    z-index: 99999;
+    animation: dropIn 0.15s ease;
+}
+
+@keyframes dropIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.dropdownHeader {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.35);
+    padding: 4px 10px 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.dropdownItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 7px 10px;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s;
+}
+
+.dropdownItem:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dropdownItemActive {
+    font-weight: 600;
+}
+
+.checkmark {
+    margin-left: auto;
+    font-size: 12px;
+}
+
+.dropdownDivider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 4px 6px;
+}
+
+.dropdownLogout {
+    display: block;
+    width: 100%;
+    padding: 7px 10px;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #ff453a;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s;
+}
+
+.dropdownLogout:hover {
+    background: rgba(255, 69, 58, 0.15);
 }

@@ -1,108 +1,147 @@
 "use client";
+import { useState } from "react";
 import { useWindowStore } from "@/store/useWindowStore";
 import styles from "./FinderContent.module.css";
-import { FolderOpen } from "lucide-react";
+import { FolderOpen, ChevronRight } from "lucide-react";
+import type { PortfolioType } from "@/store/useWindowStore";
+import allProjects from "@/data/projects.json";
 
-// project data
-const PROJECTS = [
-  {
-    id: 1,
-    title: "OBED",
-    desc: "기존 사이트와 티켓 시스템의 UX 개선 및 통합",
-    status: "진행중",
-    icon: "🎭",
-    image:
-      "	https://lh3.googleusercontent.com/rd-d/ALs6j_Ho6AoUZ8LX3u8E7JWue5waTDSFnbIWCqUQRJ9EvhC6aDQsR_99vuwTyCJfDUWS3rt3coJgsMwbqfMn79zWDk5aJ-eBBl1RrgdccKaenvNiMGKIAUiOrg5VRzyve9hWHNUD03ay_Ytq6ReR2ehI1BWDj6vSvvS7GNqiF5bL3X-oL1Me80Fq4Yf8hybhiKbi1RAZw85jYpmOofa9fzM3xVM1vysmpNC-y1gNxAtQOWW00WX-PkbGumZlgM2tn_qZCTiN2nSAesbUMAf28aERwUvDSo6xsoz8FkDRw4MNziRhF06mb0yl1Gmf2lzGLdr8JGQdYoeJYHXc65hds6OoT9FGoUxJlBHjWWgev-Y1IINq_O25qU-cHyrZ-6owQRVlgY-TkCr95tzIg_oFKCR92TgNKQMPoCznzP52_5a2VdMfxK21JKu8m_LcfolqWhc3nmKg3DqJLO4akZfqPUzNpAd_wzpWFqwT6SR3yGsjpyagTpdW0nzW_ppiuRSov7OndzpBHjbRK8CBm-LO5_53iz70z_A1sB0sjgpxInbAneNXBmWKOGjxxsHW9Ck1Gy8P6ndSM2qUI19p1AosQO3dN7EtQzce671JobDU3h9bCmY0Vr9Hh2TV1jWTLCfx5zXqJxwdAGQfn5xGnQdWbnDnB8qsQVrk9Knfk6GnWR3PGWRkku0ApK4Jz7XXJW2X4RuzT_qDVwCC3gjwTVcI2urbPIjjLMmqILHbJiNM94UPIGIcksjnqHf97WgmzPQAeB1qoS8BHPKhGmvd8EypTRwxQTncNv6HID5qbQEvF-pW4hxo-KsGoyb5gSt8uHbdfds1w9ra8VdcaGhiXHBPulCOU7aOk6Xzp93M2Gg15Ol2SdnvtB-C2ud5O1CJB9gI0lg3o2oWmdUReiJavXBHIXIEAzVOEpN8FonCF-evHM6ScfZWR-AD6gUxrOJnXoMwtqEQArf4Ry43haIHn9okQMAang6-Ed0ZCqWi3kYff5avTP5GgTXgz2Py54ryS0VXFxY81nsWWEEVjslBiedmYUD3_m6xPMjdNEa_RGxA5i84bm1wFVMV=w3584-h1812?auditContext=prefetch",
-  },
-  {
-    id: 2,
-    title: "Ticketing System",
-    desc: "실시간 티켓 예매 및 관리 시스템",
-    status: "진행중",
-    icon: "🎫",
-    image: null,
-  },
-  {
-    id: 3,
-    title: "UT Tailwind",
-    desc: "Tailwind CSS를 활용한 UI 컴포넌트 라이브러리",
-    status: "완료",
-    icon: "🚕",
-    image:
-      "https://lh3.googleusercontent.com/rd-d/ALs6j_E02NxvZ8lQzQ8LLyc4c3lujggcPIE051GDt5MnOEzztaoY_3OxWsSZEBiLAK3SmIVhxvXQSnh6TNwjG_488dAtxuMTnfLE0-jGLNmVCI38OFnH2wiipcENzQQ3g4L4KdiSyImCHSFJj7e8oGRlbKkC1Ga54DAVCNe7HvbQUmsm-9BrXSbl7vC0tZFaqML28n6DxxmL8UcbcxtHfGf3z4lqlKINCuZGVrO9J9DQuG9Qqtrms9ABcFZcX4AihVNPp8qfcig8txHULpabJa71NaxnNGR5NyXlJzSKnPbFMMx0FYHMFThyID704to4xmZyQwVNBDRi7tKvbL1kvjz-v8MK_aD5Y8UuuOGQHlwB4slga9kRjHJXUCGFlR770_ZthhDRD5NoMRh6ieNj2BuSuPw0_Mwg6XmwVYBzg0677sUrxqAdAamkSMHNcpKfhrKmace5DPh2fjYwg-poTxyWMhceeJ3ktWXvuc0t35xab8IIG82I7aekU2F1KRPf8n-C4qQhjiMs3aOC65yr-m100zU2Cq-BQgJJ3UJvhnIXS_v1JKvEAOQYXuHTdBQYGN99ORz58JXNciuOzoGtLRr1UzzVhkPGEDqmKoxhwP_AAJ-0j9Ayp3sqLJOsV8aycpPraAEK2F-zugMDNHIefqFOIYV1phDLl0VdwT0xE4uLRQDcJKtpf8sXjWTjfMDdxO64uKWEydL-PL1vb5egpQ-SJ-jQpc3Z3jukC4756eNtFumEPYVeqkYLPVsY5mf40YE447OTo3JyT6--jY5ly8TbNJ96tztsWEiI90zV60qj0ZehtzA38sMDmu3IdItfsfuAL_3YRnRm2fkhaKRD36WmeUbUewtFySgjCtsi4hF-knQpEAYciJV5WMwwSwJi8ZkhZ9QSjHtUCDi6zUzm0Mz7FbMJoglCYIFRT0VFAtRrXIJcfBsizv_Ortkuv0OYNafEBKBvR57D-bkNrXmgl0WGH5mYNnB99aA6eIfeeWS0t60D8fz_EM8bjQUa8Gp_CU_tXarUSIkINrQzbgDBqL1vsv9HgR5kZ6ipYXnDVCCAQB9gfl9PlOgNZxNwuRBvLdw2s8w3qHTCMgJBNA=w3584-h1810?auditContext=forDisplay",
-  },
-  {
-    id: 4,
-    title: "Personal Portfolio",
-    desc: "개인 프로젝트 및 기술 스택을 소개하는 포트폴리오 사이트",
-    status: "완료",
-    icon: "💼",
-    image:
-      "https://lh3.googleusercontent.com/rd-d/ALs6j_HOVud8mXRPPXA6WRksflRIS5rqdXUeItPC8eBJXXIaaU0Fy5spUGB-C4GI9UX42U3Pp1pmCdg-VDwTac4aOtwa05uIHNeT7rsQ8GMy9n1rNw9mXSD61GGltz6IQ-88HEndhEBQ0NtmRrJsgaaX4cW-48YmHDQdzeykn8lCd7JPDsngxLgrPkKqeTHqbUTIGPKMDUaR49qWCuXNJfVHvbgo8qK-7TvFda1R_r5LraoLNh2sASLtBWIxykQkwPSQmCqwHKVAI6StmC-PoU1VjujAC9hAMGpCywfN4h7EJQREZeqgDZ27YfDXsCX6Y_qc4YR1YhgL04d3FtRzHwNoW_cB2qdTf9KwSr-Xlb8tTS05AUGIW0bkXwbqz7LUC11AwFR8ifWi5h7Tpuqotc7j0ZeN7MNGrIurmYIQQhLGb00tAt16RZcPAS8p0IoABja455I7FcG0FypsZm3CsHViqvkjuHDBb_78w1K37HkAc_hIoE4sOK-rS3-LUjmZUayLIyen-iMUIwQLXPcvFhAvry8KTgKWpACV12gbpkYoAq7xvuZ0NfXwrQddSDToeRZ9jHxBNoiuW8ldlRRJg0kBrwwITiXq7qDNl7eSWJnuKM8Xa7kXEiSIzcgrcneJaR6i06eSin8-F5ngo9_z2LitUTAz3APHiAUlLsi4N8q-YFScRWRxtjPnsSDcwwY2J4JSp7Ekh67WJ_YwDlzf-5gmQYnlna5S4j3AThcafTYaUqn88qJ9qTb0vy9UI4hYWgpjLHx5-ph4FwmHZ3BYqm1D4NTzq31C-54CkW6kqv0Kfi6qjkFoFliJ6XCEz6i9Jghl5JqxfiGf7DBK0ivDXNVkbETXQwc1xrtTyz3v8057H16lisCPDdWUzYOJVRvh79MvCcTiO0JX5ZfkalJ3d-Hnwpw-Hlc-HC0F1-s5EOVYmJ6qplwl7VvpWLmxxaRWeCM3e6nwwkoezUiXUpHXR9wtHDcb8XHv_mQYS2KlsGOyjmzoxtRyVD4tXlc_32XRBaYMl3jIauXTIrOXXQUArYsqdW1YWMrmThBtZLe5OiKxk1yEGlR31A=w3584-h1812?auditContext=prefetch",
-  },
+interface ProjectItem {
+  id: number;
+  title: string;
+  desc: string;
+  status: string;
+  icon: string;
+  image: string | null;
+  category: string[];
+}
+
+const FOLDERS: { type: PortfolioType; label: string; emoji: string; color: string }[] = [
+  { type: "frontend",  label: "Frontend",  emoji: "🎨", color: "#4A9EFF" },
+  { type: "backend",   label: "Backend",   emoji: "⚙️", color: "#34C759" },
+  { type: "fullstack", label: "Fullstack", emoji: "🚀", color: "#FF9F0A" },
 ];
 
-// Finder Component
 export const FinderContent = () => {
-  const { openApp, focusApp, setSelectedProject } = useWindowStore();
+  const { openApp, focusApp, setSelectedProject, portfolioType } = useWindowStore();
+  const [currentFolder, setCurrentFolder] = useState<PortfolioType | null>(portfolioType);
 
-  // Handle project click to open in Safari
+  const visibleProjects: ProjectItem[] = currentFolder
+    ? (allProjects as ProjectItem[]).filter((p) => p.category.includes(currentFolder))
+    : [];
+  const activeFolderInfo = FOLDERS.find((f) => f.type === currentFolder);
+
   const handleProjectClick = (projectId: number) => {
     setSelectedProject(projectId);
     openApp("safari");
-    setTimeout(() => {
-      focusApp("safari");
-    }, 0);
+    setTimeout(() => focusApp("safari"), 0);
   };
 
   return (
     <div className={styles.finderContainer}>
-      {/* Finder Sidebar */}
       <div className={styles.sidebar}>
         <div className={styles.sidebarSection}>
           <div className={styles.sidebarTitle}>즐겨찾기</div>
-          <div className={`${styles.sidebarItem} ${styles.active}`}>
+          <div
+            className={`${styles.sidebarItem} ${!currentFolder ? styles.active : ""}`}
+            onClick={() => setCurrentFolder(null)}
+          >
             <FolderOpen size={16} />
-            <span>Projects</span>
+            <span>Portfolio</span>
           </div>
+        </div>
+        <div className={styles.sidebarSection}>
+          <div className={styles.sidebarTitle}>분야</div>
+          {FOLDERS.map((f) => (
+            <div
+              key={f.type}
+              className={`${styles.sidebarItem} ${currentFolder === f.type ? styles.active : ""}`}
+              onClick={() => setCurrentFolder(f.type)}
+            >
+              <span className={styles.sidebarEmoji}>{f.emoji}</span>
+              <span>{f.label}</span>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Finder Main Content */}
       <div className={styles.mainContent}>
         <div className={styles.toolbar}>
-          <div className={styles.breadcrumb}>Projects</div>
+          <div className={styles.breadcrumb}>
+            <span className={styles.breadcrumbLink} onClick={() => setCurrentFolder(null)}>
+              Portfolio
+            </span>
+            {currentFolder && (
+              <>
+                <ChevronRight size={12} style={{ opacity: 0.4 }} />
+                <span style={{ color: activeFolderInfo?.color }}>
+                  {activeFolderInfo?.emoji} {activeFolderInfo?.label}
+                </span>
+              </>
+            )}
+          </div>
         </div>
 
-        {/* Project Grid */}
         <div className={styles.projectGrid}>
-          {PROJECTS.map((project) => (
-            <div
-              key={project.id}
-              className={styles.folderItem}
-              onClick={() => handleProjectClick(project.id)}
-              onDoubleClick={() => handleProjectClick(project.id)}
-            >
-              {project.image ? (
-                <div className={styles.imageWrapper}>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className={styles.projectImage}
-                  />
+          {!currentFolder &&
+            FOLDERS.map((f) => {
+              const count = (allProjects as ProjectItem[]).filter((p) => p.category.includes(f.type)).length;
+              return (
+                <div
+                  key={f.type}
+                  className={styles.folderItem}
+                  onClick={() => setCurrentFolder(f.type)}
+                  onDoubleClick={() => setCurrentFolder(f.type)}
+                >
+                  <div
+                    className={styles.folderIconWrapper}
+                    style={{ background: f.color + "18", border: `1px solid ${f.color}30` }}
+                  >
+                    <span className={styles.folderEmoji}>{f.emoji}</span>
+                  </div>
+                  <div className={styles.folderInfo}>
+                    <div className={styles.folderTitle}>{f.label}</div>
+                    <div className={styles.folderDesc}>{count}개 프로젝트</div>
+                    {f.type === portfolioType && (
+                      <span
+                        className={styles.folderStatus}
+                        style={{ background: f.color + "22", color: f.color }}
+                      >
+                        현재 모드
+                      </span>
+                    )}
+                  </div>
                 </div>
-              ) : (
-                <div className={styles.folderIconWrapper}>
-                  <span className={styles.folderEmoji}>{project.icon}</span>
+              );
+            })}
+
+          {currentFolder && visibleProjects.length === 0 && (
+            <div className={styles.emptyMsg}>프로젝트를 준비 중입니다 🚧</div>
+          )}
+          {currentFolder &&
+            visibleProjects.map((project) => (
+              <div
+                key={project.id}
+                className={styles.folderItem}
+                onClick={() => handleProjectClick(project.id)}
+                onDoubleClick={() => handleProjectClick(project.id)}
+              >
+                {project.image ? (
+                  <div className={styles.imageWrapper}>
+                    <img src={project.image} alt={project.title} className={styles.projectImage} />
+                  </div>
+                ) : (
+                  <div className={styles.folderIconWrapper}>
+                    <span className={styles.folderEmoji}>{project.icon}</span>
+                  </div>
+                )}
+                <div className={styles.folderInfo}>
+                  <div className={styles.folderTitle}>{project.title}</div>
+                  <div className={styles.folderDesc}>{project.desc}</div>
+                  <span className={styles.folderStatus}>{project.status}</span>
                 </div>
-              )}
-              <div className={styles.folderInfo}>
-                <div className={styles.folderTitle}>{project.title}</div>
-                <div className={styles.folderDesc}>{project.desc}</div>
-                <span className={styles.folderStatus}>{project.status}</span>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>

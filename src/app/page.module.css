@@ -12,3 +12,24 @@
   position: relative;
   overflow: hidden;
 }
+
+/* 포트폴리오 전환 오버레이 */
+.transitionOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    var(--transition-color, #000) 0%,
+    #000 70%
+  );
+  animation: transitionAnim 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes transitionAnim {
+  0%   { opacity: 0; transform: scale(1.05); }
+  40%  { opacity: 0.92; transform: scale(1); }
+  60%  { opacity: 0.92; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.98); }
+}
