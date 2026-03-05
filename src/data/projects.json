@@ -25,12 +25,41 @@
             }
         ],
         "links": {
-            "github": "https://github.com/yourusername/obed-homepage",
+            "github": "https://github.com/djsy01/obed-homepage",
             "site": "https://obedworship.vercel.app"
         }
     },
     {
         "id": 2,
+        "title": "WorshipLog",
+        "desc": "예배 팀을 위한 찬양 큐레이션 및 예배 서비스 플래닝 플랫폼",
+        "status": "진행중",
+        "icon": "📖",
+        "type": "personal",
+        "image": null,
+        "images": [],
+        "category": ["frontend", "backend", "fullstack"],
+        "tech": ["Next.js 15", "NestJS", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "Redis", "Flutter"],
+        "features": [
+            "성경 구절 기반 찬양 큐레이션 및 제목/키워드 검색",
+            "키·템포·곡 형식 입력 후 PDF(A4) 예배 순서지 생성",
+            "PDF·이미지 악보 업로드 및 메타데이터 자동 채움",
+            "QR코드·링크로 팀원 초대 및 팀별 예배 순서 공유",
+            "개인 및 팀 예배 기록 날짜별 아카이브",
+            "랜덤 성경 구절 추천 및 묵상 나눔 커뮤니티"
+        ],
+        "problems": ["예배 팀의 찬양 큐레이션과 예배 계획이 분산된 도구로 인해 비효율적", "팀원 간 예배 순서 공유 및 협업 어려움"],
+        "solutions": [
+            "성경 구절 기반 찬양 큐레이션과 예배 순서지 생성을 한 플랫폼에서 제공",
+            "팀별 예배 순서 공유 및 협업 기능으로 효율적인 예배 준비 지원"
+        ],
+        "links": {
+            "github": "https://github.com/djsy01/WorshipLog",
+            "site": ""
+        }
+    },
+    {
+        "id": 3,
         "title": "Ticketing System",
         "desc": "실시간 티켓 예매 및 관리 시스템",
         "status": "진행중",
@@ -59,7 +88,7 @@
         }
     },
     {
-        "id": 3,
+        "id": 4,
         "title": "UT Tailwind",
         "desc": "Tailwind CSS를 활용한 UI 컴포넌트 라이브러리",
         "status": "완료",
@@ -103,7 +132,7 @@
         }
     },
     {
-        "id": 4,
+        "id": 5,
         "title": "Personal Portfolio",
         "desc": "개인 프로젝트 및 기술 스택을 소개하는 포트폴리오 사이트",
         "status": "완료",

@@ -159,20 +159,28 @@ export const SafariContent = () => {
           )}
 
           {/* Problems and Solutions */}
-          {project.problems && (
+          {(project.problems || project.solutions) && (
             <div className={styles.section}>
-              <h3 className={styles.sectionTitle}>개선 포인트</h3>
-              <ul className={styles.list}>
-                {project.problems.map((problem, index) => (
-                  <li key={index}>{problem}</li>
-                ))}
-              </ul>
-              <h3 className={styles.sectionTitle}>해결 방안</h3>
-              <ul className={styles.list}>
-                {project.solutions?.map((solution, index) => (
-                  <li key={index}>{solution}</li>
-                ))}
-              </ul>
+              {project.problems && (
+                <>
+                  <h3 className={styles.sectionTitle}>개선 포인트</h3>
+                  <ul className={styles.list}>
+                    {project.problems.map((problem, index) => (
+                      <li key={index}>{problem}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
+              {project.solutions && (
+                <>
+                  <h3 className={styles.sectionTitle}>해결 방안</h3>
+                  <ul className={styles.list}>
+                    {project.solutions.map((solution, index) => (
+                      <li key={index}>{solution}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
           )}
 
