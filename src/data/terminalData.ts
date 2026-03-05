@@ -10,7 +10,8 @@ export interface Line {
 export const WHOAMI: Record<PortfolioType, Line[]> = {
     frontend: [
         { type: 'output', text: '엄인호 — Frontend Developer' },
-        { type: 'output', text: '사용자 경험 중심으로 설계하고, React / Vue / Next.js 로 구현합니다.' },
+        { type: 'output', text: '사용자 경험 중심으로 설계하고,' },
+        { type: 'output', text: 'React / Vue / Next.js 로 구현합니다.' },
     ],
     backend: [
         { type: 'output', text: '엄인호 — Backend Developer (학습 중)' },
@@ -19,7 +20,7 @@ export const WHOAMI: Record<PortfolioType, Line[]> = {
     ],
     fullstack: [
         { type: 'output', text: '엄인호 — Fullstack Developer' },
-        { type: 'output', text: '프론트엔드 메인, 백엔드 협업 경험을 보유한 풀스택 지향 개발자입니다.' },
+        { type: 'output', text: '프론트엔드 협업, 백엔드 경험을 보유한 풀스택 지향 개발자입니다.' },
         { type: 'output', text: 'UI/UX 설계부터 API 연동, 배포까지 전 과정을 아우릅니다.' },
     ],
 };
@@ -42,7 +43,7 @@ export const SKILLS: Record<PortfolioType, Line[]> = {
         { type: 'section', text: '◆ Frameworks' },
         { type: 'item', text: 'Express.js  (학습 중)' },
         { type: 'section', text: '◆ Database' },
-        { type: 'item', text: 'MySQL  ·  Redis' },
+        { type: 'item', text: 'MySQL  ·  Redis  ·  PostgreSQL' },
         { type: 'section', text: '◆ Infra / Deploy' },
         { type: 'item', text: 'Railway  ·  Render  ·  GitHub Actions' },
     ],
@@ -52,7 +53,7 @@ export const SKILLS: Record<PortfolioType, Line[]> = {
         { type: 'section', text: '◆ Backend' },
         { type: 'item', text: 'Node.js  ·  Express.js' },
         { type: 'section', text: '◆ Database' },
-        { type: 'item', text: 'MySQL  ·  Redis' },
+        { type: 'item', text: 'MySQL  ·  Redis  ·  PostgreSQL' },
         { type: 'section', text: '◆ Deploy / Tools' },
         { type: 'item', text: 'Vercel  ·  Railway  ·  Render  ·  Git  ·  GitHub' },
     ],
@@ -61,13 +62,17 @@ export const SKILLS: Record<PortfolioType, Line[]> = {
 /* ===================== PROJECTS ===================== */
 export const PROJECTS: Record<PortfolioType, Line[]> = {
     frontend: [
-        { type: 'item', text: '  · OBED 웹사이트 리뉴얼              (진행중)' },
-        { type: 'item', text: '  · 티켓팅 사이트 프론트엔드          (진행중)' },
+        { type: 'item', text: '  · OBED 웹사이트 리뉴얼             (진행중)' },
+        { type: 'item', text: '  · WorshipLog                   (진행중)' },
+        { type: 'item', text: '  · 티켓팅 사이트 프론트엔드           (진행중)' },
         { type: 'item', text: '  · UT Tailwind 컴포넌트 라이브러리   (완료)' },
-        { type: 'item', text: '  · 개인 포트폴리오 사이트            (완료)' },
+        { type: 'item', text: '  · 개인 포트폴리오 사이트             (완료)' },
     ],
-    backend: [{ type: 'output', text: '  ※ 백엔드 개인 프로젝트를 준비 중입니다.' }],
-    fullstack: [{ type: 'item', text: '  · 개인 포트폴리오         (완료)    — Next.js + TypeScript' }],
+    backend: [{ type: 'item', text: '  · WorshipLog              (진행중)' }],
+    fullstack: [
+        { type: 'item', text: '  · 개인 포트폴리오         (완료)' },
+        { type: 'item', text: '  · WorshipLog          (진행중)' },
+    ],
 };
 
 /* ===================== CONTACT (공통) ===================== */

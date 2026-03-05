@@ -178,16 +178,24 @@ export const MobileSafari = ({ initialProjectId }: MobileSafariProps) => {
         )}
 
         {/* 개선 포인트 */}
-        {project.problems && (
+        {(project.problems || project.solutions) && (
           <div className={styles.section}>
-            <h3 className={styles.sectionTitle}>개선 포인트</h3>
-            <ul className={styles.ulList}>
-              {project.problems.map((p, i) => <li key={i}>{p}</li>)}
-            </ul>
-            <h3 className={styles.sectionTitle} style={{ marginTop: 14 }}>해결 방안</h3>
-            <ul className={styles.ulList}>
-              {project.solutions?.map((s, i) => <li key={i}>{s}</li>)}
-            </ul>
+            {project.problems && (
+              <>
+                <h3 className={styles.sectionTitle}>개선 포인트</h3>
+                <ul className={styles.ulList}>
+                  {project.problems.map((p, i) => <li key={i}>{p}</li>)}
+                </ul>
+              </>
+            )}
+            {project.solutions && (
+              <>
+                <h3 className={styles.sectionTitle} style={{ marginTop: 14 }}>해결 방안</h3>
+                <ul className={styles.ulList}>
+                  {project.solutions.map((s, i) => <li key={i}>{s}</li>)}
+                </ul>
+              </>
+            )}
           </div>
         )}
 
