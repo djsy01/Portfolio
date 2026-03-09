@@ -36,7 +36,7 @@
         "status": "진행중",
         "icon": "📖",
         "type": "personal",
-        "image": null,
+        "image": "https://lh3.google.com/u/0/d/1efztGWVDBO-ianeFRt8lwiq0sxMMCn3X=w1720-h1221-iv1?auditContext=prefetch",
         "images": [],
         "category": ["frontend", "backend", "fullstack"],
         "tech": ["Next.js 15", "NestJS", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "Redis", "Flutter"],
@@ -55,7 +55,7 @@
         ],
         "links": {
             "github": "https://github.com/djsy01/WorshipLog",
-            "site": ""
+            "site": "https://worship-log.vercel.app"
         }
     },
     {
