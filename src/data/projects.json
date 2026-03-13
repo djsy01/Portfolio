@@ -1,161 +1,161 @@
 [
-    {
-        "id": 1,
-        "title": "OBED",
-        "desc": "기존 사이트와 티켓 시스템의 UX 개선 및 통합",
-        "status": "진행중",
-        "icon": "🎭",
-        "type": "team",
-        "image": "https://lh3.googleusercontent.com/rd-d/ALs6j_Ho6AoUZ8LX3u8E7JWue5waTDSFnbIWCqUQRJ9EvhC6aDQsR_99vuwTyCJfDUWS3rt3coJgsMwbqfMn79zWDk5aJ-eBBl1RrgdccKaenvNiMGKIAUiOrg5VRzyve9hWHNUD03ay_Ytq6ReR2ehI1BWDj6vSvvS7GNqiF5bL3X-oL1Me80Fq4Yf8hybhiKbi1RAZw85jYpmOofa9fzM3xVM1vysmpNC-y1gNxAtQOWW00WX-PkbGumZlgM2tn_qZCTiN2nSAesbUMAf28aERwUvDSo6xsoz8FkDRw4MNziRhF06mb0yl1Gmf2lzGLdr8JGQdYoeJYHXc65hds6OoT9FGoUxJlBHjWWgev-Y1IINq_O25qU-cHyrZ-6owQRVlgY-TkCr95tzIg_oFKCR92TgNKQMPoCznzP52_5a2VdMfxK21JKu8m_LcfolqWhc3nmKg3DqJLO4akZfqPUzNpAd_wzpWFqwT6SR3yGsjpyagTpdW0nzW_ppiuRSov7OndzpBHjbRK8CBm-LO5_53iz70z_A1sB0sjgpxInbAneNXBmWKOGjxxsHW9Ck1Gy8P6ndSM2qUI19p1AosQO3dN7EtQzce671JobDU3h9bCmY0Vr9Hh2TV1jWTLCfx5zXqJxwdAGQfn5xGnQdWbnDnB8qsQVrk9Knfk6GnWR3PGWRkku0ApK4Jz7XXJW2X4RuzT_qDVwCC3gjwTVcI2urbPIjjLMmqILHbJiNM94UPIGIcksjnqHf97WgmzPQAeB1qoS8BHPKhGmvd8EypTRwxQTncNv6HID5qbQEvF-pW4hxo-KsGoyb5gSt8uHbdfds1w9ra8VdcaGhiXHBPulCOU7aOk6Xzp93M2Gg15Ol2SdnvtB-C2ud5O1CJB9gI0lg3o2oWmdUReiJavXBHIXIEAzVOEpN8FonCF-evHM6ScfZWR-AD6gUxrOJnXoMwtqEQArf4Ry43haIHn9okQMAang6-Ed0ZCqWi3kYff5avTP5GgTXgz2Py54ryS0VXFxY81nsWWEEVjslBiedmYUD3_m6xPMjdNEa_RGxA5i84bm1wFVMV=w3584-h1812?auditContext=prefetch",
-        "images": [],
-        "category": ["frontend"],
-        "tech": ["Vue.js", "Vite", "TypeScript", "CSS", "Redis", "MySQL"],
-        "problems": ["기존 사이트의 서버가 없는 동적 페이지", "티켓 예매 시스템의 분리된 사용자 경험"],
-        "solutions": ["직관적인 단일 플랫폼으로 통합", "개선된 예매 플로우 설계"],
-        "team": [
-            {
-                "name": "김승훈",
-                "role": "Back-End Developer",
-                "responsibilities": ["Node.js를 활용한 서버 구축 및 API 개발", "티켓 예매 시스템의 백엔드 로직 구현"]
-            },
-            {
-                "name": "엄인호",
-                "role": "Front-End Developer",
-                "responsibilities": ["Vue.js와 TypeScript를 활용한 프론트엔드 개발", "UI/UX 디자인 및 통합 작업", "반응형 디자인 구현"]
-            }
-        ],
-        "links": {
-            "github": "https://github.com/djsy01/obed-homepage",
-            "site": "https://obedworship.vercel.app"
-        }
-    },
-    {
-        "id": 2,
-        "title": "WorshipLog",
-        "desc": "예배 팀을 위한 찬양 큐레이션 및 예배 서비스 플래닝 플랫폼",
-        "status": "진행중",
-        "icon": "📖",
-        "type": "personal",
-        "image": "https://lh3.google.com/u/0/d/1efztGWVDBO-ianeFRt8lwiq0sxMMCn3X=w1720-h1221-iv1?auditContext=prefetch",
-        "images": [],
-        "category": ["frontend", "backend", "fullstack"],
-        "tech": ["Next.js 15", "NestJS", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "Redis", "Flutter"],
-        "features": [
-            "성경 구절 기반 찬양 큐레이션 및 제목/키워드 검색",
-            "키·템포·곡 형식 입력 후 PDF(A4) 예배 순서지 생성",
-            "PDF·이미지 악보 업로드 및 메타데이터 자동 채움",
-            "QR코드·링크로 팀원 초대 및 팀별 예배 순서 공유",
-            "개인 및 팀 예배 기록 날짜별 아카이브",
-            "랜덤 성경 구절 추천 및 묵상 나눔 커뮤니티"
-        ],
-        "problems": ["예배 팀의 찬양 큐레이션과 예배 계획이 분산된 도구로 인해 비효율적", "팀원 간 예배 순서 공유 및 협업 어려움"],
-        "solutions": [
-            "성경 구절 기반 찬양 큐레이션과 예배 순서지 생성을 한 플랫폼에서 제공",
-            "팀별 예배 순서 공유 및 협업 기능으로 효율적인 예배 준비 지원"
-        ],
-        "links": {
-            "github": "https://github.com/djsy01/WorshipLog",
-            "site": "https://worship-log.vercel.app"
-        }
-    },
-    {
-        "id": 3,
-        "title": "Ticketing System",
-        "desc": "실시간 티켓 예매 및 관리 시스템",
-        "status": "진행중",
-        "icon": "🎫",
-        "type": "team",
-        "image": null,
-        "images": [],
-        "category": ["frontend"],
-        "tech": ["React", "TypeScript"],
-        "features": ["실시간 좌석 선택", "결제 시스템 연동", "예매 내역 관리"],
-        "team": [
-            {
-                "name": "엄인호",
-                "role": "Front-End Developer",
-                "responsibilities": ["React와 TypeScript를 활용한 프론트엔드 개발", "UI/UX 디자인 및 구현", "실시간 좌석 선택 UI 구현"]
-            },
-            {
-                "name": "이준행",
-                "role": "Back-End Developer",
-                "responsibilities": ["DB설계", "서버 구축 및 API 개발", "결제 시스템 연동"]
-            }
-        ],
-        "links": {
-            "github": "https://github.com/LeopoldBloom2K/ticketingsitedemo",
-            "site": ""
-        }
-    },
-    {
-        "id": 4,
-        "title": "UT Tailwind",
-        "desc": "Tailwind CSS를 활용한 UI 컴포넌트 라이브러리",
-        "status": "완료",
-        "icon": "🚕",
-        "type": "team",
-        "image": "https://lh3.googleusercontent.com/rd-d/ALs6j_E02NxvZ8lQzQ8LLyc4c3lujggcPIE051GDt5MnOEzztaoY_3OxWsSZEBiLAK3SmIVhxvXQSnh6TNwjG_488dAtxuMTnfLE0-jGLNmVCI38OFnH2wiipcENzQQ3g4L4KdiSyImCHSFJj7e8oGRlbKkC1Ga54DAVCNe7HvbQUmsm-9BrXSbl7vC0tZFaqML28n6DxxmL8UcbcxtHfGf3z4lqlKINCuZGVrO9J9DQuG9Qqtrms9ABcFZcX4AihVNPp8qfcig8txHULpabJa71NaxnNGR5NyXlJzSKnPbFMMx0FYHMFThyID704to4xmZyQwVNBDRi7tKvbL1kvjz-v8MK_aD5Y8UuuOGQHlwB4slga9kRjHJXUCGFlR770_ZthhDRD5NoMRh6ieNj2BuSuPw0_Mwg6XmwVYBzg0677sUrxqAdAamkSMHNcpKfhrKmace5DPh2fjYwg-poTxyWMhceeJ3ktWXvuc0t35xab8IIG82I7aekU2F1KRPf8n-C4qQhjiMs3aOC65yr-m100zU2Cq-BQgJJ3UJvhnIXS_v1JKvEAOQYXuHTdBQYGN99ORz58JXNciuOzoGtLRr1UzzVhkPGEDqmKoxhwP_AAJ-0j9Ayp3sqLJOsV8aycpPraAEK2F-zugMDNHIefqFOIYV1phDLl0VdwT0xE4uLRQDcJKtpf8sXjWTjfMDdxO64uKWEydL-PL1vb5egpQ-SJ-jQpc3Z3jukC4756eNtFumEPYVeqkYLPVsY5mf40YE447OTo3JyT6--jY5ly8TbNJ96tztsWEiI90zV60qj0ZehtzA38sMDmu3IdItfsfuAL_3YRnRm2fkhaKRD36WmeUbUewtFySgjCtsi4hF-knQpEAYciJV5WMwwSwJi8ZkhZ9QSjHtUCDi6zUzm0Mz7FbMJoglCYIFRT0VFAtRrXIJcfBsizv_Ortkuv0OYNafEBKBvR57D-bkNrXmgl0WGH5mYNnB99aA6eIfeeWS0t60D8fz_EM8bjQUa8Gp_CU_tXarUSIkINrQzbgDBqL1vsv9HgR5kZ6ipYXnDVCCAQB9gfl9PlOgNZxNwuRBvLdw2s8w3qHTCMgJBNA=w3584-h1810?auditContext=forDisplay",
-        "images": [],
-        "category": ["frontend"],
-        "tech": ["HTML", "Tailwind CSS", "JavaScript"],
-        "features": ["반응형 디자인", "다양한 UI 컴포넌트 제공"],
-        "team": [
-            {
-                "name": "박현우",
-                "role": "Front-End Developer",
-                "responsibilities": ["banner 컴포넌트 개발"]
-            },
-            {
-                "name": "방효진",
-                "role": "Front-End Developer",
-                "responsibilities": ["header 컴포넌트 개발"]
-            },
-            {
-                "name": "엄인호",
-                "role": "Front-End Developer",
-                "responsibilities": ["스트럼 마스터", "index.html, style.css, main.js 등 메인 파일 작업", "About, Download 컴포넌트 개발"]
-            },
-            {
-                "name": "이규화",
-                "role": "Front-End Developer",
-                "responsibilities": ["Apply 컴포넌트 개발"]
-            },
-            {
-                "name": "홍정빈",
-                "role": "Front-End Developer",
-                "responsibilities": ["QnA 컴포넌트 개발"]
-            }
-        ],
-        "links": {
-            "github": null,
-            "site": "https://vitemin-tailwind.netlify.app/"
-        }
-    },
-    {
-        "id": 5,
-        "title": "Personal Portfolio",
-        "desc": "개인 프로젝트 및 기술 스택을 소개하는 포트폴리오 사이트",
-        "status": "완료",
-        "icon": "💼",
-        "type": "personal",
-        "image": "https://lh3.googleusercontent.com/rd-d/ALs6j_HOVud8mXRPPXA6WRksflRIS5rqdXUeItPC8eBJXXIaaU0Fy5spUGB-C4GI9UX42U3Pp1pmCdg-VDwTac4aOtwa05uIHNeT7rsQ8GMy9n1rNw9mXSD61GGltz6IQ-88HEndhEBQ0NtmRrJsgaaX4cW-48YmHDQdzeykn8lCd7JPDsngxLgrPkKqeTHqbUTIGPKMDUaR49qWCuXNJfVHvbgo8qK-7TvFda1R_r5LraoLNh2sASLtBWIxykQkwPSQmCqwHKVAI6StmC-PoU1VjujAC9hAMGpCywfN4h7EJQREZeqgDZ27YfDXsCX6Y_qc4YR1YhgL04d3FtRzHwNoW_cB2qdTf9KwSr-Xlb8tTS05AUGIW0bkXwbqz7LUC11AwFR8ifWi5h7Tpuqotc7j0ZeN7MNGrIurmYIQQhLGb00tAt16RZcPAS8p0IoABja455I7FcG0FypsZm3CsHViqvkjuHDBb_78w1K37HkAc_hIoE4sOK-rS3-LUjmZUayLIyen-iMUIwQLXPcvFhAvry8KTgKWpACV12gbpkYoAq7xvuZ0NfXwrQddSDToeRZ9jHxBNoiuW8ldlRRJg0kBrwwITiXq7qDNl7eSWJnuKM8Xa7kXEiSIzcgrcneJaR6i06eSin8-F5ngo9_z2LitUTAz3APHiAUlLsi4N8q-YFScRWRxtjPnsSDcwwY2J4JSp7Ekh67WJ_YwDlzf-5gmQYnlna5S4j3AThcafTYaUqn88qJ9qTb0vy9UI4hYWgpjLHx5-ph4FwmHZ3BYqm1D4NTzq31C-54CkW6kqv0Kfi6qjkFoFliJ6XCEz6i9Jghl5JqxfiGf7DBK0ivDXNVkbETXQwc1xrtTyz3v8057H16lisCPDdWUzYOJVRvh79MvCcTiO0JX5ZfkalJ3d-Hnwpw-Hlc-HC0F1-s5EOVYmJ6qplwl7VvpWLmxxaRWeCM3e6nwwkoezUiXUpHXR9wtHDcb8XHv_mQYS2KlsGOyjmzoxtRyVD4tXlc_32XRBaYMl3jIauXTIrOXXQUArYsqdW1YWMrmThBtZLe5OiKxk1yEGlR31A=w3584-h1812?auditContext=prefetch",
-        "images": [
-            "https://drive.google.com/file/d/1IWqsRT-OXnI8B3JFb_ivP6OsVWatB7j7/view?usp=drive_link",
-            "https://drive.google.com/file/d/13HQF2tbk3UGqqn5XAD1lNfZlhn7KU-J7/view?usp=drive_link",
-            "https://drive.google.com/file/d/1qSBN3PKpg74xHjsgshDtvTSApF-240ur/view?usp=drive_link",
-            "https://drive.google.com/file/d/14heLhDi5eDeR2Aj7qFqc7yqFkpcaGYxA/view?usp=drive_link",
-            "https://drive.google.com/file/d/1j6I_62yDJiHgosXvQeFjWvxeFn6CxaUJ/view?usp=drive_link",
-            "https://drive.google.com/file/d/1dtV1Tyrn0UwnWC44p45796whyaHh5otD/view?usp=drive_link",
-            "https://drive.google.com/file/d/1d8uAWze-O2-M_bnH_CtB4X97blh_sC8T/view?usp=drive_link",
-            "https://drive.google.com/file/d/16xGQeCfCnyu8zGquWGKhBOFJKU_HqGu1/view?usp=drive_link",
-            "https://drive.google.com/file/d/133vADQ1J5bEfMbr_EZD7CSY3vzH7gcss/view?usp=drive_link"
-        ],
-        "category": ["frontend", "fullstack"],
-        "tech": ["Next.js", "React", "TypeScript", "CSS"],
-        "features": ["프로젝트 갤러리", "연락처 폼", "모바일 최적화"],
-        "links": {
-            "github": "https://github.com/djsy01/Portfolio",
-            "site": "https://portfolio-gamma-nine-ulldr7th7m.vercel.app/"
-        }
+  {
+    "id": 1,
+    "title": "OBED",
+    "desc": "기존 사이트와 티켓 시스템의 UX 개선 및 통합",
+    "status": "진행중",
+    "icon": "🎭",
+    "type": "team",
+    "image": "https://lh3.googleusercontent.com/rd-d/ALs6j_Ho6AoUZ8LX3u8E7JWue5waTDSFnbIWCqUQRJ9EvhC6aDQsR_99vuwTyCJfDUWS3rt3coJgsMwbqfMn79zWDk5aJ-eBBl1RrgdccKaenvNiMGKIAUiOrg5VRzyve9hWHNUD03ay_Ytq6ReR2ehI1BWDj6vSvvS7GNqiF5bL3X-oL1Me80Fq4Yf8hybhiKbi1RAZw85jYpmOofa9fzM3xVM1vysmpNC-y1gNxAtQOWW00WX-PkbGumZlgM2tn_qZCTiN2nSAesbUMAf28aERwUvDSo6xsoz8FkDRw4MNziRhF06mb0yl1Gmf2lzGLdr8JGQdYoeJYHXc65hds6OoT9FGoUxJlBHjWWgev-Y1IINq_O25qU-cHyrZ-6owQRVlgY-TkCr95tzIg_oFKCR92TgNKQMPoCznzP52_5a2VdMfxK21JKu8m_LcfolqWhc3nmKg3DqJLO4akZfqPUzNpAd_wzpWFqwT6SR3yGsjpyagTpdW0nzW_ppiuRSov7OndzpBHjbRK8CBm-LO5_53iz70z_A1sB0sjgpxInbAneNXBmWKOGjxxsHW9Ck1Gy8P6ndSM2qUI19p1AosQO3dN7EtQzce671JobDU3h9bCmY0Vr9Hh2TV1jWTLCfx5zXqJxwdAGQfn5xGnQdWbnDnB8qsQVrk9Knfk6GnWR3PGWRkku0ApK4Jz7XXJW2X4RuzT_qDVwCC3gjwTVcI2urbPIjjLMmqILHbJiNM94UPIGIcksjnqHf97WgmzPQAeB1qoS8BHPKhGmvd8EypTRwxQTncNv6HID5qbQEvF-pW4hxo-KsGoyb5gSt8uHbdfds1w9ra8VdcaGhiXHBPulCOU7aOk6Xzp93M2Gg15Ol2SdnvtB-C2ud5O1CJB9gI0lg3o2oWmdUReiJavXBHIXIEAzVOEpN8FonCF-evHM6ScfZWR-AD6gUxrOJnXoMwtqEQArf4Ry43haIHn9okQMAang6-Ed0ZCqWi3kYff5avTP5GgTXgz2Py54ryS0VXFxY81nsWWEEVjslBiedmYUD3_m6xPMjdNEa_RGxA5i84bm1wFVMV=w3584-h1812?auditContext=prefetch",
+    "images": [],
+    "category": ["frontend"],
+    "tech": ["Vue.js", "Vite", "TypeScript", "CSS", "Redis", "MySQL"],
+    "problems": ["기존 사이트의 서버가 없는 동적 페이지", "티켓 예매 시스템의 분리된 사용자 경험"],
+    "solutions": ["직관적인 단일 플랫폼으로 통합", "개선된 예매 플로우 설계"],
+    "team": [
+      {
+        "name": "김승훈",
+        "role": "Back-End Developer",
+        "responsibilities": ["Node.js를 활용한 서버 구축 및 API 개발", "티켓 예매 시스템의 백엔드 로직 구현"]
+      },
+      {
+        "name": "엄인호",
+        "role": "Front-End Developer",
+        "responsibilities": ["Vue.js와 TypeScript를 활용한 프론트엔드 개발", "UI/UX 디자인 및 통합 작업", "반응형 디자인 구현"]
+      }
+    ],
+    "links": {
+      "github": "https://github.com/djsy01/obed-homepage",
+      "site": "https://obedworship.vercel.app"
     }
+  },
+  {
+    "id": 2,
+    "title": "WorshipLog",
+    "desc": "예배 팀을 위한 찬양 큐레이션 및 예배 서비스 플래닝 플랫폼",
+    "status": "진행중",
+    "icon": "📖",
+    "type": "personal",
+    "image": "https://lh3.google.com/u/0/d/1efztGWVDBO-ianeFRt8lwiq0sxMMCn3X=w1720-h1221-iv1?auditContext=prefetch",
+    "images": [],
+    "category": ["frontend", "backend", "fullstack"],
+    "tech": ["Next.js 15", "NestJS", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "Redis", "Flutter"],
+    "features": [
+      "성경 구절 기반 찬양 큐레이션 및 제목/키워드 검색",
+      "키·템포·곡 형식 입력 후 PDF(A4) 예배 순서지 생성",
+      "PDF·이미지 악보 업로드 및 메타데이터 자동 채움",
+      "QR코드·링크로 팀원 초대 및 팀별 예배 순서 공유",
+      "개인 및 팀 예배 기록 날짜별 아카이브",
+      "랜덤 성경 구절 추천 및 묵상 나눔 커뮤니티"
+    ],
+    "problems": ["예배 팀의 찬양 큐레이션과 예배 계획이 분산된 도구로 인해 비효율적", "팀원 간 예배 순서 공유 및 협업 어려움"],
+    "solutions": [
+      "성경 구절 기반 찬양 큐레이션과 예배 순서지 생성을 한 플랫폼에서 제공",
+      "팀별 예배 순서 공유 및 협업 기능으로 효율적인 예배 준비 지원"
+    ],
+    "links": {
+      "github": "https://github.com/djsy01/WorshipLog",
+      "site": "https://worship-log.inho.pe.kr"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Ticketing System",
+    "desc": "실시간 티켓 예매 및 관리 시스템",
+    "status": "진행중",
+    "icon": "🎫",
+    "type": "team",
+    "image": null,
+    "images": [],
+    "category": ["frontend"],
+    "tech": ["React", "TypeScript"],
+    "features": ["실시간 좌석 선택", "결제 시스템 연동", "예매 내역 관리"],
+    "team": [
+      {
+        "name": "엄인호",
+        "role": "Front-End Developer",
+        "responsibilities": ["React와 TypeScript를 활용한 프론트엔드 개발", "UI/UX 디자인 및 구현", "실시간 좌석 선택 UI 구현"]
+      },
+      {
+        "name": "이준행",
+        "role": "Back-End Developer",
+        "responsibilities": ["DB설계", "서버 구축 및 API 개발", "결제 시스템 연동"]
+      }
+    ],
+    "links": {
+      "github": "https://github.com/LeopoldBloom2K/ticketingsitedemo",
+      "site": ""
+    }
+  },
+  {
+    "id": 4,
+    "title": "UT Tailwind",
+    "desc": "Tailwind CSS를 활용한 UI 컴포넌트 라이브러리",
+    "status": "완료",
+    "icon": "🚕",
+    "type": "team",
+    "image": "https://lh3.googleusercontent.com/rd-d/ALs6j_E02NxvZ8lQzQ8LLyc4c3lujggcPIE051GDt5MnOEzztaoY_3OxWsSZEBiLAK3SmIVhxvXQSnh6TNwjG_488dAtxuMTnfLE0-jGLNmVCI38OFnH2wiipcENzQQ3g4L4KdiSyImCHSFJj7e8oGRlbKkC1Ga54DAVCNe7HvbQUmsm-9BrXSbl7vC0tZFaqML28n6DxxmL8UcbcxtHfGf3z4lqlKINCuZGVrO9J9DQuG9Qqtrms9ABcFZcX4AihVNPp8qfcig8txHULpabJa71NaxnNGR5NyXlJzSKnPbFMMx0FYHMFThyID704to4xmZyQwVNBDRi7tKvbL1kvjz-v8MK_aD5Y8UuuOGQHlwB4slga9kRjHJXUCGFlR770_ZthhDRD5NoMRh6ieNj2BuSuPw0_Mwg6XmwVYBzg0677sUrxqAdAamkSMHNcpKfhrKmace5DPh2fjYwg-poTxyWMhceeJ3ktWXvuc0t35xab8IIG82I7aekU2F1KRPf8n-C4qQhjiMs3aOC65yr-m100zU2Cq-BQgJJ3UJvhnIXS_v1JKvEAOQYXuHTdBQYGN99ORz58JXNciuOzoGtLRr1UzzVhkPGEDqmKoxhwP_AAJ-0j9Ayp3sqLJOsV8aycpPraAEK2F-zugMDNHIefqFOIYV1phDLl0VdwT0xE4uLRQDcJKtpf8sXjWTjfMDdxO64uKWEydL-PL1vb5egpQ-SJ-jQpc3Z3jukC4756eNtFumEPYVeqkYLPVsY5mf40YE447OTo3JyT6--jY5ly8TbNJ96tztsWEiI90zV60qj0ZehtzA38sMDmu3IdItfsfuAL_3YRnRm2fkhaKRD36WmeUbUewtFySgjCtsi4hF-knQpEAYciJV5WMwwSwJi8ZkhZ9QSjHtUCDi6zUzm0Mz7FbMJoglCYIFRT0VFAtRrXIJcfBsizv_Ortkuv0OYNafEBKBvR57D-bkNrXmgl0WGH5mYNnB99aA6eIfeeWS0t60D8fz_EM8bjQUa8Gp_CU_tXarUSIkINrQzbgDBqL1vsv9HgR5kZ6ipYXnDVCCAQB9gfl9PlOgNZxNwuRBvLdw2s8w3qHTCMgJBNA=w3584-h1810?auditContext=forDisplay",
+    "images": [],
+    "category": ["frontend"],
+    "tech": ["HTML", "Tailwind CSS", "JavaScript"],
+    "features": ["반응형 디자인", "다양한 UI 컴포넌트 제공"],
+    "team": [
+      {
+        "name": "박현우",
+        "role": "Front-End Developer",
+        "responsibilities": ["banner 컴포넌트 개발"]
+      },
+      {
+        "name": "방효진",
+        "role": "Front-End Developer",
+        "responsibilities": ["header 컴포넌트 개발"]
+      },
+      {
+        "name": "엄인호",
+        "role": "Front-End Developer",
+        "responsibilities": ["스트럼 마스터", "index.html, style.css, main.js 등 메인 파일 작업", "About, Download 컴포넌트 개발"]
+      },
+      {
+        "name": "이규화",
+        "role": "Front-End Developer",
+        "responsibilities": ["Apply 컴포넌트 개발"]
+      },
+      {
+        "name": "홍정빈",
+        "role": "Front-End Developer",
+        "responsibilities": ["QnA 컴포넌트 개발"]
+      }
+    ],
+    "links": {
+      "github": null,
+      "site": "https://vitemin-tailwind.netlify.app/"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Personal Portfolio",
+    "desc": "개인 프로젝트 및 기술 스택을 소개하는 포트폴리오 사이트",
+    "status": "완료",
+    "icon": "💼",
+    "type": "personal",
+    "image": "https://lh3.googleusercontent.com/rd-d/ALs6j_HOVud8mXRPPXA6WRksflRIS5rqdXUeItPC8eBJXXIaaU0Fy5spUGB-C4GI9UX42U3Pp1pmCdg-VDwTac4aOtwa05uIHNeT7rsQ8GMy9n1rNw9mXSD61GGltz6IQ-88HEndhEBQ0NtmRrJsgaaX4cW-48YmHDQdzeykn8lCd7JPDsngxLgrPkKqeTHqbUTIGPKMDUaR49qWCuXNJfVHvbgo8qK-7TvFda1R_r5LraoLNh2sASLtBWIxykQkwPSQmCqwHKVAI6StmC-PoU1VjujAC9hAMGpCywfN4h7EJQREZeqgDZ27YfDXsCX6Y_qc4YR1YhgL04d3FtRzHwNoW_cB2qdTf9KwSr-Xlb8tTS05AUGIW0bkXwbqz7LUC11AwFR8ifWi5h7Tpuqotc7j0ZeN7MNGrIurmYIQQhLGb00tAt16RZcPAS8p0IoABja455I7FcG0FypsZm3CsHViqvkjuHDBb_78w1K37HkAc_hIoE4sOK-rS3-LUjmZUayLIyen-iMUIwQLXPcvFhAvry8KTgKWpACV12gbpkYoAq7xvuZ0NfXwrQddSDToeRZ9jHxBNoiuW8ldlRRJg0kBrwwITiXq7qDNl7eSWJnuKM8Xa7kXEiSIzcgrcneJaR6i06eSin8-F5ngo9_z2LitUTAz3APHiAUlLsi4N8q-YFScRWRxtjPnsSDcwwY2J4JSp7Ekh67WJ_YwDlzf-5gmQYnlna5S4j3AThcafTYaUqn88qJ9qTb0vy9UI4hYWgpjLHx5-ph4FwmHZ3BYqm1D4NTzq31C-54CkW6kqv0Kfi6qjkFoFliJ6XCEz6i9Jghl5JqxfiGf7DBK0ivDXNVkbETXQwc1xrtTyz3v8057H16lisCPDdWUzYOJVRvh79MvCcTiO0JX5ZfkalJ3d-Hnwpw-Hlc-HC0F1-s5EOVYmJ6qplwl7VvpWLmxxaRWeCM3e6nwwkoezUiXUpHXR9wtHDcb8XHv_mQYS2KlsGOyjmzoxtRyVD4tXlc_32XRBaYMl3jIauXTIrOXXQUArYsqdW1YWMrmThBtZLe5OiKxk1yEGlR31A=w3584-h1812?auditContext=prefetch",
+    "images": [
+      "https://drive.google.com/file/d/1IWqsRT-OXnI8B3JFb_ivP6OsVWatB7j7/view?usp=drive_link",
+      "https://drive.google.com/file/d/13HQF2tbk3UGqqn5XAD1lNfZlhn7KU-J7/view?usp=drive_link",
+      "https://drive.google.com/file/d/1qSBN3PKpg74xHjsgshDtvTSApF-240ur/view?usp=drive_link",
+      "https://drive.google.com/file/d/14heLhDi5eDeR2Aj7qFqc7yqFkpcaGYxA/view?usp=drive_link",
+      "https://drive.google.com/file/d/1j6I_62yDJiHgosXvQeFjWvxeFn6CxaUJ/view?usp=drive_link",
+      "https://drive.google.com/file/d/1dtV1Tyrn0UwnWC44p45796whyaHh5otD/view?usp=drive_link",
+      "https://drive.google.com/file/d/1d8uAWze-O2-M_bnH_CtB4X97blh_sC8T/view?usp=drive_link",
+      "https://drive.google.com/file/d/16xGQeCfCnyu8zGquWGKhBOFJKU_HqGu1/view?usp=drive_link",
+      "https://drive.google.com/file/d/133vADQ1J5bEfMbr_EZD7CSY3vzH7gcss/view?usp=drive_link"
+    ],
+    "category": ["frontend", "fullstack"],
+    "tech": ["Next.js", "React", "TypeScript", "CSS"],
+    "features": ["프로젝트 갤러리", "연락처 폼", "모바일 최적화"],
+    "links": {
+      "github": "https://github.com/djsy01/Portfolio",
+      "site": "https://portfolio-gamma-nine-ulldr7th7m.vercel.app/"
+    }
+  }
 ]
