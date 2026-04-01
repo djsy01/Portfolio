@@ -89,6 +89,73 @@
   },
   {
     "id": 4,
+    "title": "Poke-Archive",
+    "desc": "포켓몬 도감 및 커뮤니티 플랫폼",
+    "status": "진행중",
+    "icon": "📚",
+    "type": "team",
+    "image": null,
+    "images": [],
+    "category": ["frontend"],
+    "tech": ["React", "JavaScript"],
+    "features": ["포켓몬 도감 기능", "커뮤니티 게시판", "나만의 파티 공유"],
+    "team": [
+      {
+        "name": "엄인호",
+        "role": "Front-End Developer"
+      },
+      {
+        "name": "이규화",
+        "role": "Front-End Developer",
+        "responsibilities": ["스트럼 마스터"]
+      }
+    ],
+    "links": {
+      "github": null,
+      "site": null
+    }
+  },
+  {
+    "id": 5,
+    "title": "Pocket-Archive",
+    "desc": "포켓몬 도감 및 커뮤니티 플랫폼",
+    "status": "진행중",
+    "icon": "📚",
+    "type": "team",
+    "image": null,
+    "images": [],
+    "category": ["frontend"],
+    "tech": ["HTML", "Tailwind CSS", "JavaScript", "Figma"],
+    "features": ["포켓몬 도감 기능", "커뮤니티 게시판", "나만의 파티 공유"],
+    "team": [
+      {
+        "name": "김연수",
+        "role": "Front-End Developer",
+        "responsibilities": ["로그인/회원가입 페이지 개발", "마이페이지 개발"]
+      },
+      {
+        "name": "박규나",
+        "role": "Team Master, Front-End Developer",
+        "responsibilities": ["파티만들기 페이지 개발"]
+      },
+      {
+        "name": "엄인호",
+        "role": "Front-End Developer",
+        "responsibilities": ["게시판 페이지 개발", "게시글 작성 페이지 개발"]
+      },
+      {
+        "name": "이규화",
+        "role": "Front-End Developer",
+        "responsibilities": ["Detail 게시글 페이지 개발", "포켓몬 도감 페이지 개발"]
+      }
+    ],
+    "links": {
+      "github": null,
+      "site": null
+    }
+  },
+  {
+    "id": 6,
     "title": "UT Tailwind",
     "desc": "Tailwind CSS를 활용한 UI 컴포넌트 라이브러리",
     "status": "완료",
@@ -132,7 +199,7 @@
     }
   },
   {
-    "id": 5,
+    "id": 7,
     "title": "Personal Portfolio",
     "desc": "개인 프로젝트 및 기술 스택을 소개하는 포트폴리오 사이트",
     "status": "완료",
