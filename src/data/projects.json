@@ -122,21 +122,16 @@
     "status": "진행중",
     "icon": "📚",
     "type": "team",
-    "image": null,
+    "image": "https://lh3.google.com/u/0/d/1ea8rOr-4qMbALT2vM2zgFk0KgxAI8aUz=w1720-h1222-iv1?auditContext=prefetch",
     "images": [],
     "category": ["frontend"],
     "tech": ["HTML", "Tailwind CSS", "JavaScript", "Figma"],
     "features": ["포켓몬 도감 기능", "커뮤니티 게시판", "나만의 파티 공유"],
     "team": [
       {
-        "name": "김연수",
-        "role": "Front-End Developer",
-        "responsibilities": ["로그인/회원가입 페이지 개발", "마이페이지 개발"]
-      },
-      {
         "name": "박규나",
         "role": "Team Master, Front-End Developer",
-        "responsibilities": ["파티만들기 페이지 개발"]
+        "responsibilities": ["파티만들기 페이지 개발", "modal 컴포넌트"]
       },
       {
         "name": "엄인호",
@@ -146,12 +141,12 @@
       {
         "name": "이규화",
         "role": "Front-End Developer",
-        "responsibilities": ["Detail 게시글 페이지 개발", "포켓몬 도감 페이지 개발"]
+        "responsibilities": ["Detail 게시글 페이지 개발", "포켓몬 도감 페이지 개발", "폴더 구분화"]
       }
     ],
     "links": {
       "github": null,
-      "site": null
+      "site": "https://pocketarchive.netlify.app"
     }
   },
   {
