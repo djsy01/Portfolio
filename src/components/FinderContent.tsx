@@ -5,9 +5,11 @@ import styles from "./FinderContent.module.css";
 import { FolderOpen, ChevronRight } from "lucide-react";
 import type { PortfolioType } from "@/store/useWindowStore";
 import allProjects from "@/data/projects.json";
+import { convertImageUrl } from "@/lib/imageUtils";
 
 interface ProjectItem {
   id: number;
+  hidden?: boolean;
   title: string;
   desc: string;
   status: string;
@@ -27,7 +29,7 @@ export const FinderContent = () => {
   const [currentFolder, setCurrentFolder] = useState<PortfolioType | null>(portfolioType);
 
   const visibleProjects: ProjectItem[] = currentFolder
-    ? (allProjects as ProjectItem[]).filter((p) => p.category.includes(currentFolder))
+    ? (allProjects as ProjectItem[]).filter((p) => !p.hidden && p.category.includes(currentFolder))
     : [];
   const activeFolderInfo = FOLDERS.find((f) => f.type === currentFolder);
 
@@ -128,7 +130,7 @@ export const FinderContent = () => {
               >
                 {project.image ? (
                   <div className={styles.imageWrapper}>
-                    <img src={project.image} alt={project.title} className={styles.projectImage} />
+                    <img src={convertImageUrl(project.image)} alt={project.title} className={styles.projectImage} />
                   </div>
                 ) : (
                   <div className={styles.folderIconWrapper}>
