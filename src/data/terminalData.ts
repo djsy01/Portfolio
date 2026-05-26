@@ -63,15 +63,14 @@ export const PROJECTS: Record<PortfolioType, Line[]> = {
   frontend: [
     { type: 'item', text: '  · OBED 웹사이트 리뉴얼             (진행중)' },
     { type: 'item', text: '  · WorshipLog                   (진행중)' },
-    { type: 'item', text: '  · 티켓팅 사이트                   (진행중)' },
     { type: 'item', text: '  · Poke-Archive                 (완료)' },
     { type: 'item', text: '  · UT Tailwind 컴포넌트 라이브러리   (완료)' },
     { type: 'item', text: '  · 개인 포트폴리오 사이트             (완료)' },
   ],
   backend: [{ type: 'item', text: '  · WorshipLog              (진행중)' }],
   fullstack: [
-    { type: 'item', text: '  · 개인 포트폴리오         (완료)' },
     { type: 'item', text: '  · WorshipLog          (진행중)' },
+    { type: 'item', text: '  · 개인 포트폴리오         (완료)' },
   ],
 };
 
