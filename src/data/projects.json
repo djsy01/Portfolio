@@ -3,6 +3,7 @@
     "id": 1,
     "title": "OBED",
     "desc": "기존 사이트와 티켓 시스템의 UX 개선 및 통합",
+    "date": "2025.11.15 ~ 현재",
     "status": "진행중",
     "icon": "🎭",
     "type": "team",
@@ -32,26 +33,43 @@
   {
     "id": 2,
     "title": "WorshipLog",
-    "desc": "예배 팀을 위한 찬양 큐레이션 및 예배 서비스 플래닝 플랫폼",
+    "desc": "예배 팀을 위한 찬양·순서지·협업 올인원 플랫폼",
+    "date": "2026.03.05 ~ 현재",
     "status": "진행중",
     "icon": "📖",
     "type": "personal",
     "image": "https://lh3.google.com/u/0/d/1efztGWVDBO-ianeFRt8lwiq0sxMMCn3X=w1720-h1221-iv1?auditContext=prefetch",
     "images": [],
     "category": ["frontend", "backend", "fullstack"],
-    "tech": ["Next.js 15", "NestJS", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "Redis", "Flutter"],
-    "features": [
-      "성경 구절 기반 찬양 큐레이션 및 제목/키워드 검색",
-      "키·템포·곡 형식 입력 후 PDF(A4) 예배 순서지 생성",
-      "PDF·이미지 악보 업로드 및 메타데이터 자동 채움",
-      "QR코드·링크로 팀원 초대 및 팀별 예배 순서 공유",
-      "개인 및 팀 예배 기록 날짜별 아카이브",
-      "랜덤 성경 구절 추천 및 묵상 나눔 커뮤니티"
+    "tech": [
+      "Next.js 15",
+      "NestJS 11",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "Prisma 7",
+      "PostgreSQL",
+      "Redis",
+      "Flutter",
+      "Supabase Storage",
+      "Spotify Web API",
+      "Firebase FCM"
     ],
-    "problems": ["예배 팀의 찬양 큐레이션과 예배 계획이 분산된 도구로 인해 비효율적", "팀원 간 예배 순서 공유 및 협업 어려움"],
+    "features": [
+      "Spotify API 연동으로 곡 정보 자동완성 및 CRUD (키·BPM·가사·성경 구절)",
+      "키·템포·곡 형식 설정 후 PDF(A4) 예배 순서지 내보내기",
+      "PDF·이미지 악보 업로드 및 인라인 뷰어 (페이지 인디케이터 포함)",
+      "QR코드·24시간 초대 토큰으로 팀원 초대 및 역할 권한 관리",
+      "카카오톡 스타일 팀 채팅 (파일 첨부 50MB, 읽음 표시, 메시지 검색)",
+      "성경 구절 기반 찬양 큐레이션 및 일별·랜덤 묵상 추천",
+      "다크모드·반응형 지원, Flutter iOS/Android 앱"
+    ],
+    "problems": [
+      "찬양 리스트·악보·예배 순서지가 각기 다른 도구에 분산되어 예배 준비가 비효율적",
+      "팀원 간 실시간 소통과 순서지 공유에 별도 메신저·파일 공유 도구가 필요했음"
+    ],
     "solutions": [
-      "성경 구절 기반 찬양 큐레이션과 예배 순서지 생성을 한 플랫폼에서 제공",
-      "팀별 예배 순서 공유 및 협업 기능으로 효율적인 예배 준비 지원"
+      "곡 DB·악보 관리·순서지 생성을 단일 플랫폼으로 통합해 준비 흐름을 단순화",
+      "QR 초대·역할 권한·팀 채팅을 앱 내에서 완결하여 외부 도구 의존 제거"
     ],
     "links": {
       "github": "https://github.com/djsy01/WorshipLog",
@@ -60,8 +78,10 @@
   },
   {
     "id": 3,
+    "hidden": true,
     "title": "Ticketing System",
     "desc": "실시간 티켓 예매 및 관리 시스템",
+    "date": "2025.08.29 ~ 현재",
     "status": "진행중",
     "icon": "🎫",
     "type": "team",
@@ -91,66 +111,45 @@
     "id": 4,
     "title": "Poke-Archive",
     "desc": "포켓몬 도감 및 커뮤니티 플랫폼",
-    "status": "진행중",
+    "date": "2026.03.26 ~ 2026.05.24",
+    "status": "완료",
     "icon": "📚",
     "type": "team",
-    "image": null,
+    "image": "https://lh3.google.com/u/0/d/1ea8rOr-4qMbALT2vM2zgFk0KgxAI8aUz=w1720-h1222-iv1?auditContext=prefetch",
     "images": [],
     "category": ["frontend"],
-    "tech": ["React", "JavaScript"],
+    "tech": ["React", "JavaScript", "Tailwind CSS", "Zustand", "Axios", "@dnd-kit/core", "@dnd-kit/sortable"],
     "features": ["포켓몬 도감 기능", "커뮤니티 게시판", "나만의 파티 공유"],
+    "problems": [
+      "Vanilla JS 프로젝트를 React + TypeScript로 재구현하며 컴포넌트 설계와 상태 관리 학습 필요",
+      "드래그 앤 드롭 기능 구현에 대한 이해와 적용",
+      "각 페이지별 UI/UX 개선 및 페이지 간 로딩 최적화 필요"
+    ],
+    "solutions": [
+      "React와 Tailwind CSS를 활용한 컴포넌트 기반 아키텍처로 재구현하여 유지보수성과 확장성 향상",
+      "Zustand를 활용한 글로벌 상태 관리로 컴포넌트 간 데이터 흐름 최적화",
+      "@dnd-kit 라이브러리를 활용한 드래그 앤 드롭 기능 구현으로 사용자 경험 개선",
+      "각 페이지별 UI/UX 개선과 React의 Suspense 및 Lazy Loading을 활용한 페이지 로딩 최적화"
+    ],
     "team": [
-      {
-        "name": "엄인호",
-        "role": "Front-End Developer"
-      },
       {
         "name": "이규화",
-        "role": "Front-End Developer",
-        "responsibilities": ["스트럼 마스터"]
-      }
-    ],
-    "links": {
-      "github": null,
-      "site": null
-    }
-  },
-  {
-    "id": 5,
-    "title": "Pocket-Archive",
-    "desc": "포켓몬 도감 및 커뮤니티 플랫폼",
-    "status": "진행중",
-    "icon": "📚",
-    "type": "team",
-    "image": null,
-    "images": [],
-    "category": ["frontend"],
-    "tech": ["HTML", "Tailwind CSS", "JavaScript", "Figma"],
-    "features": ["포켓몬 도감 기능", "커뮤니티 게시판", "나만의 파티 공유"],
-    "team": [
-      {
-        "name": "김연수",
-        "role": "Front-End Developer",
-        "responsibilities": ["로그인/회원가입 페이지 개발", "마이페이지 개발"]
+        "role": "Strum Master, Front-End Developer",
+        "responsibilities": ["헤더,푸터 개발", "포켓몬 도감 페이지 개발", "포켓몬 파티 페이지 개발"]
       },
       {
         "name": "박규나",
-        "role": "Team Master, Front-End Developer",
-        "responsibilities": ["파티만들기 페이지 개발"]
+        "role": "Front-End Developer",
+        "responsibilities": ["게시글 개발", "게시글 디테일 페이지 개발", "글쓰기 페이지 개발"]
       },
       {
         "name": "엄인호",
         "role": "Front-End Developer",
-        "responsibilities": ["게시판 페이지 개발", "게시글 작성 페이지 개발"]
-      },
-      {
-        "name": "이규화",
-        "role": "Front-End Developer",
-        "responsibilities": ["Detail 게시글 페이지 개발", "포켓몬 도감 페이지 개발"]
+        "responsibilities": ["로그인/회원가입 페이지 개발", "마이페이지 개발"]
       }
     ],
     "links": {
-      "github": null,
+      "github": "https://github.com/gyuhwa9922/poke-archive",
       "site": null
     }
   },
@@ -158,6 +157,7 @@
     "id": 6,
     "title": "UT Tailwind",
     "desc": "Tailwind CSS를 활용한 UI 컴포넌트 라이브러리",
+    "date": "2026.02.10 ~ 2026.02.10",
     "status": "완료",
     "icon": "🚕",
     "type": "team",
@@ -202,6 +202,7 @@
     "id": 7,
     "title": "Personal Portfolio",
     "desc": "개인 프로젝트 및 기술 스택을 소개하는 포트폴리오 사이트",
+    "date": "",
     "status": "완료",
     "icon": "💼",
     "type": "personal",

@@ -1,8 +1,8 @@
 .windowContainer {
   min-width: 400px;
   min-height: 300px;
-  width: 700px;
-  height: 500px;
+  width: 1024px;
+  height: 768px;
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(40px) saturate(180%);
   border-radius: 12px;

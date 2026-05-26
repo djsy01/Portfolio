@@ -24,7 +24,7 @@ export const Window = ({
   useEffect(() => {
     // Calculate center position
     const windowWidth = window.innerWidth;
-    const elementWidth = 700;
+    const elementWidth = 1024;
     const menuBarHeight = 30;
 
     // Set initial position to center

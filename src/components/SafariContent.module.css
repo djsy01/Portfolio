@@ -76,6 +76,7 @@
 }
 
 .heroWrap {
+  position: relative;
   margin: -32px -32px 28px;
   overflow: hidden;
   height: 220px;
@@ -170,6 +171,12 @@
   border-radius: 12px;
   font-size: 12px;
   font-weight: 600;
+}
+
+.date {
+  margin: -16px 0 12px 0;
+  font-size: 13px;
+  color: #9ca3af;
 }
 
 .desc {
@@ -344,7 +351,10 @@
 .gallery::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
 
 .galleryItem {
+  position: relative;
   flex-shrink: 0;
+  width: 260px;
+  height: 160px;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -358,10 +368,7 @@
 }
 
 .galleryImg {
-  width: 260px;
-  height: 160px;
   object-fit: cover;
-  display: block;
 }
 
 /* Lightbox */
@@ -376,12 +383,17 @@
   backdrop-filter: blur(4px);
 }
 
-.lightboxImg {
-  max-width: 90%;
-  max-height: 80%;
+.lightboxImgWrap {
+  position: relative;
+  width: 90%;
+  height: 80%;
   border-radius: 12px;
-  object-fit: contain;
+  overflow: hidden;
   box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.lightboxImg {
+  object-fit: contain;
 }
 
 .lightboxClose {
