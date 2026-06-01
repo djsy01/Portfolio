@@ -78,6 +78,42 @@
   },
   {
     "id": 3,
+    "hidden": false,
+    "title": "Cookeat",
+    "desc": "개인 레시피 공유 및 재료 구매 플랫폼",
+    "date": "2026.05.28 ~ 현재",
+    "status": "진행중",
+    "icon": "🍳",
+    "type": "team",
+    "image": "https://lh3.googleusercontent.com/rd-d/ALs6j_HgQXsH7bnRTQKsk2i2AJASyBpQ5wqRW-i08pW3SSRwD6-kOP3rR1lIUviRjiuwn0SCPd9yOmiQLnBsJImq_OboWdczKL9em0SJ88jvOgn1nBDva1-A5_UoqpOPbneBG6VUdNvegxAHp13AgboflGiWFo4AtfIqBFgvdfC7EsQ3o3kIQCUhBvGvIzpWKtt5T0l8i3sAoSSaLthcFKDBzn5AZ3B-l5zLx2cLNo4IeQks2M20x2qXNmZ5l-YSScwUhDlYcd2aK4Vn-EW_7cKqHjinQx2KeJw8ewB0p6UOTxT-4Kve7rpcZ3er3VBqg4OrUBPFR_rn7uwMtnFObQwqjJnXxlD71JuTlbACBYLwAZDLE78vaUiCT9MvDJXZl-DKAFaLsrvvbDfaLB12CesYYzaJ_bNvJV_vO22b1w7TTod80KGedws2aH7IaCrfF3bmuvvCtGtJCTGzG-qO2-chRSs31ffvexYYO-LLKYOlOFd9F8Wn0y_2VFESchr2FKMo4kst_YWopgpMPYOzdgucZbMET7PWxcwaZCD-GwGctu_FouE6UwTC5CEVNRIOk7uPZFKPMe12z3NJ-a8GlnFsfyGfAQSzBrDBAN-lQ2LR_wmNOCVfbmbMALWPx20QXrhKaruVwyC9gbi_otX3szwrRnZJb25Lx-WaHqbVyjTkjpK8lfgwyA0dDHFtd_QsmX1NLo-KfOojTWe2f4kVpss7KbhoO7nVuE8hB0sajAWV3I4Zp3JYpG7C-wPsqH3mrSQkU3hL2bbV1VEb5D7pyWHoEkXP9E1pB6JiScg7RccjEraUshSHq_fFQo7Wov1uJeKyGxm0XJKL4sfvkjjMJfguQgHabCbiqpjoyBryW_rd6qDN1RndDWkMcZ17D81q2CurFZ_WnFg9xLOoic2nPwNO5oaCLKU06eOzY6JM6IZ3icIo4KgvVzrhnGgQtKWmuiOUYRWNN6SPo46Wtxb4EMCrBkHZifhwn3qyYuNvNAg3rsSNiZUsvoiBFMR33m0QeoC8mkFa1Em3TrVcXrKKEXZfrcBkljinS1m9wBZ8JSPsbIZzlLmJDKwYxBkC85KBeakfvKtttthy3xFBA4F9-yaqjq9ODC7RjmPemH8aOCzsr8SP1T6p-yWOrPuAR6p0TadpWl7Ngi-ZLSZgM25TXKs8H3nXioShAH1Pv6lTEWcO=w1720-h1221?auditContext=prefetch",
+    "images": [],
+    "category": ["frontend", "backend", "fullstack"],
+    "tech": ["Next.js", "TypeScript", "Tailwind CSS", "SupaBase"],
+    "team": [
+      {
+        "name": "홍정빈",
+        "role": "Strum Master, Front-End Developer"
+      },
+      {
+        "name": "엄인호",
+        "role": "Full-Stack Developer"
+      },
+      {
+        "name": "최유종",
+        "role": "Front-End Developer"
+      },
+      {
+        "name": "추유나",
+        "role": "Front-End Developer"
+      }
+    ],
+    "links": {
+      "github": null,
+      "site": null
+    }
+  },
+  {
+    "id": 4,
     "hidden": true,
     "title": "Ticketing System",
     "desc": "실시간 티켓 예매 및 관리 시스템",
@@ -108,7 +144,7 @@
     }
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Poke-Archive",
     "desc": "포켓몬 도감 및 커뮤니티 플랫폼",
     "date": "2026.03.26 ~ 2026.05.24",

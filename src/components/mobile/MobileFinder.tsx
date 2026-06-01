@@ -45,7 +45,7 @@ export const MobileFinder = ({ onProjectSelect }: MobileFinderProps) => {
               <div className={styles.itemDesc}>{project.desc}</div>
             </div>
             <span
-              className={`${styles.badge} ${project.status === "완료" ? styles.done : styles.inProgress}`}
+              className={`${styles.badge} ${project.status === "완료" ? styles.done : project.status === "예정" ? styles.planned : styles.inProgress}`}
             >
               {project.status}
             </span>

@@ -166,11 +166,24 @@
 .folderStatus {
   display: inline-block;
   padding: 4px 12px;
-  background: #dbeafe;
-  color: #1e40af;
   border-radius: 12px;
   font-size: 11px;
   font-weight: 600;
+}
+
+.folderStatusPlanned {
+  background: rgba(142, 142, 147, 0.15);
+  color: #636366;
+}
+
+.folderStatusInProgress {
+  background: rgba(0, 122, 255, 0.15);
+  color: #0071e3;
+}
+
+.folderStatusDone {
+  background: rgba(52, 199, 89, 0.15);
+  color: #248a3d;
 }
 
 .sidebarEmoji {

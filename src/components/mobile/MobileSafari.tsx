@@ -125,7 +125,7 @@ export const MobileSafari = ({ initialProjectId }: MobileSafariProps) => {
       <div className={styles.detail}>
         <div className={styles.detailHeader}>
           <h2 className={styles.detailTitle}>{project.title}</h2>
-          <span className={`${styles.badge} ${project.status === "완료" ? styles.done : styles.inProgress}`}>
+          <span className={`${styles.badge} ${project.status === "완료" ? styles.done : project.status === "예정" ? styles.planned : styles.inProgress}`}>
             {project.status}
           </span>
         </div>

@@ -206,12 +206,15 @@ export const LoginScreen = () => {
 
 /* 실시간 시계 컴포넌트 */
 const Clock = () => {
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState<Date | null>(null);
 
   useEffect(() => {
+    setTime(new Date());
     const t = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(t);
   }, []);
+
+  if (!time) return <div className={styles.clock} />;
 
   const hours = time.getHours().toString().padStart(2, "0");
   const minutes = time.getMinutes().toString().padStart(2, "0");

@@ -94,9 +94,14 @@
   flex-shrink: 0;
 }
 
+.planned {
+  background: rgba(142, 142, 147, 0.15);
+  color: #636366;
+}
+
 .inProgress {
-  background: rgba(255, 149, 0, 0.15);
-  color: #c97200;
+  background: rgba(0, 122, 255, 0.15);
+  color: #0071e3;
 }
 
 .done {
