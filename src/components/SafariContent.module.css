@@ -166,11 +166,24 @@
 
 .status {
   padding: 4px 12px;
-  background: #dbeafe;
-  color: #1e40af;
   border-radius: 12px;
   font-size: 12px;
   font-weight: 600;
+}
+
+.statusPlanned {
+  background: rgba(142, 142, 147, 0.15);
+  color: #636366;
+}
+
+.statusInProgress {
+  background: rgba(0, 122, 255, 0.15);
+  color: #0071e3;
+}
+
+.statusDone {
+  background: rgba(52, 199, 89, 0.15);
+  color: #248a3d;
 }
 
 .date {

@@ -140,7 +140,7 @@ export const FinderContent = () => {
                 <div className={styles.folderInfo}>
                   <div className={styles.folderTitle}>{project.title}</div>
                   <div className={styles.folderDesc}>{project.desc}</div>
-                  <span className={styles.folderStatus}>{project.status}</span>
+                  <span className={`${styles.folderStatus} ${project.status === "완료" ? styles.folderStatusDone : project.status === "예정" ? styles.folderStatusPlanned : styles.folderStatusInProgress}`}>{project.status}</span>
                 </div>
               </div>
             ))}

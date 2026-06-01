@@ -107,7 +107,7 @@ export const SafariContent = () => {
 
           <div className={styles.detailHeader}>
             <h2 className={styles.detailTitle}>{project.title}</h2>
-            <span className={styles.status}>{project.status}</span>
+            <span className={`${styles.status} ${project.status === "완료" ? styles.statusDone : project.status === "예정" ? styles.statusPlanned : styles.statusInProgress}`}>{project.status}</span>
           </div>
 
           {project.date && <p className={styles.date}>📅 {project.date}</p>}
