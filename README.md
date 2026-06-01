@@ -117,30 +117,30 @@ my-mac-portfolio/
 
 ```json
 [
-    {
-        "id": 1,
-        "title": "프로젝트 이름",
-        "desc": "프로젝트 설명",
-        "status": "진행중",
-        "icon": "🖥️",
-        "type": "team",
-        "image": "썸네일 이미지 URL",
-        "images": ["스크린샷 URL"],
-        "tech": ["React", "TypeScript", "Node.js"],
-        "problems": ["문제점 1", "문제점 2"],
-        "solutions": ["해결방안 1", "해결방안 2"],
-        "team": [
-            {
-                "name": "홍길동",
-                "role": "Frontend Developer",
-                "responsibilities": ["UI/UX 디자인 구현", "React 컴포넌트 개발"]
-            }
-        ],
-        "links": {
-            "github": "GitHub URL",
-            "site": "라이브 사이트 URL"
-        }
+  {
+    "id": 1,
+    "title": "프로젝트 이름",
+    "desc": "프로젝트 설명",
+    "status": "진행중",
+    "icon": "🖥️",
+    "type": "team",
+    "image": "썸네일 이미지 URL",
+    "images": ["스크린샷 URL"],
+    "tech": ["React", "TypeScript", "Node.js"],
+    "problems": ["문제점 1", "문제점 2"],
+    "solutions": ["해결방안 1", "해결방안 2"],
+    "team": [
+      {
+        "name": "홍길동",
+        "role": "Frontend Developer",
+        "responsibilities": ["UI/UX 디자인 구현", "React 컴포넌트 개발"]
+      }
+    ],
+    "links": {
+      "github": "GitHub URL",
+      "site": "라이브 사이트 URL"
     }
+  }
 ]
 ```
 
@@ -150,16 +150,16 @@ my-mac-portfolio/
 
 ```json
 {
-    "whoami": "개발자 소개",
-    "skills": {
-        "frontend": ["HTML", "CSS", "React"],
-        "backend": ["Node.js"],
-        "database": ["MySQL"],
-        "tools": ["Git", "Vercel"]
-    },
-    "contact": {
-        "email": "your@email.com"
-    }
+  "whoami": "개발자 소개",
+  "skills": {
+    "frontend": ["HTML", "CSS", "React"],
+    "backend": ["Node.js"],
+    "database": ["MySQL"],
+    "tools": ["Git", "Vercel"]
+  },
+  "contact": {
+    "email": "your@email.com"
+  }
 }
 ```
 
@@ -230,11 +230,11 @@ my-mac-portfolio/
 2. **창 드래그**: 헤더를 클릭하고 드래그하여 창 이동
 3. **전체화면**: 노란색 버튼 클릭으로 창 최대화/복원
 4. **프로젝트 탐색**:
-    - Finder에서 프로젝트 클릭
-    - Safari가 자동으로 열리며 프로젝트 상세 정보 표시
+   - Finder에서 프로젝트 클릭
+   - Safari가 자동으로 열리며 프로젝트 상세 정보 표시
 5. **외부 링크**:
-    - GitHub 버튼: 새 탭에서 열림
-    - Live Site 버튼: Safari 내부 iframe으로 표시
+   - GitHub 버튼: 새 탭에서 열림
+   - Live Site 버튼: Safari 내부 iframe으로 표시
 
 ## 🔧 빌드
 
@@ -275,7 +275,7 @@ npm start
 
 ## 👤 개발자 : 엄인호 (Inho Um)
 
-- Portfolio: [portfolio-gamma-nine-ulldr7th7m.vercel.app](https://portfolio-gamma-nine-ulldr7th7m.vercel.app/)
+- Portfolio: [portfolio-gamma-nine-ulldr7th7m.vercel.app](https://portfolio.inho.pe.kr)
 - GitHub: [@djsy01](https://github.com/djsy01)
 
 ## 🙏 감사의 말
