@@ -11,7 +11,7 @@ import projectsData from '@/data/projects.json';
 interface TeamMember {
   name: string;
   role: string;
-  responsibilities: string[];
+  responsibilities?: string[];
 }
 
 interface Project {
@@ -138,7 +138,7 @@ export const SafariContent = () => {
                       <span className={styles.memberRole}>{member.role}</span>
                     </div>
                     <ul className={styles.responsibilitiesList}>
-                      {member.responsibilities.map((resp, idx) => (
+                      {member.responsibilities?.map((resp, idx) => (
                         <li key={idx}>{resp}</li>
                       ))}
                     </ul>

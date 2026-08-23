@@ -7,7 +7,7 @@ import { convertImageUrl } from "@/lib/imageUtils";
 interface TeamMember {
   name: string;
   role: string;
-  responsibilities: string[];
+  responsibilities?: string[];
 }
 
 interface Project {
@@ -154,7 +154,7 @@ export const MobileSafari = ({ initialProjectId }: MobileSafariProps) => {
                   <span className={styles.memberRole}>{member.role}</span>
                 </div>
                 <ul className={styles.respList}>
-                  {member.responsibilities.map((r, j) => (
+                  {member.responsibilities?.map((r, j) => (
                     <li key={j}>{r}</li>
                   ))}
                 </ul>
