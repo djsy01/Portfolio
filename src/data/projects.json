@@ -8,7 +8,7 @@
     "icon": "📖",
     "type": "personal",
     "image": "https://lh3.google.com/u/0/d/1efztGWVDBO-ianeFRt8lwiq0sxMMCn3X=w1720-h1221-iv1?auditContext=prefetch",
-    "images": [],
+    "images": ["/screenshots/worshiplog/dashboard.webp", "/screenshots/worshiplog/community.webp", "/screenshots/worshiplog/guide.webp"],
     "category": "fullstack",
     "tech": [
       "Next.js 15",
@@ -42,7 +42,7 @@
     ],
     "links": {
       "github": "https://github.com/djsy01/WorshipLog",
-      "site": "https://worship-log.inho.pe.kr"
+      "site": "https://worshiplog.inho.pe.kr"
     }
   },
   {
