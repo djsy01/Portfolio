@@ -33,23 +33,15 @@ const APPS = [
   },
 ];
 
-const TYPE_LABEL: Record<string, { label: string; emoji: string }> = {
-  frontend: { label: "Frontend", emoji: "🎨" },
-  backend:  { label: "Backend",  emoji: "⚙️" },
-  fullstack:{ label: "Fullstack",emoji: "🚀" },
-};
-
 export default function MobilePage() {
   const [openApp, setOpenApp] = useState<AppId>(null);
   const [safariProjectId, setSafariProjectId] = useState<number | null>(null);
-  const { isLoggedIn, portfolioType, logout } = useWindowStore();
+  const { isLoggedIn, logout } = useWindowStore();
 
   const handleFinderProjectSelect = (id: number) => {
     setSafariProjectId(id);
     setOpenApp("safari");
   };
-
-  const typeInfo = portfolioType ? TYPE_LABEL[portfolioType] : null;
 
   return (
     <div className={styles.screen}>
@@ -69,9 +61,7 @@ export default function MobilePage() {
           })}
         </div>
         <div className={styles.heroName}>엄인호</div>
-        <div className={styles.heroSub}>
-          {typeInfo ? `${typeInfo.emoji} ${typeInfo.label} Developer` : "Developer"}
-        </div>
+        <div className={styles.heroSub}>Web Developer</div>
       </div>
 
       {/* 하단 독 */}

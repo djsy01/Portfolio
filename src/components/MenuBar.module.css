@@ -57,15 +57,6 @@
 }
 
 /* ===== Type Badge ===== */
-.typeBadge {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 10px;
-    border: 1px solid;
-    letter-spacing: 0.3px;
-    user-select: none;
-}
 
 /* ===== Portfolio Dropdown ===== */
 .portfolioMenu {
@@ -99,48 +90,11 @@
     }
 }
 
-.dropdownHeader {
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.35);
-    padding: 4px 10px 6px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
 
-.dropdownItem {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    width: 100%;
-    padding: 7px 10px;
-    background: none;
-    border: none;
-    border-radius: 8px;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.8);
-    cursor: pointer;
-    text-align: left;
-    transition: background 0.15s;
-}
 
-.dropdownItem:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
 
-.dropdownItemActive {
-    font-weight: 600;
-}
 
-.checkmark {
-    margin-left: auto;
-    font-size: 12px;
-}
 
-.dropdownDivider {
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
-    margin: 4px 6px;
-}
 
 .dropdownLogout {
     display: block;

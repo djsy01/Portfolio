@@ -9,7 +9,7 @@ Next.js로 구현한 인터랙티브 macOS 스타일 포트폴리오 웹사이�
 ## ✨ 주요 기능
 
 - 🪟 **드래그 가능한 창**: macOS 스타일의 드래그·최대화·닫기 가능한 윈도우 시스템
-- 📁 **Finder**: 프로젝트를 시각적으로 탐색할 수 있는 파일 탐색기
+- 📁 **Finder**: Frontend / Backend / Fullstack 폴더별로 프로젝트를 탐색할 수 있는 파일 탐색기
 - 🌐 **Safari**: 프로젝트 상세 정보, 갤러리 라이트박스, 라이브 사이트 iframe 미리보기
 - 💻 **Terminal**: 인터랙티브 터미널 UI (`whoami`, `skills`, `projects`, `contact` 등)
 - 👥 **협업자 정보**: 팀 프로젝트의 협업자와 담당 업무 표시
@@ -124,6 +124,7 @@ my-mac-portfolio/
     "status": "진행중",
     "icon": "🖥️",
     "type": "team",
+    "category": "frontend",
     "image": "썸네일 이미지 URL",
     "images": ["스크린샷 URL"],
     "tech": ["React", "TypeScript", "Node.js"],
@@ -162,6 +163,11 @@ my-mac-portfolio/
   }
 }
 ```
+
+### 프로젝트 분류
+
+- **`category`**: `"frontend"` | `"backend"` | `"fullstack"` — Finder에서 해당 폴더에 표시됨
+- **`hidden: true`**: Finder 목록에서 숨김
 
 ### 프로젝트 타입
 
