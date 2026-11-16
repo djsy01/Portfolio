@@ -6,7 +6,6 @@ import { FinderContent } from "@/components/FinderContent";
 import { SafariContent } from "@/components/SafariContent";
 import { TerminalContent } from "@/components/TerminalContent";
 import { LoginScreen } from "@/components/LoginScreen";
-import { SwitchOverlay } from "@/components/SwitchOverlay";
 import { useWindowStore } from "@/store/useWindowStore";
 import styles from "./page.module.css";
 
@@ -16,7 +15,6 @@ export default function Home() {
   return (
     <>
       {!isLoggedIn && <LoginScreen />}
-      <SwitchOverlay />
       <div className={styles.desktop}>
         <MenuBar />
         <div className={styles.windowArea}>

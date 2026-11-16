@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useWindowStore } from "@/store/useWindowStore";
 import styles from "./FinderContent.module.css";
 import { FolderOpen, ChevronRight } from "lucide-react";
-import type { PortfolioType } from "@/store/useWindowStore";
+import type { ProjectCategory } from "@/store/useWindowStore";
 import allProjects from "@/data/projects.json";
 import { convertImageUrl } from "@/lib/imageUtils";
 
@@ -15,22 +15,22 @@ interface ProjectItem {
   status: string;
   icon: string;
   image: string | null;
-  category: string[];
+  category: ProjectCategory;
 }
 
-const FOLDERS: { type: PortfolioType; label: string; emoji: string; color: string }[] = [
+const FOLDERS: { type: ProjectCategory; label: string; emoji: string; color: string }[] = [
   { type: "frontend",  label: "Frontend",  emoji: "🎨", color: "#4A9EFF" },
   { type: "backend",   label: "Backend",   emoji: "⚙️", color: "#34C759" },
   { type: "fullstack", label: "Fullstack", emoji: "🚀", color: "#FF9F0A" },
 ];
 
-export const FinderContent = () => {
-  const { openApp, focusApp, setSelectedProject, portfolioType } = useWindowStore();
-  const [currentFolder, setCurrentFolder] = useState<PortfolioType | null>(portfolioType);
+const projects = (allProjects as ProjectItem[]).filter((p) => !p.hidden);
 
-  const visibleProjects: ProjectItem[] = currentFolder
-    ? (allProjects as ProjectItem[]).filter((p) => !p.hidden && p.category.includes(currentFolder))
-    : [];
+export const FinderContent = () => {
+  const { openApp, focusApp, setSelectedProject } = useWindowStore();
+  const [currentFolder, setCurrentFolder] = useState<ProjectCategory | null>(null);
+
+  const visibleProjects = currentFolder ? projects.filter((p) => p.category === currentFolder) : [];
   const activeFolderInfo = FOLDERS.find((f) => f.type === currentFolder);
 
   const handleProjectClick = (projectId: number) => {
@@ -87,7 +87,7 @@ export const FinderContent = () => {
         <div className={styles.projectGrid}>
           {!currentFolder &&
             FOLDERS.map((f) => {
-              const count = (allProjects as ProjectItem[]).filter((p) => p.category.includes(f.type)).length;
+              const count = projects.filter((p) => p.category === f.type).length;
               return (
                 <div
                   key={f.type}
@@ -104,14 +104,6 @@ export const FinderContent = () => {
                   <div className={styles.folderInfo}>
                     <div className={styles.folderTitle}>{f.label}</div>
                     <div className={styles.folderDesc}>{count}개 프로젝트</div>
-                    {f.type === portfolioType && (
-                      <span
-                        className={styles.folderStatus}
-                        style={{ background: f.color + "22", color: f.color }}
-                      >
-                        현재 모드
-                      </span>
-                    )}
                   </div>
                 </div>
               );
