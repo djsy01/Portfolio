@@ -18,13 +18,16 @@ interface ProjectItem {
   category: ProjectCategory;
 }
 
-const FOLDERS: { type: ProjectCategory; label: string; emoji: string; color: string }[] = [
+const ALL_FOLDERS: { type: ProjectCategory; label: string; emoji: string; color: string }[] = [
   { type: "frontend",  label: "Frontend",  emoji: "🎨", color: "#4A9EFF" },
   { type: "backend",   label: "Backend",   emoji: "⚙️", color: "#34C759" },
   { type: "fullstack", label: "Fullstack", emoji: "🚀", color: "#FF9F0A" },
 ];
 
 const projects = (allProjects as ProjectItem[]).filter((p) => !p.hidden);
+
+// 프로젝트가 없는 폴더는 숨김
+const FOLDERS = ALL_FOLDERS.filter((f) => projects.some((p) => p.category === f.type));
 
 export const FinderContent = () => {
   const { openApp, focusApp, setSelectedProject } = useWindowStore();
