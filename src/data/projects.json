@@ -6,8 +6,9 @@
     "date": "2026.03.05 ~ 현재",
     "status": "진행중",
     "icon": "📖",
+    "iconImage": "/icons/worshiplog.png",
     "type": "personal",
-    "image": "https://lh3.google.com/u/0/d/1efztGWVDBO-ianeFRt8lwiq0sxMMCn3X=w1720-h1221-iv1?auditContext=prefetch",
+    "image": "/screenshots/worshiplog/dashboard.webp",
     "images": ["/screenshots/worshiplog/dashboard.webp", "/screenshots/worshiplog/songs.webp", "/screenshots/worshiplog/mobile.webp", "/screenshots/worshiplog/guide.webp", "/screenshots/worshiplog/guide-meditation.webp", "/screenshots/worshiplog/community.webp", "/screenshots/worshiplog/login.webp"],
     "category": "fullstack",
     "tech": [
@@ -52,8 +53,9 @@
     "date": "2025.11.15 ~ 현재",
     "status": "진행중",
     "icon": "🎭",
+    "iconImage": "/icons/obed.jpg",
     "type": "team",
-    "image": "https://lh3.googleusercontent.com/rd-d/ALs6j_Ho6AoUZ8LX3u8E7JWue5waTDSFnbIWCqUQRJ9EvhC6aDQsR_99vuwTyCJfDUWS3rt3coJgsMwbqfMn79zWDk5aJ-eBBl1RrgdccKaenvNiMGKIAUiOrg5VRzyve9hWHNUD03ay_Ytq6ReR2ehI1BWDj6vSvvS7GNqiF5bL3X-oL1Me80Fq4Yf8hybhiKbi1RAZw85jYpmOofa9fzM3xVM1vysmpNC-y1gNxAtQOWW00WX-PkbGumZlgM2tn_qZCTiN2nSAesbUMAf28aERwUvDSo6xsoz8FkDRw4MNziRhF06mb0yl1Gmf2lzGLdr8JGQdYoeJYHXc65hds6OoT9FGoUxJlBHjWWgev-Y1IINq_O25qU-cHyrZ-6owQRVlgY-TkCr95tzIg_oFKCR92TgNKQMPoCznzP52_5a2VdMfxK21JKu8m_LcfolqWhc3nmKg3DqJLO4akZfqPUzNpAd_wzpWFqwT6SR3yGsjpyagTpdW0nzW_ppiuRSov7OndzpBHjbRK8CBm-LO5_53iz70z_A1sB0sjgpxInbAneNXBmWKOGjxxsHW9Ck1Gy8P6ndSM2qUI19p1AosQO3dN7EtQzce671JobDU3h9bCmY0Vr9Hh2TV1jWTLCfx5zXqJxwdAGQfn5xGnQdWbnDnB8qsQVrk9Knfk6GnWR3PGWRkku0ApK4Jz7XXJW2X4RuzT_qDVwCC3gjwTVcI2urbPIjjLMmqILHbJiNM94UPIGIcksjnqHf97WgmzPQAeB1qoS8BHPKhGmvd8EypTRwxQTncNv6HID5qbQEvF-pW4hxo-KsGoyb5gSt8uHbdfds1w9ra8VdcaGhiXHBPulCOU7aOk6Xzp93M2Gg15Ol2SdnvtB-C2ud5O1CJB9gI0lg3o2oWmdUReiJavXBHIXIEAzVOEpN8FonCF-evHM6ScfZWR-AD6gUxrOJnXoMwtqEQArf4Ry43haIHn9okQMAang6-Ed0ZCqWi3kYff5avTP5GgTXgz2Py54ryS0VXFxY81nsWWEEVjslBiedmYUD3_m6xPMjdNEa_RGxA5i84bm1wFVMV=w3584-h1812?auditContext=prefetch",
+    "image": "/screenshots/obed/home.webp",
     "images": ["/screenshots/obed/home.webp", "/screenshots/obed/mobile.webp", "/screenshots/obed/vision.webp", "/screenshots/obed/team.webp", "/screenshots/obed/worship-log.webp", "/screenshots/obed/scores.webp", "/screenshots/obed/map.webp", "/screenshots/obed/qna.webp", "/screenshots/obed/login.webp"],
     "category": "frontend",
     "tech": ["Vue.js", "Vite", "TypeScript", "CSS", "Redis", "MySQL"],
@@ -62,12 +64,14 @@
     "team": [
       {
         "name": "김승훈",
+        "githubUsername": "SIya45",
         "role": "Back-End Developer",
         "responsibilities": ["Node.js를 활용한 서버 구축 및 API 개발", "티켓 예매 시스템의 백엔드 로직 구현"]
       },
       {
         "name": "엄인호",
-        "role": "Strum Master, Front-End Developer",
+        "githubUsername": "djsy01",
+        "role": "Scrum Master, Front-End Developer",
         "responsibilities": [
           "팀원 역할 및 일정 조율",
           "Vue.js와 TypeScript를 활용한 프론트엔드 개발",
@@ -89,6 +93,7 @@
     "date": "2026.05.28 ~ 2026.07.07",
     "status": "완료",
     "icon": "🍳",
+    "iconImage": "/icons/cookeat.png",
     "type": "team",
     "image": "/screenshots/cookeat/home.webp",
     "images": [
@@ -105,21 +110,25 @@
     "team": [
       {
         "name": "최유종",
-        "role": "Strum Master, Front-End Developer",
+        "githubUsername": "jjong0",
+        "role": "Scrum Master, Front-End Developer",
         "responsibilities": ["관리자 페이지 개발"]
       },
       {
         "name": "엄인호",
+        "githubUsername": "djsy01",
         "role": "Front-End Developer",
         "responsibilities": ["유저 페이지 개발"]
       },
       {
         "name": "추유나",
+        "githubUsername": "nana9147",
         "role": "Front-End Developer",
         "responsibilities": ["판매자 페이지 개발"]
       },
       {
         "name": "홍정빈",
+        "githubUsername": "jbhong3010-ops",
         "role": "Front-End Developer",
         "responsibilities": ["Home 페이지 개발 (중도 하차)"]
       }
@@ -136,8 +145,9 @@
     "date": "2026.03.26 ~ 2026.05.24",
     "status": "완료",
     "icon": "📚",
+    "iconImage": "/icons/poke-archive.png",
     "type": "team",
-    "image": "https://lh3.google.com/u/0/d/1ea8rOr-4qMbALT2vM2zgFk0KgxAI8aUz=w1720-h1222-iv1?auditContext=prefetch",
+    "image": "/screenshots/poke-archive/demo-pokedex.gif",
     "images": ["/screenshots/poke-archive/demo-pokedex.gif", "/screenshots/poke-archive/demo-board.gif", "/screenshots/poke-archive/demo-party.gif"],
     "category": "frontend",
     "tech": ["React", "JavaScript", "Tailwind CSS", "Zustand", "Axios", "@dnd-kit/core", "@dnd-kit/sortable"],
@@ -156,16 +166,19 @@
     "team": [
       {
         "name": "이규화",
-        "role": "Strum Master, Front-End Developer",
+        "githubUsername": "gyuhwa9922",
+        "role": "Scrum Master, Front-End Developer",
         "responsibilities": ["헤더,푸터 개발", "포켓몬 도감 페이지 개발", "포켓몬 파티 페이지 개발"]
       },
       {
         "name": "박규나",
+        "githubUsername": "Gyu-me",
         "role": "Front-End Developer",
         "responsibilities": ["게시글 개발", "게시글 디테일 페이지 개발", "글쓰기 페이지 개발"]
       },
       {
         "name": "엄인호",
+        "githubUsername": "djsy01",
         "role": "Front-End Developer",
         "responsibilities": ["로그인/회원가입 페이지 개발", "마이페이지 개발"]
       }
@@ -182,8 +195,9 @@
     "date": "2026.02.10 ~ 2026.02.10",
     "status": "완료",
     "icon": "🚕",
+    "iconImage": "/icons/ut-tailwind.png",
     "type": "team",
-    "image": "https://lh3.googleusercontent.com/rd-d/ALs6j_E02NxvZ8lQzQ8LLyc4c3lujggcPIE051GDt5MnOEzztaoY_3OxWsSZEBiLAK3SmIVhxvXQSnh6TNwjG_488dAtxuMTnfLE0-jGLNmVCI38OFnH2wiipcENzQQ3g4L4KdiSyImCHSFJj7e8oGRlbKkC1Ga54DAVCNe7HvbQUmsm-9BrXSbl7vC0tZFaqML28n6DxxmL8UcbcxtHfGf3z4lqlKINCuZGVrO9J9DQuG9Qqtrms9ABcFZcX4AihVNPp8qfcig8txHULpabJa71NaxnNGR5NyXlJzSKnPbFMMx0FYHMFThyID704to4xmZyQwVNBDRi7tKvbL1kvjz-v8MK_aD5Y8UuuOGQHlwB4slga9kRjHJXUCGFlR770_ZthhDRD5NoMRh6ieNj2BuSuPw0_Mwg6XmwVYBzg0677sUrxqAdAamkSMHNcpKfhrKmace5DPh2fjYwg-poTxyWMhceeJ3ktWXvuc0t35xab8IIG82I7aekU2F1KRPf8n-C4qQhjiMs3aOC65yr-m100zU2Cq-BQgJJ3UJvhnIXS_v1JKvEAOQYXuHTdBQYGN99ORz58JXNciuOzoGtLRr1UzzVhkPGEDqmKoxhwP_AAJ-0j9Ayp3sqLJOsV8aycpPraAEK2F-zugMDNHIefqFOIYV1phDLl0VdwT0xE4uLRQDcJKtpf8sXjWTjfMDdxO64uKWEydL-PL1vb5egpQ-SJ-jQpc3Z3jukC4756eNtFumEPYVeqkYLPVsY5mf40YE447OTo3JyT6--jY5ly8TbNJ96tztsWEiI90zV60qj0ZehtzA38sMDmu3IdItfsfuAL_3YRnRm2fkhaKRD36WmeUbUewtFySgjCtsi4hF-knQpEAYciJV5WMwwSwJi8ZkhZ9QSjHtUCDi6zUzm0Mz7FbMJoglCYIFRT0VFAtRrXIJcfBsizv_Ortkuv0OYNafEBKBvR57D-bkNrXmgl0WGH5mYNnB99aA6eIfeeWS0t60D8fz_EM8bjQUa8Gp_CU_tXarUSIkINrQzbgDBqL1vsv9HgR5kZ6ipYXnDVCCAQB9gfl9PlOgNZxNwuRBvLdw2s8w3qHTCMgJBNA=w3584-h1810?auditContext=forDisplay",
+    "image": "/screenshots/ut-tailwind/hero.png",
     "images": ["/screenshots/ut-tailwind/hero.png", "/screenshots/ut-tailwind/faq.webp", "/screenshots/ut-tailwind/driver-signup.webp", "/screenshots/ut-tailwind/footer.webp", "/screenshots/ut-tailwind/mobile.webp"],
     "category": "frontend",
     "tech": ["HTML", "Tailwind CSS", "JavaScript"],
@@ -191,26 +205,31 @@
     "team": [
       {
         "name": "박현우",
+        "githubUsername": "hyeonwoo1231",
         "role": "Front-End Developer",
         "responsibilities": ["banner 컴포넌트 개발"]
       },
       {
         "name": "방효진",
+        "githubUsername": "lllillly",
         "role": "Front-End Developer",
         "responsibilities": ["header 컴포넌트 개발"]
       },
       {
         "name": "엄인호",
-        "role": "Front-End Developer",
-        "responsibilities": ["스트럼 마스터", "index.html, style.css, main.js 등 메인 파일 작업", "About, Download 컴포넌트 개발"]
+        "githubUsername": "djsy01",
+        "role": "Scrum Master, Front-End Developer",
+        "responsibilities": ["index.html, style.css, main.js 등 메인 파일 작업", "About, Download 컴포넌트 개발"]
       },
       {
         "name": "이규화",
+        "githubUsername": "gyuhwa9922",
         "role": "Front-End Developer",
         "responsibilities": ["Apply 컴포넌트 개발"]
       },
       {
         "name": "홍정빈",
+        "githubUsername": "jbhong3010-ops",
         "role": "Front-End Developer",
         "responsibilities": ["QnA 컴포넌트 개발"]
       }
@@ -227,8 +246,9 @@
     "date": "2025.06.11 ~ 2025.11.03",
     "status": "완료",
     "icon": "🤖",
+    "iconImage": "/icons/rogiarm.png",
     "type": "team",
-    "image": "https://lh3.google.com/u/0/d/1S5Y8gs-n5_f6DqZbrXStKB9MqecukgKH=w3024-h1532-iv1?auditContext=prefetch",
+    "image": "/screenshots/rogiarm/home.png",
     "images": ["/screenshots/rogiarm/home.png", "/screenshots/rogiarm/data.png"],
     "category": "fullstack",
     "tech": ["React", "Node.js", "SQLite3", "Arduino", "Raspberry Pi 5", "SerialPort"],
@@ -239,18 +259,19 @@
     ],
     "solutions": ["더미 데이터로 대시보드 동작을 시연하는 방식으로 대안을 찾아 발표까지 마무리"],
     "team": [
-      { "name": "김승훈", "role": "Strum Master", "responsibilities": ["ROS, Arduino"] },
-      { "name": "고동휘", "role": "Developer", "responsibilities": ["센서(이미지 러닝)"] },
+      { "name": "김승훈", "githubUsername": "SIya45", "role": "Scrum Master", "responsibilities": ["ROS, Arduino"] },
+      { "name": "고동휘", "githubUsername": "Taehavobka", "role": "Developer", "responsibilities": ["센서(이미지 러닝)"] },
       {
         "name": "엄인호",
+        "githubUsername": "djsy01",
         "role": "Full-Stack Developer",
         "responsibilities": ["React 기반 웹 대시보드 개발", "Node.js 서버 및 SQLite3 데이터 관리"]
       },
-      { "name": "이두혁", "role": "Developer", "responsibilities": ["센서(이미지 러닝)"] }
+      { "name": "이두혁", "githubUsername": "MarvHara", "role": "Developer", "responsibilities": ["센서(이미지 러닝)"] }
     ],
     "links": {
       "github": "https://github.com/Rogi4Rm/AutoMaitc_RobotTransfer",
-      "site": ""
+      "site": null
     }
   },
   {
@@ -260,6 +281,7 @@
     "date": "",
     "status": "완료",
     "icon": "💼",
+    "iconImage": "/icons/portfolio.png",
     "type": "personal",
     "image": "https://lh3.googleusercontent.com/rd-d/ALs6j_HOVud8mXRPPXA6WRksflRIS5rqdXUeItPC8eBJXXIaaU0Fy5spUGB-C4GI9UX42U3Pp1pmCdg-VDwTac4aOtwa05uIHNeT7rsQ8GMy9n1rNw9mXSD61GGltz6IQ-88HEndhEBQ0NtmRrJsgaaX4cW-48YmHDQdzeykn8lCd7JPDsngxLgrPkKqeTHqbUTIGPKMDUaR49qWCuXNJfVHvbgo8qK-7TvFda1R_r5LraoLNh2sASLtBWIxykQkwPSQmCqwHKVAI6StmC-PoU1VjujAC9hAMGpCywfN4h7EJQREZeqgDZ27YfDXsCX6Y_qc4YR1YhgL04d3FtRzHwNoW_cB2qdTf9KwSr-Xlb8tTS05AUGIW0bkXwbqz7LUC11AwFR8ifWi5h7Tpuqotc7j0ZeN7MNGrIurmYIQQhLGb00tAt16RZcPAS8p0IoABja455I7FcG0FypsZm3CsHViqvkjuHDBb_78w1K37HkAc_hIoE4sOK-rS3-LUjmZUayLIyen-iMUIwQLXPcvFhAvry8KTgKWpACV12gbpkYoAq7xvuZ0NfXwrQddSDToeRZ9jHxBNoiuW8ldlRRJg0kBrwwITiXq7qDNl7eSWJnuKM8Xa7kXEiSIzcgrcneJaR6i06eSin8-F5ngo9_z2LitUTAz3APHiAUlLsi4N8q-YFScRWRxtjPnsSDcwwY2J4JSp7Ekh67WJ_YwDlzf-5gmQYnlna5S4j3AThcafTYaUqn88qJ9qTb0vy9UI4hYWgpjLHx5-ph4FwmHZ3BYqm1D4NTzq31C-54CkW6kqv0Kfi6qjkFoFliJ6XCEz6i9Jghl5JqxfiGf7DBK0ivDXNVkbETXQwc1xrtTyz3v8057H16lisCPDdWUzYOJVRvh79MvCcTiO0JX5ZfkalJ3d-Hnwpw-Hlc-HC0F1-s5EOVYmJ6qplwl7VvpWLmxxaRWeCM3e6nwwkoezUiXUpHXR9wtHDcb8XHv_mQYS2KlsGOyjmzoxtRyVD4tXlc_32XRBaYMl3jIauXTIrOXXQUArYsqdW1YWMrmThBtZLe5OiKxk1yEGlR31A=w3584-h1812?auditContext=prefetch",
     "images": [
@@ -299,18 +321,126 @@
     "team": [
       {
         "name": "엄인호",
+        "githubUsername": "djsy01",
         "role": "Front-End Developer",
         "responsibilities": ["React와 TypeScript를 활용한 프론트엔드 개발", "UI/UX 디자인 및 구현", "실시간 좌석 선택 UI 구현"]
       },
       {
         "name": "이준행",
+        "githubUsername": "LeopoldBloom2K",
         "role": "Back-End Developer",
         "responsibilities": ["DB설계", "서버 구축 및 API 개발", "결제 시스템 연동"]
       }
     ],
     "links": {
       "github": "https://github.com/LeopoldBloom2K/ticketingsitedemo",
-      "site": ""
+      "site": null
+    }
+  },
+  {
+    "id": 9,
+    "title": "샤인포 · 교육 운영 포털",
+    "desc": "교육 과정별 할 일을 자동 생성하고 담당자 처리와 리더 검토를 연결하는 업무 포털. 프론트엔드 단독 담당.",
+    "date": "2026.10.28 ~ 2026.11.27",
+    "status": "진행중",
+    "icon": "⚙️",
+    "type": "team",
+    "image": "/screenshots/shinepo/dashboard.jpg",
+    "images": [
+      "/screenshots/shinepo/dashboard.jpg",
+      "/screenshots/shinepo/tasks.jpg",
+      "/screenshots/shinepo/task-detail.jpg",
+      "/screenshots/shinepo/login.jpg"
+    ],
+    "imageLabels": ["담당자 홈", "과정별 할 일 목록", "할 일 상세 및 처리 패널", "이메일 로그인"],
+    "category": "frontend",
+    "tech": [
+      "React 19",
+      "Vite",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "shadcn/ui",
+      "TanStack Query",
+      "axios",
+      "react-router-dom",
+      "Zustand",
+      "Playwright",
+      "GitHub Actions"
+    ],
+    "features": [
+      "프론트엔드 단독 담당: 인증·역할별 홈·과정/할 일·관리자 화면 등 필수 화면 17개 설계·구현",
+      "담당자·리더·관리자 3개 역할별 레이아웃 라우트와 사업·역할 전환(선택값 유지, 역할별 홈 이동, 모바일 시트 메뉴)",
+      "할 일 상세에서 완료·메모·취소, 리더 확인·확인 취소(409 충돌 처리) 흐름 구현",
+      "관리자 과정 목록·등록·담당 배정, 삭제 대신 보관·복원 처리, 변경된 항목만 저장",
+      "과정 CSV 가져오기: 미리보기 → 줄별 오류 표시 → 오류가 있으면 전체 거부 후 적용",
+      "목록 필터·정렬·검색 상태를 URL 쿼리에 유지해 새로고침·공유 시에도 동일한 화면 복원",
+      "정적 배포 구조(Vite)로 API 주소·프록시를 환경변수로 분리, Mac(Apple Silicon) 실행 환경 주기 점검",
+      "협업: 기능 단위 소형 PR(400줄 권장), 팀원 리뷰 후 병합, GitHub 이슈 상위(화면)·서브(PR 1개) 구조로 백로그 관리"
+    ],
+    "problems": [
+      "UX/UI 시안과 백엔드 API가 늦어지는 상황에서 프론트 1명이 화면 17개를 일정 내 완성해야 했음",
+      "명세서와 질의응답이 달라(예: 구글 로그인 → 시험용 이메일 로그인, 오류 줄 제외 적용 불가) 기준이 흔들림",
+      "한글 검색 입력이 입력 도중 끊기는 버그 발생",
+      "서브 이슈 19개 중 다수가 목업 상태로 남아 실서버 연결 시 데이터 형태 불일치 위험",
+      "PR이 서로 쌓여(스택) 병합 순서에 따라 충돌 발생 (예: PR #138)"
+    ],
+    "solutions": [
+      "시안 확정 전에는 shadcn 기본 스타일 + 의미 토큰(CSS 변수)으로 선행 구현하고 확정 값만 교체, 백엔드 전까지는 API 함수를 목업으로 분리",
+      "질의응답 최신 답변을 기준으로 삼고 로그인 방식은 환경변수로 토글, 인증 처리는 axios 인터셉터 한 곳에 격리",
+      "한글 검색 입력 버그를 수정하고 검색 훅 중복을 공용 훅으로 통합",
+      "API-1(경로·타입 정리)을 먼저 병합한 뒤 화면별로 목업→실API 전환, 19개 서브 이슈 중 13개를 목업 없이 실서버 연결",
+      "충돌은 병합 순서를 정해 rebase로 해소, 파일당 80줄 이하·feature 간 직접 import 금지 규칙으로 구조 유지"
+    ],
+    "team": [
+      {
+        "name": "손하영",
+        "githubUsername": "lou0-ux",
+        "role": "PM · NLP Developer",
+        "responsibilities": [
+          "백로그·일정 관리, 업무 규칙 테스트 및 사용성 검수",
+          "물어보기 의도 분류와 답변 후보 처리, 문서 구절 검색 및 모델 평가"
+        ]
+      },
+      {
+        "name": "김태완",
+        "role": "UX/UI Designer",
+        "responsibilities": [
+          "Figma 디자인 시스템과 컴포넌트 가이드 설계",
+          "담당자·리더 홈, 할 일 상세, 관리자, 물어보기 등 핵심 화면 디자인"
+        ]
+      },
+      {
+        "name": "엄인호",
+        "githubUsername": "djsy01",
+        "role": "Front-End Developer",
+        "responsibilities": [
+          "프론트엔드 전체 설계·구현 (React + Vite, 화면 17개 범위)",
+          "역할별 홈·과정·할 일 상세·리더 확인·관리자 과정 화면, 과정 CSV 가져오기",
+          "목업 → 실서버 API 연결, PR 작성·리뷰 반영, 이슈 관리"
+        ]
+      },
+      {
+        "name": "김호현",
+        "githubUsername": "HoHyun-Dev",
+        "role": "Back-End Developer",
+        "responsibilities": [
+          "Spring Boot 기반 백엔드와 인증·과정 관리 API 구현",
+          "업무 마감 계산, 서비스 토큰 및 연동 API 구현"
+        ]
+      },
+      {
+        "name": "유관호",
+        "githubUsername": "KwanHoYoo",
+        "role": "Cloud / Infrastructure",
+        "responsibilities": [
+          "Docker Compose·nginx 배포 환경과 CI 구성",
+          "백업·복구와 운영 모니터링 구성"
+        ]
+      }
+    ],
+    "links": {
+      "github": null,
+      "site": null
     }
   }
 ]

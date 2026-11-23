@@ -232,3 +232,19 @@
     padding: 16px;
   }
 }
+
+.folderDate {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 11px;
+  color: #86868b;
+  white-space: nowrap;
+}
+
+.folderIconImg {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  border-radius: 22px;
+}

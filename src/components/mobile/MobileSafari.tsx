@@ -3,31 +3,31 @@ import { useState } from "react";
 import projects from "@/data/projects.json";
 import styles from "./MobileSafari.module.css";
 import { convertImageUrl } from "@/lib/imageUtils";
+import { sortTeamMembers } from "@/lib/sortTeamMembers";
+import { ProjectAiUsage } from "../ProjectAiUsage";
+import { ProjectDetailIcon } from "../ProjectDetailIcon";
+import { ProjectLinks, type PublicProjectLinks } from "../ProjectLinks";
 
-interface TeamMember {
-  name: string;
-  role: string;
-  responsibilities?: string[];
-}
+import { TeamMemberCard, type TeamMember } from "../TeamMemberCard";
 
 interface Project {
   id: number;
   title: string;
   desc: string;
+  date?: string;
   status: string;
   icon: string;
+  iconImage?: string;
   image: string | null;
   images: string[];
+  imageLabels?: string[];
   type: string;
   tech: string[];
   problems?: string[];
   solutions?: string[];
   features?: string[];
   team?: TeamMember[];
-  links: {
-    github?: string | null;
-    site?: string | null;
-  };
+  links: PublicProjectLinks;
 }
 
 interface MobileSafariProps {
@@ -60,7 +60,7 @@ export const MobileSafari = ({ initialProjectId }: MobileSafariProps) => {
         <button className={styles.lightboxClose} onClick={() => setLightboxIdx(null)}>✕</button>
         <img
           src={convertImageUrl(galleryImages[lightboxIdx])}
-          alt={`screenshot-${lightboxIdx + 1}`}
+          alt={project?.imageLabels?.[lightboxIdx] ?? `스크린샷 ${lightboxIdx + 1}`}
           className={styles.lightboxImg}
           onClick={(e) => e.stopPropagation()}
         />
@@ -116,18 +116,17 @@ export const MobileSafari = ({ initialProjectId }: MobileSafariProps) => {
         <span className={styles.searchText}>{project.title}</span>
       </div>
 
-      {project.image && (
-        <div className={styles.detailHero}>
-          <img src={project.image} alt={project.title} className={styles.detailHeroImg} />
-        </div>
-      )}
-
       <div className={styles.detail}>
+        <ProjectDetailIcon icon={project.icon} iconImage={project.iconImage} />
+
         <div className={styles.detailHeader}>
           <h2 className={styles.detailTitle}>{project.title}</h2>
-          <span className={`${styles.badge} ${project.status === "완료" ? styles.done : project.status === "예정" ? styles.planned : styles.inProgress}`}>
-            {project.status}
-          </span>
+          <div className={styles.statusRow}>
+            <span className={`${styles.badge} ${project.status === "완료" ? styles.done : project.status === "예정" ? styles.planned : styles.inProgress}`}>
+              {project.status}
+            </span>
+            {project.date && <span className={styles.date}>{project.date}</span>}
+          </div>
         </div>
         <p className={styles.desc}>{project.desc}</p>
 
@@ -147,18 +146,11 @@ export const MobileSafari = ({ initialProjectId }: MobileSafariProps) => {
             <h3 className={styles.sectionTitle}>
               {project.type === "team" ? "👥 팀 구성" : "개발자"}
             </h3>
-            {project.team.map((member, i) => (
-              <div key={i} className={styles.member}>
-                <div className={styles.memberHead}>
-                  <span className={styles.memberName}>{member.name}</span>
-                  <span className={styles.memberRole}>{member.role}</span>
-                </div>
-                <ul className={styles.respList}>
-                  {member.responsibilities?.map((r, j) => (
-                    <li key={j}>{r}</li>
-                  ))}
-                </ul>
-              </div>
+            {sortTeamMembers(project.team).map((member) => (
+              <TeamMemberCard key={member.name} member={member} classes={{
+                card: styles.member, header: styles.memberHead, name: styles.memberName,
+                role: styles.memberRole, list: styles.respList,
+              }} />
             ))}
           </div>
         )}
@@ -170,12 +162,14 @@ export const MobileSafari = ({ initialProjectId }: MobileSafariProps) => {
             <div className={styles.gallery}>
               {galleryImages.map((src, i) => (
                 <button key={i} className={styles.galleryItem} onClick={() => setLightboxIdx(i)}>
-                  <img src={convertImageUrl(src)} alt={`screenshot-${i + 1}`} className={styles.galleryImg} />
+                  <img src={convertImageUrl(src)} alt={project.imageLabels?.[i] ?? `스크린샷 ${i + 1}`} className={styles.galleryImg} />
                 </button>
               ))}
             </div>
           </div>
         )}
+
+        <ProjectAiUsage projectId={project.id} sectionClassName={styles.section} titleClassName={styles.sectionTitle} />
 
         {/* 개선 포인트 */}
         {(project.problems || project.solutions) && (
@@ -209,23 +203,12 @@ export const MobileSafari = ({ initialProjectId }: MobileSafariProps) => {
           </div>
         )}
 
-        {/* 링크 */}
-        <div className={styles.linkRow}>
-          {project.links.github ? (
-            <a href={project.links.github} target="_blank" rel="noreferrer" className={styles.linkBtn}>
-              GitHub ↗
-            </a>
-          ) : (
-            <button className={`${styles.linkBtn} ${styles.linkDisabled}`} disabled>GitHub (비공개)</button>
-          )}
-          {project.links.site ? (
-            <button className={styles.linkBtn} onClick={() => setIframeUrl(project.links.site!)}>
-              Live Site ↗
-            </button>
-          ) : (
-            <button className={`${styles.linkBtn} ${styles.linkDisabled}`} disabled>Live Site (준비중)</button>
-          )}
-        </div>
+        <ProjectLinks
+          links={project.links}
+          rowClassName={styles.linkRow}
+          linkClassName={styles.linkBtn}
+          onOpenSite={setIframeUrl}
+        />
       </div>
     </div>
   );

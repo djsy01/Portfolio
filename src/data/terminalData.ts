@@ -15,6 +15,7 @@ export const SKILLS: Line[] = [
   { type: 'section', text: '◆ Languages' },
   { type: 'item', text: 'HTML  ·  CSS  ·  JavaScript  ·  TypeScript' },
   { type: 'section', text: '◆ Frontend' },
+  { type: 'item', text: '  · 샤인포 · 교육 운영 포털            (진행중)' },
   { type: 'item', text: 'React  ·  Vue.js  ·  Next.js  ·  Tailwind CSS  ·  Zustand' },
   { type: 'section', text: '◆ Backend' },
   { type: 'item', text: 'Node.js  ·  NestJS  ·  Prisma  ·  Supabase' },

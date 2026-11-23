@@ -4,15 +4,15 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useWindowStore } from '@/store/useWindowStore';
 import styles from './SafariContent.module.css';
-import { FolderOpen, ArrowLeft, ExternalLink, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { FolderOpen, ArrowLeft, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { convertImageUrl } from '@/lib/imageUtils';
+import { sortTeamMembers } from '@/lib/sortTeamMembers';
 import projectsData from '@/data/projects.json';
+import { ProjectAiUsage } from './ProjectAiUsage';
+import { ProjectDetailIcon } from './ProjectDetailIcon';
+import { ProjectLinks, type PublicProjectLinks } from './ProjectLinks';
 
-interface TeamMember {
-  name: string;
-  role: string;
-  responsibilities?: string[];
-}
+import { TeamMemberCard, type TeamMember } from "./TeamMemberCard";
 
 interface Project {
   id: number;
@@ -22,18 +22,16 @@ interface Project {
   date: string;
   status: string;
   icon: string;
+  iconImage?: string;
   type: string;
-  image: string | null;
   images: string[];
+  imageLabels?: string[];
   tech: string[];
   problems?: string[];
   solutions?: string[];
   features?: string[];
   team?: TeamMember[];
-  links: {
-    github?: string | null;
-    site?: string | null;
-  };
+  links: PublicProjectLinks;
 }
 
 const PROJECTS = projectsData as Project[];
@@ -59,13 +57,9 @@ export const SafariContent = () => {
     setCurrentUrl('');
   };
 
-  const handleLinkClick = (url: string, isGithub: boolean = false) => {
-    if (isGithub) {
-      window.open(url, '_blank');
-    } else {
-      setCurrentUrl(url);
-      setCurrentView('website');
-    }
+  const openSite = (url: string) => {
+    setCurrentUrl(url);
+    setCurrentView('website');
   };
 
   const project = PROJECTS.find((p) => p.id === storeSelectedProject);
@@ -99,18 +93,15 @@ export const SafariContent = () => {
       {/* Detail View */}
       {currentView === 'detail' && project && (
         <div className={styles.projectDetail}>
-          {project.image && (
-            <div className={styles.heroWrap}>
-              <Image src={convertImageUrl(project.image)} alt={project.title} fill unoptimized className={styles.heroImg} sizes="1024px" />
-            </div>
-          )}
+          <ProjectDetailIcon icon={project.icon} iconImage={project.iconImage} />
 
           <div className={styles.detailHeader}>
             <h2 className={styles.detailTitle}>{project.title}</h2>
-            <span className={`${styles.status} ${project.status === "완료" ? styles.statusDone : project.status === "예정" ? styles.statusPlanned : styles.statusInProgress}`}>{project.status}</span>
+            <div className={styles.statusRow}>
+              <span className={`${styles.status} ${project.status === "완료" ? styles.statusDone : project.status === "예정" ? styles.statusPlanned : styles.statusInProgress}`}>{project.status}</span>
+              {project.date && <span className={styles.date}>📅 {project.date}</span>}
+            </div>
           </div>
-
-          {project.date && <p className={styles.date}>📅 {project.date}</p>}
 
           <p className={styles.desc}>{project.desc}</p>
 
@@ -131,18 +122,11 @@ export const SafariContent = () => {
             <div className={styles.section}>
               <h3 className={styles.sectionTitle}>{project.type === 'team' ? '👥 팀 구성' : '개발자'}</h3>
               <div className={styles.teamList}>
-                {project.team.map((member, index) => (
-                  <div key={index} className={styles.teamMember}>
-                    <div className={styles.memberHeader}>
-                      <span className={styles.memberName}>{member.name}</span>
-                      <span className={styles.memberRole}>{member.role}</span>
-                    </div>
-                    <ul className={styles.responsibilitiesList}>
-                      {member.responsibilities?.map((resp, idx) => (
-                        <li key={idx}>{resp}</li>
-                      ))}
-                    </ul>
-                  </div>
+                {sortTeamMembers(project.team).map((member) => (
+                  <TeamMemberCard key={member.name} member={member} classes={{
+                    card: styles.teamMember, header: styles.memberHeader, name: styles.memberName,
+                    role: styles.memberRole, list: styles.responsibilitiesList,
+                  }} />
                 ))}
               </div>
             </div>
@@ -155,12 +139,14 @@ export const SafariContent = () => {
               <div className={styles.gallery}>
                 {galleryImages.map((src, i) => (
                   <button key={i} className={styles.galleryItem} onClick={() => setLightboxIdx(i)}>
-                    <Image src={convertImageUrl(src)} alt={`screenshot-${i + 1}`} fill unoptimized className={styles.galleryImg} sizes="260px" />
+                    <Image src={convertImageUrl(src)} alt={project.imageLabels?.[i] ?? `스크린샷 ${i + 1}`} fill unoptimized className={styles.galleryImg} sizes="260px" />
                   </button>
                 ))}
               </div>
             </div>
           )}
+
+          <ProjectAiUsage projectId={project.id} sectionClassName={styles.section} titleClassName={styles.sectionTitle} />
 
           {/* Features */}
           {project.features && (
@@ -198,31 +184,12 @@ export const SafariContent = () => {
             </div>
           )}
 
-          {/* Links */}
-          <div className={styles.links}>
-            {project.links.github ? (
-              <button onClick={() => handleLinkClick(project.links.github!, true)} className={styles.linkButton}>
-                <ExternalLink size={16} />
-                GitHub
-              </button>
-            ) : (
-              <button className={`${styles.linkButton} ${styles.linkDisabled}`} disabled>
-                <ExternalLink size={16} />
-                GitHub (비공개)
-              </button>
-            )}
-            {project.links.site ? (
-              <button onClick={() => handleLinkClick(project.links.site!, false)} className={styles.linkButton}>
-                <ExternalLink size={16} />
-                Live Site
-              </button>
-            ) : (
-              <button className={`${styles.linkButton} ${styles.linkDisabled}`} disabled>
-                <ExternalLink size={16} />
-                Live Site (준비중)
-              </button>
-            )}
-          </div>
+          <ProjectLinks
+            links={project.links}
+            rowClassName={styles.links}
+            linkClassName={styles.linkButton}
+            onOpenSite={openSite}
+          />
         </div>
       )}
 
@@ -253,7 +220,7 @@ export const SafariContent = () => {
           <div className={styles.lightboxImgWrap} onClick={(e) => e.stopPropagation()}>
             <Image
               src={convertImageUrl(galleryImages[lightboxIdx])}
-              alt={`screenshot-${lightboxIdx + 1}`}
+              alt={project?.imageLabels?.[lightboxIdx] ?? `스크린샷 ${lightboxIdx + 1}`}
               fill
               unoptimized
               className={styles.lightboxImg}
