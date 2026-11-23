@@ -1,21 +1,14 @@
 {
-  "whoami": "Frontend Developer — 사용자 경험 중심으로 설계하고 구현합니다",
+  "whoami": "엄인호 — Web Developer\n사용자 경험 중심으로 설계하고, React / Vue / Next.js로 구현합니다.\nNode.js / NestJS 기반 백엔드까지 영역을 넓혀가는 풀스택 지향 개발자입니다.",
   "skills": {
-    "frontend": ["HTML", "CSS", "Tailwind", "JavaScript", "TypeScript", "React", "Vue.js", "Next.js"],
-    "backend": ["Node.js", "NestJS"],
-    "database": ["Redis", "MySQL", "PostgreSQL"],
-    "tools": ["Git", "GitHub", "Netlify", "Vercel", "Render", "Railway"]
+    "languages": ["HTML", "CSS", "JavaScript", "TypeScript"],
+    "frontend": ["React", "Vue.js", "Next.js", "Vite", "Tailwind CSS", "Zustand", "TanStack Query"],
+    "backend": ["Node.js", "NestJS", "Prisma", "Supabase"],
+    "database": ["Redis", "MySQL", "PostgreSQL", "SQLite"],
+    "tools": ["Git", "GitHub", "GitHub Actions", "Playwright", "Netlify", "Vercel", "Render", "Railway"]
   },
-  "projects": [
-    { "title": "OBED 웹사이트 리뉴얼", "status": "진행중" },
-    { "title": "WorshipLog", "status": "진행중" },
-    { "title": "Cookeat", "status": "완료" },
-    { "title": "RogiArm", "status": "완료" },
-    { "title": "Poke-Archive", "status": "완료" },
-    { "title": "UT Tailwind", "status": "완료" },
-    { "title": "개인 포트폴리오 사이트", "status": "완료" }
-  ],
   "contact": {
-    "email": "dlsgh8884@naver.com"
+    "email": "dlsgh8884@naver.com",
+    "github": "github.com/djsy01"
   }
 }

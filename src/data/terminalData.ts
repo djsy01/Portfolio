@@ -3,47 +3,6 @@ export interface Line {
   text: string;
 }
 
-/* ===================== WHOAMI ===================== */
-export const WHOAMI: Line[] = [
-  { type: 'output', text: '엄인호 — Web Developer' },
-  { type: 'output', text: '사용자 경험 중심으로 설계하고, React / Vue / Next.js 로 구현합니다.' },
-  { type: 'output', text: 'Node.js / NestJS 기반 백엔드까지 영역을 넓혀가는 풀스택 지향 개발자입니다.' },
-];
-
-/* ===================== SKILLS ===================== */
-export const SKILLS: Line[] = [
-  { type: 'section', text: '◆ Languages' },
-  { type: 'item', text: 'HTML  ·  CSS  ·  JavaScript  ·  TypeScript' },
-  { type: 'section', text: '◆ Frontend' },
-  { type: 'item', text: '  · 샤인포 · 교육 운영 포털            (진행중)' },
-  { type: 'item', text: 'React  ·  Vue.js  ·  Next.js  ·  Tailwind CSS  ·  Zustand' },
-  { type: 'section', text: '◆ Backend' },
-  { type: 'item', text: 'Node.js  ·  NestJS  ·  Prisma  ·  Supabase' },
-  { type: 'section', text: '◆ Database' },
-  { type: 'item', text: 'MySQL  ·  PostgreSQL  ·  Redis  ·  SQLite' },
-  { type: 'section', text: '◆ Deploy / Tools' },
-  { type: 'item', text: 'Git  ·  GitHub  ·  Vercel  ·  Netlify  ·  Railway  ·  Render' },
-];
-
-/* ===================== PROJECTS ===================== */
-export const PROJECTS: Line[] = [
-  { type: 'section', text: '◆ Fullstack' },
-  { type: 'item', text: '  · WorshipLog                     (진행중)' },
-  { type: 'item', text: '  · RogiArm                        (완료)' },
-  { type: 'section', text: '◆ Frontend' },
-  { type: 'item', text: '  · OBED 웹사이트 리뉴얼               (진행중)' },
-  { type: 'item', text: '  · Cookeat                        (완료)' },
-  { type: 'item', text: '  · Poke-Archive                   (완료)' },
-  { type: 'item', text: '  · UT Tailwind 컴포넌트 라이브러리     (완료)' },
-  { type: 'item', text: '  · 개인 포트폴리오 사이트               (완료)' },
-];
-
-/* ===================== CONTACT ===================== */
-export const CONTACT: Line[] = [
-  { type: 'output', text: 'email   : dlsgh8884@naver.com' },
-  { type: 'output', text: 'github  : github.com/djsy01' },
-];
-
 /* ===================== HELP ===================== */
 export const HELP: Line[] = [
   { type: 'output', text: '사용 가능한 명령어:' },
