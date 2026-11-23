@@ -1,6 +1,6 @@
 # 🖥️ macOS Portfolio
 
-Next.js로 구현한 인터랙티브 macOS 스타일 포트폴리오 웹사이트
+엄인호의 개발 포트폴리오입니다. Finder에서 프로젝트를 열면 Safari에서 구현 화면, 팀원의 담당 업무, AI 활용 사례를 살펴볼 수 있습니다. [포트폴리오 열기](https://portfolio.inho.pe.kr)
 
 ![macOS Portfolio](https://img.shields.io/badge/Next.js-16.1.1-black?style=flat-square&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.2.3-61DAFB?style=flat-square&logo=react)
@@ -12,7 +12,7 @@ Next.js로 구현한 인터랙티브 macOS 스타일 포트폴리오 웹사이�
 - 📁 **Finder**: Frontend / Backend / Fullstack 폴더별로 프로젝트를 탐색할 수 있는 파일 탐색기
 - 🌐 **Safari**: 프로젝트 상세 정보, 갤러리 라이트박스, 라이브 사이트 iframe 미리보기
 - 💻 **Terminal**: 인터랙티브 터미널 UI (`whoami`, `skills`, `projects`, `contact` 등)
-- 👥 **협업자 정보**: 팀 프로젝트의 협업자와 담당 업무 표시
+- 👥 **협업자 정보** — 역할별 팀원 카드에서 담당 업무를 확인하고 GitHub 프로필로 이동
 - 📱 **모바일 자동 라우팅**: User-Agent 감지 후 iOS 스타일 모바일 UI로 자동 전환
 - 🔄 **창 상태 관리**: Zustand로 창 z-index, 포커스, 최대화 상태 통합 관리
 
@@ -22,8 +22,8 @@ Next.js로 구현한 인터랙티브 macOS 스타일 포트폴리오 웹사이�
 
 ```bash
 # 저장소 클론
-git clone https://github.com/djsy01/my-mac-portfolio.git
-cd my-mac-portfolio
+git clone https://github.com/djsy01/Portfolio.git
+cd Portfolio
 
 # 의존성 설치
 npm install
@@ -37,7 +37,7 @@ npm run dev
 ## 📁 프로젝트 구조
 
 ```text
-my-mac-portfolio/
+Portfolio/
 ├── src/
 │   ├── app/
 │   │   ├── page.tsx              # 데스크탑 메인 페이지
@@ -63,7 +63,10 @@ my-mac-portfolio/
 │   │   └── useWindowStore.ts     # Zustand 창 상태 관리
 │   ├── data/
 │   │   ├── projects.json         # 프로젝트 데이터 (수정 가능)
-│   │   └── profile.json          # 개발자 프로필 데이터 (수정 가능)
+│   │   ├── profile.json          # 터미널의 소개·기술·연락처
+│   │   ├── projectAi.ts          # 프로젝트 ID별 AI 활용 사례
+│   │   ├── shinepoAi.ts          # 샤인포 AI 활용 사례
+│   │   └── terminalData.ts       # 도움말·사용 안내·개발 환경 사양
 │   ├── lib/
 │   │   ├── terminalCommands.ts   # 터미널 명령어 핸들러
 │   │   └── imageUtils.ts         # Google Drive 이미지 URL 변환
@@ -102,9 +105,10 @@ my-mac-portfolio/
 | 명령어     | 설명                                             |
 | ---------- | ------------------------------------------------ |
 | `whoami`   | 개발자 소개                                      |
-| `skills`   | 기술 스택 목록 (Frontend / Backend / DB / Tools) |
-| `projects` | 프로젝트 목록 및 상태                            |
-| `contact`  | 연락처 (이메일)                                  |
+| `skills`   | 언어, 프론트엔드, 백엔드, 데이터베이스, 배포·개발 도구 |
+| `projects` | Finder와 같은 분야별 프로젝트 목록 및 진행 상태 |
+| `contact`  | 이메일 및 GitHub 프로필 |
+| `specs`    | 개발에 사용하는 장비 사양 |
 | `help`     | 사용 가능한 명령어 목록                          |
 | `menual`   | 사이트 사용 방법 안내                            |
 | `clear`    | 터미널 초기화                                    |
@@ -113,20 +117,21 @@ my-mac-portfolio/
 
 ### 프로젝트 추가/수정
 
-프로젝트 데이터는 `src/data/projects.json`에서 관리합니다:
+Finder와 터미널의 `projects` 명령은 같은 [프로젝트 목록](src/data/projects.json)을 읽습니다. 새 프로젝트에는 고유한 `id`를 지정합니다.
 
 ```json
 [
   {
-    "id": 1,
+    "id": 10,
     "title": "프로젝트 이름",
     "desc": "프로젝트 설명",
     "status": "진행중",
+    "date": "2026.11.01 ~ 현재",
     "icon": "🖥️",
     "type": "team",
     "category": "frontend",
-    "image": "썸네일 이미지 URL",
-    "images": ["스크린샷 URL"],
+    "image": null,
+    "images": [],
     "tech": ["React", "TypeScript", "Node.js"],
     "problems": ["문제점 1", "문제점 2"],
     "solutions": ["해결방안 1", "해결방안 2"],
@@ -138,8 +143,8 @@ my-mac-portfolio/
       }
     ],
     "links": {
-      "github": "GitHub URL",
-      "site": "라이브 사이트 URL"
+      "github": null,
+      "site": null
     }
   }
 ]
@@ -147,19 +152,21 @@ my-mac-portfolio/
 
 ### 프로필 수정
 
-개발자 정보는 `src/data/profile.json`에서 관리합니다:
+터미널의 `whoami`, `skills`, `contact` 출력을 바꾸려면 [프로필 데이터](src/data/profile.json)를 수정합니다.
 
 ```json
 {
   "whoami": "개발자 소개",
   "skills": {
-    "frontend": ["HTML", "CSS", "React"],
+    "languages": ["HTML", "CSS", "TypeScript"],
+    "frontend": ["React", "Vite"],
     "backend": ["Node.js"],
     "database": ["MySQL"],
     "tools": ["Git", "Vercel"]
   },
   "contact": {
-    "email": "your@email.com"
+    "email": "you@example.com",
+    "github": "github.com/your-account"
   }
 }
 ```
@@ -167,7 +174,7 @@ my-mac-portfolio/
 ### 프로젝트 분류
 
 - **`category`**: `"frontend"` | `"backend"` | `"fullstack"` — Finder에서 해당 폴더에 표시됨
-- **`hidden: true`**: Finder 목록에서 숨김
+- `hidden: true`인 항목은 Finder와 터미널의 `projects` 목록에서 숨깁니다. 둘 다 분야 안에서 같은 정렬 규칙을 사용합니다.
 
 ### 프로젝트 타입
 
@@ -205,11 +212,14 @@ my-mac-portfolio/
 프로젝트 상세 정보와 라이브 사이트를 미리보기할 수 있는 브라우저.
 
 - **기술 스택**: 사용된 기술 태그 표시
-- **팀 구성**: 협업자 이름, 역할, 담당 업무
+- **팀 구성** — 마스터를 먼저 표시하고 기획, UX, FE, BE, NLP, 클라우드 순으로 정렬합니다. 같은 역할 안에서는 이름 가나다순입니다. 팀원 데이터의 `githubUsername`에 계정명을 입력하면 카드 전체가 해당 프로필을 새 탭으로 여는 링크가 됩니다.
+- **AI 활용** — 프로젝트 ID에 연결된 사례가 있으면 적용한 작업(`scope`), 도구(`tool`), 구현 방식(`approach`)을 표시합니다. [사례 데이터](src/data/projectAi.ts)
 - **문제점 & 해결방안**: 프로젝트 개선 포인트
-- **갤러리**: 스크린샷 라이트박스 (이전/다음 네비게이션)
+- **아이콘과 갤러리** — 상세 상단에는 `iconImage` 또는 `icon` 이모지를 표시합니다. 스크린샷은 `images` 순서대로 갤러리에 모으며, `imageLabels`에 같은 순서로 화면 이름을 지정할 수 있습니다. 샤인포에는 담당자 홈, 과정별 할 일 목록, 할 일 상세, 이메일 로그인 화면이 있습니다.
 - **GitHub**: 새 탭에서 열기
 - **Live Site**: Safari 내부 iframe에서 미리보기
+
+공개할 주소만 `links.github`와 `links.site`에 입력합니다. 값이 `null`이면 해당 버튼을 숨깁니다.
 
 ### Terminal
 
@@ -222,7 +232,7 @@ my-mac-portfolio/
 ## 📱 모바일 대응
 
 `src/middleware.ts`에서 User-Agent를 감지해 모바일 기기를 자동으로 `/mobile` 경로로 라우팅합니다.
-`m.{hostname}` 서브도메인 접근 시에도 모바일 UI를 제공합니다.
+데스크톱에서도 `/mobile` 경로를 직접 열어 모바일 화면을 확인할 수 있습니다.
 
 모바일 UI 구성:
 
@@ -281,7 +291,7 @@ npm start
 
 ## 👤 개발자 : 엄인호 (Inho Um)
 
-- Portfolio: [portfolio-gamma-nine-ulldr7th7m.vercel.app](https://portfolio.inho.pe.kr)
+- Portfolio: [portfolio.inho.pe.kr](https://portfolio.inho.pe.kr)
 - GitHub: [@djsy01](https://github.com/djsy01)
 
 ## 🙏 감사의 말
