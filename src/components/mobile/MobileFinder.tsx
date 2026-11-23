@@ -1,4 +1,5 @@
 "use client";
+import { sortProjects } from "@/lib/sortProjects";
 import projects from "@/data/projects.json";
 import type { ProjectCategory } from "@/store/useWindowStore";
 import styles from "./MobileFinder.module.css";
@@ -8,8 +9,10 @@ interface Project {
   hidden?: boolean;
   title: string;
   desc: string;
+  date?: string;
   status: string;
   icon: string;
+  iconImage?: string;
   image: string | null;
   category: ProjectCategory;
 }
@@ -20,7 +23,7 @@ const FOLDERS: { type: ProjectCategory; label: string; emoji: string }[] = [
   { type: "fullstack", label: "Fullstack", emoji: "🚀" },
 ];
 
-const visibleProjects = (projects as Project[]).filter((p) => !p.hidden);
+const visibleProjects = sortProjects((projects as Project[]).filter((p) => !p.hidden));
 
 interface MobileFinderProps {
   onProjectSelect: (id: number) => void;
@@ -49,20 +52,17 @@ export const MobileFinder = ({ onProjectSelect }: MobileFinderProps) => {
                   className={styles.item}
                   onClick={() => onProjectSelect(project.id)}
                 >
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className={styles.thumbnail}
-                    />
-                  ) : (
-                    <div className={styles.iconBox}>
+                  <div className={styles.iconBox}>
+                    {project.iconImage ? (
+                      <img src={project.iconImage} alt={project.title} className={styles.thumbnail} />
+                    ) : (
                       <span className={styles.icon}>{project.icon}</span>
-                    </div>
-                  )}
+                    )}
+                  </div>
                   <div className={styles.info}>
                     <div className={styles.itemTitle}>{project.title}</div>
                     <div className={styles.itemDesc}>{project.desc}</div>
+                    {project.date && <div className={styles.itemDate}>{project.date}</div>}
                   </div>
                   <span
                     className={`${styles.badge} ${project.status === "완료" ? styles.done : project.status === "예정" ? styles.planned : styles.inProgress}`}

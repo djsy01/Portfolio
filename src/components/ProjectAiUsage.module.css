@@ -1,0 +1,30 @@
+.cases {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+}
+
+.scope {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  color: #1c1c1e;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tool {
+  color: #235cb0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.approach {
+  margin: 4px 0 0;
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}

@@ -4,16 +4,18 @@ import { useWindowStore } from "@/store/useWindowStore";
 import styles from "./FinderContent.module.css";
 import { FolderOpen, ChevronRight } from "lucide-react";
 import type { ProjectCategory } from "@/store/useWindowStore";
+import { sortProjects } from "@/lib/sortProjects";
 import allProjects from "@/data/projects.json";
-import { convertImageUrl } from "@/lib/imageUtils";
 
 interface ProjectItem {
   id: number;
   hidden?: boolean;
   title: string;
   desc: string;
+  date?: string;
   status: string;
   icon: string;
+  iconImage?: string;
   image: string | null;
   category: ProjectCategory;
 }
@@ -24,7 +26,7 @@ const ALL_FOLDERS: { type: ProjectCategory; label: string; emoji: string; color:
   { type: "fullstack", label: "Fullstack", emoji: "🚀", color: "#FF9F0A" },
 ];
 
-const projects = (allProjects as ProjectItem[]).filter((p) => !p.hidden);
+const projects = sortProjects((allProjects as ProjectItem[]).filter((p) => !p.hidden));
 
 // 프로젝트가 없는 폴더는 숨김
 const FOLDERS = ALL_FOLDERS.filter((f) => projects.some((p) => p.category === f.type));
@@ -123,15 +125,14 @@ export const FinderContent = () => {
                 onClick={() => handleProjectClick(project.id)}
                 onDoubleClick={() => handleProjectClick(project.id)}
               >
-                {project.image ? (
-                  <div className={styles.imageWrapper}>
-                    <img src={convertImageUrl(project.image)} alt={project.title} className={styles.projectImage} />
-                  </div>
-                ) : (
-                  <div className={styles.folderIconWrapper}>
+                <div className={styles.folderIconWrapper}>
+                  {project.date && <span className={styles.folderDate}>{project.date}</span>}
+                  {project.iconImage ? (
+                    <img src={project.iconImage} alt={project.title} className={styles.folderIconImg} />
+                  ) : (
                     <span className={styles.folderEmoji}>{project.icon}</span>
-                  </div>
-                )}
+                  )}
+                </div>
                 <div className={styles.folderInfo}>
                   <div className={styles.folderTitle}>{project.title}</div>
                   <div className={styles.folderDesc}>{project.desc}</div>

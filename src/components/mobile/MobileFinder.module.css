@@ -124,3 +124,9 @@
   background: rgba(52, 199, 89, 0.15);
   color: #248a3d;
 }
+
+.itemDate {
+  margin-top: 2px;
+  font-size: 11px;
+  color: #86868b;
+}

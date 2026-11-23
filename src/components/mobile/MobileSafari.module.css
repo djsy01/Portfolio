@@ -112,21 +112,8 @@
 }
 
 /* Detail view */
-.detailHero {
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-}
-
-.detailHeroImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 .detail {
-  padding: 4px 16px 20px;
+  padding: 16px 16px 20px;
 }
 
 .detailHeader {
@@ -276,6 +263,7 @@
 
 .linkBtn {
   flex: 1;
+  gap: 6px;
   padding: 12px;
   background: #007aff;
   color: white;
@@ -292,12 +280,6 @@
 
 .linkBtn:active {
   opacity: 0.8;
-}
-
-.linkDisabled {
-  background: rgba(118, 118, 128, 0.12);
-  color: #8e8e93;
-  cursor: not-allowed;
 }
 
 /* Screenshot Gallery */
@@ -419,4 +401,17 @@
   flex: 1;
   width: 100%;
   border: none;
+}
+
+.date {
+  font-size: 12px;
+  color: #86868b;
+  white-space: nowrap;
+}
+
+.statusRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
 }
