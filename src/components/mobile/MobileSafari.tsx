@@ -2,7 +2,7 @@
 import { useState } from "react";
 import projects from "@/data/projects.json";
 import styles from "./MobileSafari.module.css";
-import { convertImageUrl } from "@/lib/imageUtils";
+import { ScreenshotGallery, type Screenshot } from "../screenshots/ScreenshotGallery";
 import { sortTeamMembers } from "@/lib/sortTeamMembers";
 import { ProjectAiUsage } from "../ProjectAiUsage";
 import { ProjectDetailIcon } from "../ProjectDetailIcon";
@@ -19,8 +19,7 @@ interface Project {
   icon: string;
   iconImage?: string;
   image: string | null;
-  images: string[];
-  imageLabels?: string[];
+  screenshots: Screenshot[];
   type: string;
   tech: string[];
   problems?: string[];
@@ -37,10 +36,8 @@ interface MobileSafariProps {
 export const MobileSafari = ({ initialProjectId }: MobileSafariProps) => {
   const [selectedId, setSelectedId] = useState<number | null>(initialProjectId ?? null);
   const [iframeUrl, setIframeUrl] = useState<string | null>(null);
-  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
   const project = (projects as Project[]).find((p) => p.id === selectedId);
-  const galleryImages = project?.images ?? [];
 
   if (iframeUrl) {
     return (
@@ -50,33 +47,6 @@ export const MobileSafari = ({ initialProjectId }: MobileSafariProps) => {
           <span className={styles.iframeUrl}>{iframeUrl}</span>
         </div>
         <iframe src={iframeUrl} className={styles.iframe} title="Live Site" />
-      </div>
-    );
-  }
-
-  if (lightboxIdx !== null) {
-    return (
-      <div className={styles.lightboxScreen} onClick={() => setLightboxIdx(null)}>
-        <button className={styles.lightboxClose} onClick={() => setLightboxIdx(null)}>✕</button>
-        <img
-          src={convertImageUrl(galleryImages[lightboxIdx])}
-          alt={project?.imageLabels?.[lightboxIdx] ?? `스크린샷 ${lightboxIdx + 1}`}
-          className={styles.lightboxImg}
-          onClick={(e) => e.stopPropagation()}
-        />
-        <div className={styles.lightboxNav}>
-          <button
-            className={styles.lightboxBtn}
-            disabled={lightboxIdx === 0}
-            onClick={(e) => { e.stopPropagation(); setLightboxIdx(lightboxIdx - 1); }}
-          >‹</button>
-          <span className={styles.lightboxCount}>{lightboxIdx + 1} / {galleryImages.length}</span>
-          <button
-            className={styles.lightboxBtn}
-            disabled={lightboxIdx === galleryImages.length - 1}
-            onClick={(e) => { e.stopPropagation(); setLightboxIdx(lightboxIdx + 1); }}
-          >›</button>
-        </div>
       </div>
     );
   }
@@ -155,17 +125,9 @@ export const MobileSafari = ({ initialProjectId }: MobileSafariProps) => {
           </div>
         )}
 
-        {/* 스크린샷 갤러리 */}
-        {galleryImages.length > 0 && (
+        {project.screenshots.length > 0 && (
           <div className={styles.section}>
-            <h3 className={styles.sectionTitle}>스크린샷</h3>
-            <div className={styles.gallery}>
-              {galleryImages.map((src, i) => (
-                <button key={i} className={styles.galleryItem} onClick={() => setLightboxIdx(i)}>
-                  <img src={convertImageUrl(src)} alt={project.imageLabels?.[i] ?? `스크린샷 ${i + 1}`} className={styles.galleryImg} />
-                </button>
-              ))}
-            </div>
+            <ScreenshotGallery key={project.id} screenshots={project.screenshots} titleClassName={styles.sectionTitle} />
           </div>
         )}
 

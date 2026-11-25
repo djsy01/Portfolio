@@ -131,7 +131,7 @@ Finder와 터미널의 `projects` 명령은 같은 [프로젝트 목록](src/dat
     "type": "team",
     "category": "frontend",
     "image": null,
-    "images": [],
+    "screenshots": [],
     "tech": ["React", "TypeScript", "Node.js"],
     "problems": ["문제점 1", "문제점 2"],
     "solutions": ["해결방안 1", "해결방안 2"],
@@ -215,7 +215,7 @@ Finder와 터미널의 `projects` 명령은 같은 [프로젝트 목록](src/dat
 - **팀 구성** — 마스터를 먼저 표시하고 기획, UX, FE, BE, NLP, 클라우드 순으로 정렬합니다. 같은 역할 안에서는 이름 가나다순입니다. 팀원 데이터의 `githubUsername`에 계정명을 입력하면 카드 전체가 해당 프로필을 새 탭으로 여는 링크가 됩니다.
 - **AI 활용** — 프로젝트 ID에 연결된 사례가 있으면 적용한 작업(`scope`), 도구(`tool`), 구현 방식(`approach`)을 표시합니다. [사례 데이터](src/data/projectAi.ts)
 - **문제점 & 해결방안**: 프로젝트 개선 포인트
-- **아이콘과 갤러리** — 상세 상단에는 `iconImage` 또는 `icon` 이모지를 표시합니다. 스크린샷은 `images` 순서대로 갤러리에 모으며, `imageLabels`에 같은 순서로 화면 이름을 지정할 수 있습니다. 샤인포에는 담당자 홈, 과정별 할 일 목록, 할 일 상세, 이메일 로그인 화면이 있습니다.
+- **아이콘과 갤러리** — 상세 상단에는 `iconImage` 또는 `icon` 이모지를 표시합니다. 스크린샷은 `screenshots`에 `src`(이미지 경로), `label`(화면 이름), `kind`(`desktop`, `mobile`, `demo`, `general`)로 등록합니다. 같은 유형의 첫 번째 화면을 대표로 배치합니다. 샤인포에는 담당자 홈, 과정별 할 일 목록, 할 일 상세, 이메일 로그인 화면이 있습니다.
 - **GitHub**: 새 탭에서 열기
 - **Live Site**: Safari 내부 iframe에서 미리보기
 

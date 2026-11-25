@@ -1,11 +1,10 @@
 // components/SafariContent.tsx
 'use client';
 import { useState } from 'react';
-import Image from 'next/image';
 import { useWindowStore } from '@/store/useWindowStore';
 import styles from './SafariContent.module.css';
-import { FolderOpen, ArrowLeft, X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { convertImageUrl } from '@/lib/imageUtils';
+import { FolderOpen, ArrowLeft } from 'lucide-react';
+import { ScreenshotGallery, type Screenshot } from './screenshots/ScreenshotGallery';
 import { sortTeamMembers } from '@/lib/sortTeamMembers';
 import projectsData from '@/data/projects.json';
 import { ProjectAiUsage } from './ProjectAiUsage';
@@ -24,8 +23,7 @@ interface Project {
   icon: string;
   iconImage?: string;
   type: string;
-  images: string[];
-  imageLabels?: string[];
+  screenshots: Screenshot[];
   tech: string[];
   problems?: string[];
   solutions?: string[];
@@ -40,7 +38,6 @@ export const SafariContent = () => {
   const { selectedProject: storeSelectedProject } = useWindowStore();
   const [currentView, setCurrentView] = useState<'detail' | 'website'>('detail');
   const [currentUrl, setCurrentUrl] = useState<string>('');
-  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
   const [prevStoreProject, setPrevStoreProject] = useState(storeSelectedProject);
 
   // Reset view when selected project changes (React-recommended derived state pattern)
@@ -63,12 +60,6 @@ export const SafariContent = () => {
   };
 
   const project = PROJECTS.find((p) => p.id === storeSelectedProject);
-  const galleryImages = project?.images ?? [];
-
-  const closeLightbox = () => setLightboxIdx(null);
-  const prevImage = () => setLightboxIdx((i) => (i !== null ? Math.max(0, i - 1) : null));
-  const nextImage = () => setLightboxIdx((i) => (i !== null ? Math.min(galleryImages.length - 1, i + 1) : null));
-
   return (
     <div className={styles.safariContainer}>
       {/* Safari Address Bar */}
@@ -132,17 +123,9 @@ export const SafariContent = () => {
             </div>
           )}
 
-          {/* Screenshot Gallery — 팀 구성 ↓ 개선 포인트 사이 */}
-          {galleryImages.length > 0 && (
+          {project.screenshots.length > 0 && (
             <div className={styles.section}>
-              <h3 className={styles.sectionTitle}>📸 스크린샷</h3>
-              <div className={styles.gallery}>
-                {galleryImages.map((src, i) => (
-                  <button key={i} className={styles.galleryItem} onClick={() => setLightboxIdx(i)}>
-                    <Image src={convertImageUrl(src)} alt={project.imageLabels?.[i] ?? `스크린샷 ${i + 1}`} fill unoptimized className={styles.galleryImg} sizes="260px" />
-                  </button>
-                ))}
-              </div>
+              <ScreenshotGallery key={project.id} screenshots={project.screenshots} titleClassName={styles.sectionTitle} />
             </div>
           )}
 
@@ -197,52 +180,6 @@ export const SafariContent = () => {
       {currentView === 'website' && currentUrl && (
         <div className={styles.iframeContainer}>
           <iframe src={currentUrl} className={styles.iframe} title={project?.title || 'Website'} />
-        </div>
-      )}
-
-      {/* Lightbox */}
-      {lightboxIdx !== null && (
-        <div className={styles.lightboxOverlay} onClick={closeLightbox}>
-          <button className={styles.lightboxClose} onClick={closeLightbox}>
-            <X size={24} />
-          </button>
-          {lightboxIdx > 0 && (
-            <button
-              className={`${styles.lightboxNav} ${styles.lightboxPrev}`}
-              onClick={(e) => {
-                e.stopPropagation();
-                prevImage();
-              }}
-            >
-              <ChevronLeft size={32} />
-            </button>
-          )}
-          <div className={styles.lightboxImgWrap} onClick={(e) => e.stopPropagation()}>
-            <Image
-              src={convertImageUrl(galleryImages[lightboxIdx])}
-              alt={project?.imageLabels?.[lightboxIdx] ?? `스크린샷 ${lightboxIdx + 1}`}
-              fill
-              unoptimized
-              className={styles.lightboxImg}
-              sizes="90vw"
-            />
-          </div>
-          {lightboxIdx < galleryImages.length - 1 && (
-            <button
-              className={`${styles.lightboxNav} ${styles.lightboxNext}`}
-              onClick={(e) => {
-                e.stopPropagation();
-                nextImage();
-              }}
-            >
-              <ChevronRight size={32} />
-            </button>
-          )}
-          <div className={styles.lightboxDots}>
-            {galleryImages.map((_, i) => (
-              <span key={i} className={`${styles.dot} ${i === lightboxIdx ? styles.dotActive : ''}`} />
-            ))}
-          </div>
         </div>
       )}
     </div>
