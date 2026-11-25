@@ -1,0 +1,60 @@
+.dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(1000px, calc(100% - 24px));
+  max-width: none;
+  max-height: none;
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  color: white;
+  background: #1d1d1f;
+}
+
+.dialog::backdrop { background: rgb(0 0 0 / 75%); }
+.panel {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  max-height: 90dvh;
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.toolbar h2 { font-size: 15px; }
+
+.toolbar button {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  height: 44px;
+  color: inherit;
+  border-radius: 8px;
+  background: #39393e;
+}
+
+.toolbar button:disabled { opacity: 0.38; cursor: default; }
+.scroll {
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: #111113;
+}
+
+.scroll:focus-visible {
+  outline: 2px solid #79baff;
+  outline-offset: -2px;
+}
+
+.image {
+  display: block;
+  margin-inline: auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}

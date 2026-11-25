@@ -9,7 +9,17 @@
     "iconImage": "/icons/worshiplog.png",
     "type": "personal",
     "image": "/screenshots/worshiplog/dashboard.webp",
-    "images": ["/screenshots/worshiplog/dashboard.webp", "/screenshots/worshiplog/songs.webp", "/screenshots/worshiplog/mobile.webp", "/screenshots/worshiplog/guide.webp", "/screenshots/worshiplog/guide-meditation.webp", "/screenshots/worshiplog/community.webp", "/screenshots/worshiplog/login.webp"],
+    "screenshots": [
+      {"src": "/screenshots/worshiplog/dashboard.webp", "label": "홈 대시보드", "kind": "desktop"},
+      {"src": "/screenshots/worshiplog/songs.webp", "label": "찬양 검색", "kind": "desktop"},
+      {"src": "/screenshots/worshiplog/guide.webp", "label": "찬양 관리 가이드", "kind": "desktop"},
+      {"src": "/screenshots/worshiplog/guide-meditation.webp", "label": "말씀 묵상 가이드", "kind": "desktop"},
+      {"src": "/screenshots/worshiplog/community.webp", "label": "커뮤니티", "kind": "desktop"},
+      {"src": "/screenshots/worshiplog/login.webp", "label": "로그인", "kind": "desktop"},
+      {"src": "/screenshots/worshiplog/mobile-dashboard.webp", "label": "홈 대시보드", "kind": "mobile"},
+      {"src": "/screenshots/worshiplog/mobile-guide.webp", "label": "찬양 관리 가이드", "kind": "mobile"},
+      {"src": "/screenshots/worshiplog/mobile-community.webp", "label": "자유게시판", "kind": "mobile"}
+    ],
     "category": "fullstack",
     "tech": [
       "Next.js 15",
@@ -56,7 +66,19 @@
     "iconImage": "/icons/obed.jpg",
     "type": "team",
     "image": "/screenshots/obed/home.webp",
-    "images": ["/screenshots/obed/home.webp", "/screenshots/obed/mobile.webp", "/screenshots/obed/vision.webp", "/screenshots/obed/team.webp", "/screenshots/obed/worship-log.webp", "/screenshots/obed/scores.webp", "/screenshots/obed/map.webp", "/screenshots/obed/qna.webp", "/screenshots/obed/login.webp"],
+    "screenshots": [
+      {"src": "/screenshots/obed/home.webp", "label": "메인 홈", "kind": "desktop"},
+      {"src": "/screenshots/obed/vision.webp", "label": "공동체 비전", "kind": "desktop"},
+      {"src": "/screenshots/obed/team.webp", "label": "팀원 소개", "kind": "desktop"},
+      {"src": "/screenshots/obed/worship-log.webp", "label": "지난 집회 기록", "kind": "desktop"},
+      {"src": "/screenshots/obed/scores.webp", "label": "악보 목록", "kind": "desktop"},
+      {"src": "/screenshots/obed/map.webp", "label": "오시는 길", "kind": "desktop"},
+      {"src": "/screenshots/obed/qna.webp", "label": "질문 게시판", "kind": "desktop"},
+      {"src": "/screenshots/obed/login.webp", "label": "로그인", "kind": "desktop"},
+      {"src": "/screenshots/obed/mobile-home.webp", "label": "메인 홈", "kind": "mobile"},
+      {"src": "/screenshots/obed/mobile-vision.webp", "label": "공동체 비전", "kind": "mobile"},
+      {"src": "/screenshots/obed/mobile-worship-log.webp", "label": "지난 집회 기록", "kind": "mobile"}
+    ],
     "category": "frontend",
     "tech": ["Vue.js", "Vite", "TypeScript", "CSS", "Redis", "MySQL"],
     "problems": ["기존 사이트의 서버가 없는 동적 페이지", "티켓 예매 시스템의 분리된 사용자 경험"],
@@ -96,13 +118,13 @@
     "iconImage": "/icons/cookeat.png",
     "type": "team",
     "image": "/screenshots/cookeat/home.webp",
-    "images": [
-      "/screenshots/cookeat/home.webp",
-      "/screenshots/cookeat/recipes.webp",
-      "/screenshots/cookeat/recipe-detail.webp",
-      "/screenshots/cookeat/shopping.webp",
-      "/screenshots/cookeat/dashboard.webp",
-      "/screenshots/cookeat/analytics.webp"
+    "screenshots": [
+      {"src": "/screenshots/cookeat/home.webp", "label": "메인 홈", "kind": "desktop"},
+      {"src": "/screenshots/cookeat/recipes.webp", "label": "레시피 탐색", "kind": "desktop"},
+      {"src": "/screenshots/cookeat/recipe-detail.webp", "label": "레시피 상세", "kind": "desktop"},
+      {"src": "/screenshots/cookeat/shopping.webp", "label": "쇼핑 목록", "kind": "desktop"},
+      {"src": "/screenshots/cookeat/dashboard.webp", "label": "관리자 대시보드", "kind": "desktop"},
+      {"src": "/screenshots/cookeat/analytics.webp", "label": "관리자 통계", "kind": "desktop"}
     ],
     "category": "frontend",
     "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
@@ -148,7 +170,11 @@
     "iconImage": "/icons/poke-archive.png",
     "type": "team",
     "image": "/screenshots/poke-archive/demo-pokedex.gif",
-    "images": ["/screenshots/poke-archive/demo-pokedex.gif", "/screenshots/poke-archive/demo-board.gif", "/screenshots/poke-archive/demo-party.gif"],
+    "screenshots": [
+      {"src": "/screenshots/poke-archive/demo-pokedex.gif", "label": "도감 탐색", "kind": "demo"},
+      {"src": "/screenshots/poke-archive/demo-board.gif", "label": "게시판 이용", "kind": "demo"},
+      {"src": "/screenshots/poke-archive/demo-party.gif", "label": "파티 구성", "kind": "demo"}
+    ],
     "category": "frontend",
     "tech": ["React", "JavaScript", "Tailwind CSS", "Zustand", "Axios", "@dnd-kit/core", "@dnd-kit/sortable"],
     "features": ["포켓몬 도감 기능", "커뮤니티 게시판", "나만의 파티 공유"],
@@ -198,7 +224,15 @@
     "iconImage": "/icons/ut-tailwind.png",
     "type": "team",
     "image": "/screenshots/ut-tailwind/hero.png",
-    "images": ["/screenshots/ut-tailwind/hero.png", "/screenshots/ut-tailwind/faq.webp", "/screenshots/ut-tailwind/driver-signup.webp", "/screenshots/ut-tailwind/footer.webp", "/screenshots/ut-tailwind/mobile.webp"],
+    "screenshots": [
+      {"src": "/screenshots/ut-tailwind/hero.png", "label": "랜딩 페이지", "kind": "desktop"},
+      {"src": "/screenshots/ut-tailwind/faq.webp", "label": "자주 묻는 질문", "kind": "desktop"},
+      {"src": "/screenshots/ut-tailwind/driver-signup.webp", "label": "기사 가입 폼", "kind": "desktop"},
+      {"src": "/screenshots/ut-tailwind/footer.webp", "label": "하단 내비게이션", "kind": "desktop"},
+      {"src": "/screenshots/ut-tailwind/mobile-hero.webp", "label": "랜딩 페이지", "kind": "mobile"},
+      {"src": "/screenshots/ut-tailwind/mobile-download.webp", "label": "앱 다운로드 및 기사 가입", "kind": "mobile"},
+      {"src": "/screenshots/ut-tailwind/mobile-footer.webp", "label": "하단 내비게이션", "kind": "mobile"}
+    ],
     "category": "frontend",
     "tech": ["HTML", "Tailwind CSS", "JavaScript"],
     "features": ["반응형 디자인", "다양한 UI 컴포넌트 제공"],
@@ -249,7 +283,10 @@
     "iconImage": "/icons/rogiarm.png",
     "type": "team",
     "image": "/screenshots/rogiarm/home.png",
-    "images": ["/screenshots/rogiarm/home.png", "/screenshots/rogiarm/data.png"],
+    "screenshots": [
+      {"src": "/screenshots/rogiarm/home.png", "label": "로봇 제어 서비스 소개", "kind": "desktop"},
+      {"src": "/screenshots/rogiarm/data.png", "label": "로봇 데이터 화면", "kind": "desktop"}
+    ],
     "category": "fullstack",
     "tech": ["React", "Node.js", "SQLite3", "Arduino", "Raspberry Pi 5", "SerialPort"],
     "features": ["로봇팔 센서 데이터 실시간 모니터링", "영상 관리 UI", "Node.js 서버 기반 SQLite3 데이터 수집·관리"],
@@ -284,16 +321,16 @@
     "iconImage": "/icons/portfolio.png",
     "type": "personal",
     "image": "https://lh3.googleusercontent.com/rd-d/ALs6j_HOVud8mXRPPXA6WRksflRIS5rqdXUeItPC8eBJXXIaaU0Fy5spUGB-C4GI9UX42U3Pp1pmCdg-VDwTac4aOtwa05uIHNeT7rsQ8GMy9n1rNw9mXSD61GGltz6IQ-88HEndhEBQ0NtmRrJsgaaX4cW-48YmHDQdzeykn8lCd7JPDsngxLgrPkKqeTHqbUTIGPKMDUaR49qWCuXNJfVHvbgo8qK-7TvFda1R_r5LraoLNh2sASLtBWIxykQkwPSQmCqwHKVAI6StmC-PoU1VjujAC9hAMGpCywfN4h7EJQREZeqgDZ27YfDXsCX6Y_qc4YR1YhgL04d3FtRzHwNoW_cB2qdTf9KwSr-Xlb8tTS05AUGIW0bkXwbqz7LUC11AwFR8ifWi5h7Tpuqotc7j0ZeN7MNGrIurmYIQQhLGb00tAt16RZcPAS8p0IoABja455I7FcG0FypsZm3CsHViqvkjuHDBb_78w1K37HkAc_hIoE4sOK-rS3-LUjmZUayLIyen-iMUIwQLXPcvFhAvry8KTgKWpACV12gbpkYoAq7xvuZ0NfXwrQddSDToeRZ9jHxBNoiuW8ldlRRJg0kBrwwITiXq7qDNl7eSWJnuKM8Xa7kXEiSIzcgrcneJaR6i06eSin8-F5ngo9_z2LitUTAz3APHiAUlLsi4N8q-YFScRWRxtjPnsSDcwwY2J4JSp7Ekh67WJ_YwDlzf-5gmQYnlna5S4j3AThcafTYaUqn88qJ9qTb0vy9UI4hYWgpjLHx5-ph4FwmHZ3BYqm1D4NTzq31C-54CkW6kqv0Kfi6qjkFoFliJ6XCEz6i9Jghl5JqxfiGf7DBK0ivDXNVkbETXQwc1xrtTyz3v8057H16lisCPDdWUzYOJVRvh79MvCcTiO0JX5ZfkalJ3d-Hnwpw-Hlc-HC0F1-s5EOVYmJ6qplwl7VvpWLmxxaRWeCM3e6nwwkoezUiXUpHXR9wtHDcb8XHv_mQYS2KlsGOyjmzoxtRyVD4tXlc_32XRBaYMl3jIauXTIrOXXQUArYsqdW1YWMrmThBtZLe5OiKxk1yEGlR31A=w3584-h1812?auditContext=prefetch",
-    "images": [
-      "https://drive.google.com/file/d/1IWqsRT-OXnI8B3JFb_ivP6OsVWatB7j7/view?usp=drive_link",
-      "https://drive.google.com/file/d/13HQF2tbk3UGqqn5XAD1lNfZlhn7KU-J7/view?usp=drive_link",
-      "https://drive.google.com/file/d/1qSBN3PKpg74xHjsgshDtvTSApF-240ur/view?usp=drive_link",
-      "https://drive.google.com/file/d/14heLhDi5eDeR2Aj7qFqc7yqFkpcaGYxA/view?usp=drive_link",
-      "https://drive.google.com/file/d/1j6I_62yDJiHgosXvQeFjWvxeFn6CxaUJ/view?usp=drive_link",
-      "https://drive.google.com/file/d/1dtV1Tyrn0UwnWC44p45796whyaHh5otD/view?usp=drive_link",
-      "https://drive.google.com/file/d/1d8uAWze-O2-M_bnH_CtB4X97blh_sC8T/view?usp=drive_link",
-      "https://drive.google.com/file/d/16xGQeCfCnyu8zGquWGKhBOFJKU_HqGu1/view?usp=drive_link",
-      "https://drive.google.com/file/d/133vADQ1J5bEfMbr_EZD7CSY3vzH7gcss/view?usp=drive_link"
+    "screenshots": [
+      {"src": "https://drive.google.com/file/d/1IWqsRT-OXnI8B3JFb_ivP6OsVWatB7j7/view?usp=drive_link", "label": "화면 1", "kind": "general"},
+      {"src": "https://drive.google.com/file/d/13HQF2tbk3UGqqn5XAD1lNfZlhn7KU-J7/view?usp=drive_link", "label": "화면 2", "kind": "general"},
+      {"src": "https://drive.google.com/file/d/1qSBN3PKpg74xHjsgshDtvTSApF-240ur/view?usp=drive_link", "label": "화면 3", "kind": "general"},
+      {"src": "https://drive.google.com/file/d/14heLhDi5eDeR2Aj7qFqc7yqFkpcaGYxA/view?usp=drive_link", "label": "화면 4", "kind": "general"},
+      {"src": "https://drive.google.com/file/d/1j6I_62yDJiHgosXvQeFjWvxeFn6CxaUJ/view?usp=drive_link", "label": "화면 5", "kind": "general"},
+      {"src": "https://drive.google.com/file/d/1dtV1Tyrn0UwnWC44p45796whyaHh5otD/view?usp=drive_link", "label": "화면 6", "kind": "general"},
+      {"src": "https://drive.google.com/file/d/1d8uAWze-O2-M_bnH_CtB4X97blh_sC8T/view?usp=drive_link", "label": "화면 7", "kind": "general"},
+      {"src": "https://drive.google.com/file/d/16xGQeCfCnyu8zGquWGKhBOFJKU_HqGu1/view?usp=drive_link", "label": "화면 8", "kind": "general"},
+      {"src": "https://drive.google.com/file/d/133vADQ1J5bEfMbr_EZD7CSY3vzH7gcss/view?usp=drive_link", "label": "화면 9", "kind": "general"}
     ],
     "category": "frontend",
     "tech": ["Next.js", "React", "TypeScript", "CSS"],
@@ -314,7 +351,7 @@
     "icon": "🎫",
     "type": "team",
     "image": null,
-    "images": [],
+    "screenshots": [],
     "category": "frontend",
     "tech": ["React", "TypeScript"],
     "features": ["실시간 좌석 선택", "결제 시스템 연동", "예매 내역 관리"],
@@ -346,13 +383,12 @@
     "icon": "⚙️",
     "type": "team",
     "image": "/screenshots/shinepo/dashboard.jpg",
-    "images": [
-      "/screenshots/shinepo/dashboard.jpg",
-      "/screenshots/shinepo/tasks.jpg",
-      "/screenshots/shinepo/task-detail.jpg",
-      "/screenshots/shinepo/login.jpg"
+    "screenshots": [
+      {"src": "/screenshots/shinepo/dashboard.jpg", "label": "담당자 홈", "kind": "desktop"},
+      {"src": "/screenshots/shinepo/tasks.jpg", "label": "과정별 할 일 목록", "kind": "desktop"},
+      {"src": "/screenshots/shinepo/task-detail.jpg", "label": "할 일 상세 및 처리 패널", "kind": "desktop"},
+      {"src": "/screenshots/shinepo/login.jpg", "label": "이메일 로그인", "kind": "desktop"}
     ],
-    "imageLabels": ["담당자 홈", "과정별 할 일 목록", "할 일 상세 및 처리 패널", "이메일 로그인"],
     "category": "frontend",
     "tech": [
       "React 19",
