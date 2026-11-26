@@ -7,6 +7,8 @@ import { sortTeamMembers } from "@/lib/sortTeamMembers";
 import { ProjectAiUsage } from "../ProjectAiUsage";
 import { ProjectDetailIcon } from "../ProjectDetailIcon";
 import { ProjectLinks, type PublicProjectLinks } from "../ProjectLinks";
+import { WorkLog, type WorkLogEntry } from "../worklog/WorkLog";
+import { ProjectStory, type ProjectStoryData } from "../story/ProjectStory";
 
 import { TeamMemberCard, type TeamMember } from "../TeamMemberCard";
 
@@ -14,12 +16,14 @@ interface Project {
   id: number;
   title: string;
   desc: string;
+  story?: ProjectStoryData;
   date?: string;
   status: string;
   icon: string;
   iconImage?: string;
   image: string | null;
   screenshots: Screenshot[];
+  worklog?: WorkLogEntry[];
   type: string;
   tech: string[];
   problems?: string[];
@@ -99,6 +103,7 @@ export const MobileSafari = ({ initialProjectId }: MobileSafariProps) => {
           </div>
         </div>
         <p className={styles.desc}>{project.desc}</p>
+        <ProjectStory story={project.story} sectionClassName={styles.section} />
 
         {/* 기술 스택 */}
         <div className={styles.section}>
@@ -125,12 +130,8 @@ export const MobileSafari = ({ initialProjectId }: MobileSafariProps) => {
           </div>
         )}
 
-        {project.screenshots.length > 0 && (
-          <div className={styles.section}>
-            <ScreenshotGallery key={project.id} screenshots={project.screenshots} titleClassName={styles.sectionTitle} />
-          </div>
-        )}
-
+        <WorkLog key={project.id} entries={project.worklog}
+          sectionClassName={styles.section} titleClassName={styles.sectionTitle} />
         <ProjectAiUsage projectId={project.id} sectionClassName={styles.section} titleClassName={styles.sectionTitle} />
 
         {/* 개선 포인트 */}
@@ -162,6 +163,12 @@ export const MobileSafari = ({ initialProjectId }: MobileSafariProps) => {
             <ul className={styles.ulList}>
               {project.features.map((f, i) => <li key={i}>{f}</li>)}
             </ul>
+          </div>
+        )}
+
+        {project.screenshots.length > 0 && (
+          <div className={styles.section}>
+            <ScreenshotGallery key={project.id} screenshots={project.screenshots} titleClassName={styles.sectionTitle} />
           </div>
         )}
 
