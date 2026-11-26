@@ -17,10 +17,9 @@ export interface Screenshot {
 
 interface Props {
   screenshots: Screenshot[];
-  titleClassName: string;
 }
 
-export function ScreenshotGallery({ screenshots, titleClassName }: Props) {
+export function ScreenshotGallery({ screenshots }: Props) {
   const id = useId();
   const [selection, setSelection] = useState(0);
   const [viewerIndex, setViewerIndex] = useState<number | null>(null);
@@ -40,7 +39,6 @@ export function ScreenshotGallery({ screenshots, titleClassName }: Props) {
 
   return (
     <>
-      <h3 className={titleClassName}>스크린샷</h3>
       <div className={styles.gallery}>
         {hasGroups && <GalleryTabs panelId={groupId} label="스크린샷 종류"
           options={kinds.map((kind) => ({ label: groups[kind] }))} selected={kindIndex}

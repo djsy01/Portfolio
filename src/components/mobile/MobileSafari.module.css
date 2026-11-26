@@ -331,3 +331,21 @@
   align-items: flex-end;
   gap: 4px;
 }
+
+/* Project detail sub-sections */
+.subTitle {
+  margin: 0 0 8px;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.subTitle:not(:first-child),
+.issue + .issue {
+  margin-top: 14px;
+}
+
+.evidence {
+  color: #007aff;
+  text-underline-offset: 3px;
+}
