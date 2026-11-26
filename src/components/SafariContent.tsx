@@ -10,6 +10,8 @@ import projectsData from '@/data/projects.json';
 import { ProjectAiUsage } from './ProjectAiUsage';
 import { ProjectDetailIcon } from './ProjectDetailIcon';
 import { ProjectLinks, type PublicProjectLinks } from './ProjectLinks';
+import { WorkLog, type WorkLogEntry } from './worklog/WorkLog';
+import { ProjectStory, type ProjectStoryData } from './story/ProjectStory';
 
 import { TeamMemberCard, type TeamMember } from "./TeamMemberCard";
 
@@ -18,12 +20,14 @@ interface Project {
   hidden?: boolean;
   title: string;
   desc: string;
+  story?: ProjectStoryData;
   date: string;
   status: string;
   icon: string;
   iconImage?: string;
   type: string;
   screenshots: Screenshot[];
+  worklog?: WorkLogEntry[];
   tech: string[];
   problems?: string[];
   solutions?: string[];
@@ -95,6 +99,7 @@ export const SafariContent = () => {
           </div>
 
           <p className={styles.desc}>{project.desc}</p>
+          <ProjectStory story={project.story} sectionClassName={styles.section} />
 
           {/* Tech Stack */}
           <div className={styles.section}>
@@ -123,12 +128,8 @@ export const SafariContent = () => {
             </div>
           )}
 
-          {project.screenshots.length > 0 && (
-            <div className={styles.section}>
-              <ScreenshotGallery key={project.id} screenshots={project.screenshots} titleClassName={styles.sectionTitle} />
-            </div>
-          )}
-
+          <WorkLog key={project.id} entries={project.worklog}
+            sectionClassName={styles.section} titleClassName={styles.sectionTitle} />
           <ProjectAiUsage projectId={project.id} sectionClassName={styles.section} titleClassName={styles.sectionTitle} />
 
           {/* Features */}
@@ -164,6 +165,12 @@ export const SafariContent = () => {
                   <li key={index}>{solution}</li>
                 ))}
               </ul>
+            </div>
+          )}
+
+          {project.screenshots.length > 0 && (
+            <div className={styles.section}>
+              <ScreenshotGallery key={project.id} screenshots={project.screenshots} titleClassName={styles.sectionTitle} />
             </div>
           )}
 

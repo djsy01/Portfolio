@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import { useWindowStore } from "@/store/useWindowStore";
 import styles from "./LoginScreen.module.css";
 
@@ -12,7 +12,7 @@ const PROFILE = {
 };
 
 export const LoginScreen = () => {
-  const { login } = useWindowStore();
+  const login = useWindowStore((state) => state.login);
   const [selected, setSelected] = useState(false);
   const [typedPassword, setTypedPassword] = useState("");
   const [isLoggingIn, setIsLoggingIn] = useState(false);
@@ -60,7 +60,7 @@ export const LoginScreen = () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-  }, [selected]);
+  }, [login, selected]);
 
   const handleProfileClick = () => {
     if (isLoggingIn) return;
@@ -168,17 +168,18 @@ export const LoginScreen = () => {
 };
 
 /* 실시간 시계 컴포넌트 */
+const subscribeToClock = (onTick: () => void) => {
+  const interval = setInterval(onTick, 1000);
+  return () => clearInterval(interval);
+};
+const getClockSnapshot = () => Math.floor(Date.now() / 1000) * 1000;
+const getServerClockSnapshot = () => null;
+
 const Clock = () => {
-  const [time, setTime] = useState<Date | null>(null);
+  const timestamp = useSyncExternalStore(subscribeToClock, getClockSnapshot, getServerClockSnapshot);
+  if (timestamp === null) return <div className={styles.clock} />;
 
-  useEffect(() => {
-    setTime(new Date());
-    const t = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(t);
-  }, []);
-
-  if (!time) return <div className={styles.clock} />;
-
+  const time = new Date(timestamp);
   const hours = time.getHours().toString().padStart(2, "0");
   const minutes = time.getMinutes().toString().padStart(2, "0");
   const days = ["일", "월", "화", "수", "목", "금", "토"];

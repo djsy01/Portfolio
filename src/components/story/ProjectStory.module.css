@@ -1,0 +1,21 @@
+.blocks {
+  display: grid;
+  gap: 14px;
+  color: #444950;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.blocks h3 {
+  margin: 0 0 4px;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.blocks p { margin: 0; }
+.blocks ul {
+  margin: 0;
+  padding-inline-start: 20px;
+  list-style: disc;
+}
