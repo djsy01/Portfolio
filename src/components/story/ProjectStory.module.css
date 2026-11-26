@@ -6,7 +6,7 @@
   line-height: 1.55;
 }
 
-.blocks h3 {
+.blocks h4 {
   margin: 0 0 4px;
   color: #374151;
   font-size: 14px;
@@ -14,8 +14,6 @@
 }
 
 .blocks p { margin: 0; }
-.blocks ul {
-  margin: 0;
-  padding-inline-start: 20px;
-  list-style: disc;
+.blocks + ul {
+  margin-block-start: 14px;
 }

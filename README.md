@@ -209,17 +209,23 @@ Finder와 터미널의 `projects` 명령은 같은 [프로젝트 목록](src/dat
 
 ### Safari
 
-프로젝트 상세 정보와 라이브 사이트를 미리보기할 수 있는 브라우저.
+프로젝트 상세 정보와 라이브 사이트를 미리보기할 수 있는 브라우저. 데스크톱 Safari와 모바일 Safari가 같은 상세 컴포넌트(`src/components/detail/`)를 사용하며, 데이터가 없는 섹션은 표시하지 않습니다.
 
-- **개요·만든 이유·내 기여** — `story`에 `overview`, `motivation`(선택), `contributions`(목록)를 입력하면 설명 아래에 표시합니다.
-- **기술 스택**: 사용된 기술 태그 표시
-- **팀 구성** — 마스터를 먼저 표시하고 기획, UX, FE, BE, NLP, 클라우드 순으로 정렬합니다. 같은 역할 안에서는 이름 가나다순입니다. 팀원 데이터의 `githubUsername`에 계정명을 입력하면 카드 전체가 해당 프로필을 새 탭으로 여는 링크가 됩니다.
-- **AI 활용** — 프로젝트 ID에 연결된 사례가 있으면 적용한 작업(`scope`), 도구(`tool`), 구현 방식(`approach`)을 표시합니다. [사례 데이터](src/data/projectAi.ts)
-- **문제점 & 해결방안**: 프로젝트 개선 포인트
-- **아이콘과 갤러리** — 상세 상단에는 `iconImage` 또는 `icon` 이모지를 표시합니다. 스크린샷은 `screenshots`에 `src`(이미지 경로), `label`(화면 이름), `kind`(`desktop`, `mobile`, `demo`, `general`)로 등록합니다. 상세 하단(링크 버튼 위)에 큰 미리보기 한 장과 썸네일 줄로 표시하고, 유형이 여러 개면 탭으로 나눕니다.
-- **작업 기록** — `worklog`에 `date`, `title`, `items`를 날짜순으로 입력하면 타임라인으로 표시합니다. 5개를 넘으면 최근 4개만 보이고 전체 보기로 펼칩니다.
-- **GitHub**: 새 탭에서 열기
-- **Live Site**: Safari 내부 iframe에서 미리보기
+표시 순서:
+
+1. **🧭 프로젝트 소개** — `story.overview`, `story.motivation`(선택)과 기간·팀 구성(팀원 중 `githubUsername`이 `djsy01`인 사람의 역할)
+2. **✨ 주요 기능** — `features`. `"라벨: 설명"` 형식이면 라벨을 굵게 표시합니다. 아래에 기술 스택을 `techStack`(`category`, `items`) 분류별 칩으로, 없으면 `tech` 칩으로 표시합니다.
+3. **🙋 내가 기여한 바** — `story.contributions`와 팀원 카드. 팀원은 마스터를 먼저 표시하고 기획, UX, FE, BE, NLP, 클라우드 순으로 정렬하며, 같은 역할 안에서는 이름 가나다순입니다. `githubUsername`을 입력하면 카드가 GitHub 프로필 링크가 됩니다.
+4. **🔧 트러블슈팅** — `troubleshooting`에 `title`, `problem`, `cause`(선택), `solution`, `result`(선택), `link`(선택, `{ label, url }`)를 입력합니다. 없으면 기존 `problems`/`solutions`를 개선 포인트·해결 방안으로 표시합니다.
+5. **♻️ 리팩토링** — `refactoring` 목록
+6. **🏆 성과** — `outcomes` 목록
+7. **작업 기록** — `worklog`에 `date`, `title`, `items`를 날짜순으로 입력하면 타임라인으로 표시합니다. 5개를 넘으면 최근 4개만 보이고 전체 보기로 펼칩니다.
+8. **AI 활용** — 프로젝트 ID에 연결된 사례가 있으면 적용한 작업(`scope`), 도구(`tool`), 구현 방식(`approach`)을 표시합니다. [사례 데이터](src/data/projectAi.ts)
+9. **🎬 시연 영상** — `video`에 YouTube 주소(`youtu.be/...`, `watch?v=...`)를 입력하면 16:9 플레이어로 표시합니다.
+10. **🖼️ 스크린샷** — `screenshots`에 `src`(이미지 경로), `label`(화면 이름), `kind`(`desktop`, `mobile`, `demo`, `general`)로 등록합니다. 큰 미리보기 한 장과 썸네일 줄로 표시하고, 유형이 여러 개면 탭으로 나눕니다.
+11. **GitHub / Live Site 버튼** — GitHub는 새 탭에서, Live Site는 Safari 내부 iframe에서 엽니다.
+
+상세 상단에는 `iconImage` 또는 `icon` 이모지, 상태, 기간, `desc`를 표시합니다.
 
 공개할 주소만 `links.github`와 `links.site`에 입력합니다. 값이 `null`이면 해당 버튼을 숨깁니다.
 
