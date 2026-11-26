@@ -1,9 +1,6 @@
 import { ExternalLink } from "lucide-react";
 
-export interface PublicProjectLinks {
-  github?: string | null;
-  site?: string | null;
-}
+import type { PublicProjectLinks } from '@/types/project';
 
 interface ProjectLinksProps {
   links: PublicProjectLinks;
