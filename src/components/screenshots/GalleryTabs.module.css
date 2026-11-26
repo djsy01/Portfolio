@@ -1,0 +1,55 @@
+.segments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 3px;
+  border: 1px solid #dce0e5;
+  border-radius: 9px;
+  background: #edf0f4;
+}
+
+.segments button {
+  flex: 1 0 auto;
+  min-height: 32px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #444950;
+}
+.segments button[aria-selected="true"] {
+  background: white;
+  color: #0064d2;
+  box-shadow: 0 1px 2px rgb(29 29 31 / 14%);
+}
+
+.thumbnails {
+  display: flex;
+  gap: 8px;
+  padding: 4px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 4px;
+  scrollbar-width: thin;
+}
+
+.thumbnails button {
+  position: relative;
+  flex: 0 0 72px;
+  height: 48px;
+  scroll-snap-align: start;
+  overflow: hidden;
+  border: 1px solid #dce0e5;
+  border-radius: 9px;
+  background: #edf0f4;
+}
+.thumbnails img { object-fit: contain; }
+.thumbnails button:hover,
+.thumbnails button[aria-selected="true"] { border-color: #007aff; }
+.thumbnails button[aria-selected="true"] { outline: 2px solid #007aff; }
+
+.segments button:focus-visible,
+.thumbnails button:focus-visible { outline: 2px solid #004b9c; outline-offset: 2px; }
